@@ -216,23 +216,34 @@ Handling the big data in geophysics requires a shift from linear, sequential pro
 
 For example, FWI is a compute-intensive task which simulates seismic waves through every cubic meter of the earth and requires heavy lifting on HPC. The hybrid infrastructure accelerates high-resolution FWI by embedding physical laws directly into AI algorithms, since it is driven by Physics-Informed Neural Networks (PINNs) \cite{}. The FWI remains on GPU-accelerated HPC clusters because of the tight coupling required between processors. In turn, bursty tasks, such as initial seismic signal denoising and geometry correction of the dataset are offloaded to the cloud which profits from its elasticity. This allows teams to spin up 10,000 nodes for a single weekend of processing without owning the hardware. For remote nodal arrays, smart nodes now perform initial data compression and basic quality checks at the source, transmitting only the most relevant seismic signal back to headquarters, Table \ref{tab02}. 
 
-\begin{table}[H] 
-\caption{Summary of modern big data processing in geophysics.\label{tab02}}
-%\newcolumntype{C}{>{\centering\arraybackslash}X}
-\begin{tabularx}{\textwidth}{CCC}
-%\toprule
-\textbf{Task} & \textbf{2026 Strategy}	& \textbf{Technology Used}\\
-%\midrule
-Nodal Data Ingest & Decoupled Streaming & Cloud Object Storage (S3/Azure Blob)\\
-Velocity Modeling & PINN-based Inversion & NVIDIA H100/H200 Clusters\\
-Noise Removal	 & Deep Learning Autoencoders & CNN-based Denoising\\
-Reservoir Monitoring	 & Digital Twins	& Real-time Edge Computing
-%\bottomrule
+\begin{table}[H]
+\caption{State-of-the-Art Big Data Processing in Geophysics (2026 Framework)}
+\label{tab:geophysics_2026}
+\begin{tabularx}{\textwidth}{@{} >{\hsize=0.8\hsize}C >{\hsize=1.2\hsize}C >{\hsize=1.0\hsize}C @{}}
+\toprule
+\textbf{Geophysical Task} & \textbf{2026 Advanced Strategy} & \textbf{Technology Stack} \\ \midrule
+\textbf{High-Density Nodal Ingest} & Decoupled asynchronous streaming from 100k+ channel nodes; real-time metadata indexing. & Azure Blob/S3, Apache Kafka, Zarr/ASDF Formats \\ \addlinespace
+\textbf{Elastic FWI \& Velocity Modeling} & Multi-parameter PINN-based inversion to resolve complex salt geometries and anisotropy. & NVIDIA H200 Clusters, PyTorch/JAX-Seismic \\ \addlinespace
+\textbf{Seismic Signal Enhancement} & Self-supervised Deep Learning Autoencoders for 5D interpolation and ghost reflection removal. & Transfomer-based Denoising, GANs \\ \addlinespace
+\textbf{Microseismic Monitoring} & Automated event detection and location using Edge-AI for real-time hydraulic fracture mapping. & NVIDIA Jetson AGX Orin, 5G/6S Telemetry \\ \addlinespace
+\textbf{4D Reservoir Characterization} & Digital Twin synchronization integrating seismic, EM, and production data for predictive flow modeling. & Azure Digital Twins, NVIDIA Omniverse \\ \addlinespace
+\textbf{Multi-Physics Integration} & Joint inversion of gravity, magnetic, and seismic data via Large Language Models (LLMs) for interpretation. & Foundation Models, Graph Neural Networks (GNNs) \\ \bottomrule
 \end{tabularx}
 \end{table}
-\unskip
 
 As a result of hybrid approach, geophysicists integrate edge computing for real-time data compression and automated AI quality control for trace picking. Such approach ensures geological accuracy while bypassing the "non-uniqueness" of traditional methods. Hence, the industry has shifted from labor-intensive manual workflows to an asynchronous, "digital twin" approach that can reconstruct complex subsurface structures with unprecedented speed and precision \cite{}.
+
+%----------- subsection ----------->
+\subsection{Architecture Paradigms for Marmara Regional Seismology}
+
+To manage the heterogeneous data demands of the Marmara region, cluster architectures are categorized into three patterns optimized for distinct geophysical workflows. The Master-Worker paradigm, utilizing Apache Spark, facilitates high-precision batch analytics and task coordination essential for computationally intensive Full Waveform Inversion (FWI) and 3D tomographic modeling of the North Anatolian Fault. For high-density nodal arrays, a Peer-to-Peer pattern (e.g., Apache Cassandra) employs decentralized gossip protocols and N-replication to ensure maximum fault tolerance and high availability for seismic traces, eliminating single points of failure during regional events. Finally, a Hybrid Broker-Based architecture using Apache Kafka provides the decoupled scaling necessary to ingest and partition massive telemetry streams from borehole and GPS sensors. This framework balances the sub-second latency required for Earthquake Early Warning (EEW) against the high-velocity throughput needed for petabyte-scale tectonic research, Figure \ref{fig03}
+
+\begin{figure}[H]
+    \centering % Use \centering instead of the center environment to avoid extra vertical space
+    \includegraphics[width=\textwidth]{Fig_03.png} 
+    \caption{Geophysical Data Processing Framework: Istanbul EEW \& Seismic Analysis. Diagram source: authors.}
+    \label{fig03}
+\end{figure}
 
 %----------- subsection ----------->
 \subsection{Physics-Informed Neural Networks (PINNs)}
@@ -267,32 +278,27 @@ This distributed approach is vital for collaborative seismic monitoring, allowin
 
 The primary collaboration challenges stem from the "Domain vs. Code" gap, where specialized physical algorithms must be translated into scalable code, and the technical friction of handling "heavy" legacy data formats like SEG-Y (Society of Exploration Geophysicists - Y format alongside modern cloud-native formats. These teams often face "Black Box" skepticism, where scientific rigor clashes with opaque machine learning results, and resource contention over the massive computational power required for tasks like 3D seismic inversion. Using a unified platform like Azure Databricks helps mitigate these issues by providing a shared workspace that harmonizes domain expertise with distributed computing.
 
-\subsection{Geophysical data hubs in Turkey: Distributed architecture}
-The distributed approach to data processing in earthquake monitoring centres corresponds to its current organisational structure of geophysical data centres. Since Turkey is home to some of the most advanced geophysical data centres in the Mediterranean and Middle East, its primary focus is on seismic monitoring due to the country’s unique position on major fault lines. Data centres include a network of centres processing and analysing seismic and earthquake data. The following institutions as the primary hubs for geophysical data collection, processing, and distribution:
+\subsection{Geophysical data hubs in Turkey: Distributed architecture, collaboration and technical silo}
+The distributed approach to data processing in earthquake monitoring centres corresponds to its current organisational structure of geophysical data centres. Since Turkey is home to some of the most advanced geophysical data centres in the Mediterranean and Middle East, its primary focus is on seismic monitoring due to the country’s unique position on major fault lines. Data centres include a network of centres processing and analysing seismic and earthquake data. The following institutions as the primary hubs for geophysical data collection, processing, and distribution, Table \ref{tab03}:
 
-\begin{itemize}
-  \item KOERI (Kandilli Observatory and Earthquake Research Institute): Based at Boğaziçi University, this is arguably the most famous geophysical data center in Turkey. It operates the National Earthquake Monitoring Center (NEMC) and is the primary source for real-time seismic and tsunami data in the Marmara region.  
-
-    \item AFAD (Disaster and Emergency Management Presidency): AFAD operates the Earthquake Data Center System of Turkey (TDVMS). It manages a massive network of over 1,100 stations and serves as the official government authority for disaster response data.  
-
-   \item MTA (General Directorate of Mineral Research and Exploration): Located in Ankara, MTA maintains the most comprehensive databases for geological and geophysical surveys related to mineral deposits, geothermal energy, and active fault mapping across Turkey.  
-
-    \item TPAO (Turkish Petroleum Corporation): TPAO holds the country’s largest private/government-held collection of 3D and 4D seismic reflection data (often in SEG-Y format) used for hydrocarbon exploration in the Black Sea and Mediterranean.
-
-    \item TÜBİTAK MAM (Marmara Research Center): Its Earth and Marine Sciences Institute focuses on R\&D data, including high-resolution soil analysis, liquefaction potential, and marine geophysics using specialized research vessels.  
-
-    \item Belbaşı Nuclear Tests Monitoring Center: Run by KOERI in Ankara, this is a specialized facility that collects geophysical data to detect underground nuclear explosions globally, contributing to the Comprehensive Nuclear-Test-Ban Treaty (CTBT).  
-
-    \item ITU (Istanbul Technical University) - Geophysics Dept: ITU houses several high-level laboratories, including the Prof. Dr. N. Canıtez Data Processing Lab, which handles advanced academic seismic imaging and electromagnetic data.  
-
-    \item METU (Middle East Technical University) - Earth System Science: METU focuses on multi-disciplinary data, integrating geodetic data (GPS/GNSS) with seismic records to study crustal deformation and plate tectonics.
-
-    \item Dokuz Eylül University - Earthquake Research and Implementation Center (DAUM): Based in İzmir, this center is the primary data hub for seismic activity and fault analysis in the Aegean region.
-
-    \item Kocaeli University - Department of Geophysics: Following the 1999 earthquake, this department became a major center for urban geophysics data, focusing on site-response analysis and seismic microzonation for the industrial heartland of Turkey
-\end{itemize}
-
-\subsection{Geophysical data centres: Collaboration challenges and technical silos}
+\begin{table}[H]
+\caption{Principal Organizations and Big Data Activities in Marmara Region Seismology and EEW}
+\label{tab03}
+\begin{tabularx}{\textwidth}{@{} X >{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{6.5cm} @{}}
+\toprule
+\textbf{Data Centre} & \textbf{Primary Focus} & \textbf{Seismic Big Data \& EEW Activities} \\ \midrule
+\textbf{KOERI (Kandilli)} \newline \textit{Est. 1868 (Imperial Observatory)} & Operates the National Earthquake Monitoring Center (NEMC). & Processes real-time streams for the Istanbul EEW system, utilizing borehole and surface sensors to trigger automated gas/rail shutdowns in the Marmara region. \\ \addlinespace
+\textbf{AFAD} \newline \textit{Est. 2009 (Consolidating TEMAD/EIE)} & Manages the TDVMS (Earthquake Data Center System) with 1,100+ stations. & Acts as the official authority for high-velocity acceleration data used in real-time structural health monitoring and regional intensity mapping. \\ \addlinespace
+\textbf{MTA} \newline \textit{Est. 1935 (Ankara)} & Curates the Active Fault Map of Turkey. & Big data activities focus on high-resolution GIS integration of paleoseismological data and surface rupture mapping to inform long-term probabilistic hazard models. \\ \addlinespace
+\textbf{TPAO} \newline \textit{Est. 1954} & Manages petabyte-scale 3D/4D seismic reflection catalogs. & Utilizes high-performance computing (HPC) for deep-water imaging in the Black Sea/Marmara, providing critical crustal structure insights via legacy SEG-Y archives. \\ \addlinespace
+\textbf{TÜBİTAK MAM} \newline \textit{Est. 1972 (Gebze)} & Focuses on marine geophysics and R\&D. & Processes high-resolution bathymetry and sub-bottom profiler data from the Marmara Sea to identify active submarine fault segments and liquefaction risks. \\ \addlinespace
+\textbf{Belbaşı Monitoring Center} \newline \textit{Est. 1951} & Specialized CTBT facility. & Analyzes global seismic waves for nuclear test detection; its high-precision sensors contribute to deep-crustal noise characterization and signal processing research. \\ \addlinespace
+\textbf{ITU Geophysics} \newline \textit{Est. 1952 (Department)} & Houses the N. Canıtez Lab. & Advanced academic processing of electromagnetic and seismic data; pioneers AI-driven feature extraction for Marmara-specific site-response and tomography. \\ \addlinespace
+\textbf{METU Earth Systems} \newline \textit{Est. 2002} & Integrates multi-disciplinary big data. & Primarily blending GNSS/GPS crustal deformation records with seismic catalogs to quantify the slip rate and strain accumulation along the North Anatolian Fault. \\ \addlinespace
+\textbf{Dokuz Eylül (DAUM)} \newline \textit{Est. 1987 (İzmir)} & Primary data hub for the Aegean region. & Conducts massive fault analysis and seismic cataloging to study complex graben systems and volcanic-seismic interactions. \\ \addlinespace
+\textbf{Kocaeli University} \newline \textit{Post-1999 expansion} & Center for urban geophysics. & Processes massive site-response and microzonation datasets for the Marmara industrial corridor, focusing on soil-structure interaction during high-amplitude shaking. \\ \bottomrule
+\end{tabularx}
+\end{table}
 
 A geophysical data centre is organised into a structure consisting of data engineers managing high-volume pipelines, geophysicists that provide domain-specific interpretation, and data scientists applying predictive modeling. The collaboration within the tri-layer structure of a geophysical data centre is primarily hindered by technical and semantic silos that emerge when sharing massive, complex datasets. Friction arises from data format incompatibility, where data engineers prioritize high-performance cloud formats like Parquet, while geophysicists remain tethered to legacy SEG-Y files, leading to costly "data wrangling" cycles. Additionally, code reproducibility is challenged by the gap between exploratory research notebooks and standardized production pipelines, often exacerbated by a lack of shared version control for "ground truth" datasets. These hurdles are compounded by a communication barrier regarding model interpretability, where the data scientist's focus on statistical accuracy may clash with the geophysicist’s requirement for physical consistency and scientific rigor.
 
@@ -308,14 +314,14 @@ Databricks as a cloud-based data engineering and analytics platform for processi
 Turkey is a primary hub for the big data architecture in geophysics due to its high seismic activity and the massive scale of data. The large data massifs are generated by data centres such as AFAD (Disaster and Emergency Management Authority) and KOERI (Kandilli Observatory and Earthquake Research Institute). To ensure both operational stability and scientific agility in geophysical data centres, the Databricks workspace adopt a hybrid structure that separates concerns by environment (Dev/Staging/Prod) at the top level while organizing internal content by project. For example, by using a Unified Data Lakehouse, a researcher in Ankara can run a PySpark script on the same data that a technician in Istanbul just uploaded. Instead of sending terabytes of hard drives across the country, the team uses Unity Catalog to securely share "Gold-level" datasets between government agencies and universities (like ITU or METU) for rapid disaster-risk assessment. 
 
 \subsection{From Raw Waves to Real-Time Alerts: The Intelligent Data Tiering Through Medallion Architecture}
-In geophysics, the Medallion Architecture on Databricks streamlines the transition from raw seismic sensor feeds to predictive insights by organizing data into three functional stages, Figure \ref{fig03}. The process begins with the Bronze layer, which ingests raw seismic waveforms from global APIs like the USGS or local station streams, preserving the original signal in its entirety. This data is then refined into the Silver layer, where signal processing removes "cultural noise" such as traffic or industrial vibrations to isolate tectonic activity. Finally, the Gold layer provides curated, analytics-ready datasets used for high-level earthquake magnitude and location prediction. This structured workflow allows research institutions to efficiently parallelize computationally intensive tasks like Template Matching, enabling the detection of micro-earthquakes hidden within years of continuous recording that traditional systems would miss.
+In geophysics, the Medallion Architecture on Databricks streamlines the transition from raw seismic sensor feeds to predictive insights by organizing data into three functional stages, Figure \ref{fig04}. The process begins with the Bronze layer, which ingests raw seismic waveforms from global APIs like the USGS or local station streams, preserving the original signal in its entirety. This data is then refined into the Silver layer, where signal processing removes "cultural noise" such as traffic or industrial vibrations to isolate tectonic activity. Finally, the Gold layer provides curated, analytics-ready datasets used for high-level earthquake magnitude and location prediction. This structured workflow allows research institutions to efficiently parallelize computationally intensive tasks like Template Matching, enabling the detection of micro-earthquakes hidden within years of continuous recording that traditional systems would miss.
 
 \begin{figure}[H]
     \begin{center}
 	\hspace{-35pt}\includegraphics[width=13.0cm]{Fig_03.png}
     \end{center}
     \caption{Earthquake Early Warning (EEW) system data flow on Databricks. Diagram source: authors.}
-    \label{fig03}
+    \label{fig04}
 \end{figure}
 
 To foster a unified environment, the Databricks workspace is organized around a Medallion Architecture governed by Unity Catalog, ensuring a single source of truth across all tiers. By structuring data into Bronze (raw SEG-Y), Silver (physically validated), and Gold (model-ready features) catalogs, the organization eliminates manual data duplication and version chaos. Collaboration is further streamlined through Persona-Based Clusters—where engineers use memory-heavy nodes for ETL and scientists utilize GPU-enabled nodes for deep learning—and Databricks Repos, which integrates Git to ensure all code is versioned and peer-reviewed. Finally, replacing static PDF reports with Live SQL Dashboards allows geophysicists and scientists to interact directly with real-time seismic streams, effectively bridging the "Domain vs. Code" gap through a shared, transparent technical ecosystem.
