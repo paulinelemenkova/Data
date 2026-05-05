@@ -192,7 +192,7 @@ Türkiye is notably vulnerable to seismic activities, especially in regions near
 
 This tectonic activity significantly influences the geological and seismic characteristics of the region. The Anatolian Block is being squeezed westward as the Arabian Plate moves northward against the Eurasian Plate, while the African Plate subducts beneath the Hellenic Arc \cite{McKenzie1972, LePichon2010}. Such processes, which influence regional tectonics, contribute to the occurrence of frequent and powerful earthquakes at lithosphere boundaries. The most prominent feature of this system is the North Anatolian Fault Zone (NAFZ), a 1,200 km right-lateral strike-slip fault extending from the Gulf of Saros to Karlıova \cite{Barka1992, Sengor2005}. It was formed 13–11 million years ago and remains seismically active, capable of producing significant earthquakes up to magnitude 8.0 \cite{Stein1997}. Current deformation, particularly in the Marmara region, is asymmetric and heavily influenced by the complex regional geology reflecting conditions along the NAFZ \cite{Puccinelli2021}. This ongoing deformation ensures that the region remains one of the most monitored and researched seismic zones in the world, as the accumulation of strain along these boundaries poses a continuous threat to urban centers.
 
-\subsection{Historical Outline of Seismic Events (496 BC to Present)}
+\subsection{Historical Outline of Seismic Events in Türkiye (496 BC to Present)}
 
 The following historical overview examines the relentless cycle of seismic activity in the Anatolian region, tracing a path from the earliest documented tremors of antiquity through the devastating tectonic ruptures of the modern era, Figure \ref{fig03}. 
 
@@ -311,7 +311,7 @@ As a result of hybrid approach, geophysicists integrate edge computing for real-
 %----------- subsection ----------->
 \subsection{Architecture Paradigms for Marmara Regional Seismology}
 
-To manage the heterogeneous data demands of the Marmara region, cluster architectures are categorized into three patterns optimized for distinct geophysical workflows. The Master-Worker paradigm, utilizing Apache Spark, facilitates high-precision batch analytics and task coordination essential for computationally intensive Full Waveform Inversion (FWI) and 3D tomographic modeling of the North Anatolian Fault. For high-density nodal arrays, a Peer-to-Peer pattern (e.g., Apache Cassandra) employs decentralized gossip protocols and N-replication to ensure maximum fault tolerance and high availability for seismic traces, eliminating single points of failure during regional events. Finally, a Hybrid Broker-Based architecture using Apache Kafka provides the decoupled scaling necessary to ingest and partition massive telemetry streams from borehole and GPS sensors. This framework balances the sub-second latency required for Earthquake Early Warning (EEW) against the high-velocity throughput needed for petabyte-scale tectonic research, Figure \ref{fig04}
+To manage the heterogeneous data demands of the Marmara region, cluster architectures are categorized into three patterns optimized for distinct geophysical workflows. The Master-Worker paradigm, utilizing Apache Spark, facilitates high-precision batch analytics and task coordination essential for computationally intensive Full Waveform Inversion (FWI) and 3D tomographic modeling of the North Anatolian Fault. For high-density nodal arrays, a Peer-to-Peer pattern (e.g., Apache Cassandra) employs decentralized gossip protocols and N-replication to ensure maximum fault tolerance and high availability for seismic traces, eliminating single points of failure during regional events. Finally, a Hybrid Broker-Based architecture using Apache Kafka provides the decoupled scaling necessary to ingest and partition massive telemetry streams from borehole and GPS sensors. This framework balances the sub-second latency required for EEW against the high-velocity throughput needed for petabyte-scale tectonic research, Figure \ref{fig04}
 
 %----------- subsection ----------->
 \subsection{Physics-Informed Neural Networks (PINNs)}
@@ -641,7 +641,8 @@ EEW & Earthquake Early Warning \\
 ETL & Extract, Transform, and Load \\
 FWI & Full Waveform Inversion \\
 GPU & Graphics Processing Unit \\
-HPC & high-performance computing \\
+GNNs & Graph Neural Networks \\
+HPC & High-Performance Computing \\
 I/O & Input-Output \\
 KOERI & Kandilli Observatory and Earthquake Research Institute\\
 KVKK & Kişisel Verileri Korunması Kanunu \\
@@ -654,7 +655,7 @@ PINNs & Physics-Informed Neural Networks \\
 PDF & Portable Document Format \\
 PaC & Policy-as-Code \\
 QC & Quality Control \\
-RNNs & recursive neural networks \\
+RNNs & Recursive Neural Networks \\
 SaaS & Software as a Service \\
 SEG-Y & Society of Exploration Geophysicists - Y format \\
 SHRA & Seismic Hazard Risk Assessment \\
