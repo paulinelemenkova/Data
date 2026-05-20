@@ -56,6 +56,8 @@
 \usepackage{multirow}
 \usepackage{adjustbox}
 \usepackage{soul}  % for \textcolor{blue}{} highlighting
+% This resets the equation counter at every new section
+\counterwithin{equation}{section}
 
 \definecolor{deepblue}{rgb}{0,0,0.5}
 \definecolor{deepred}{rgb}{0.6,0,0}
@@ -604,7 +606,7 @@ print(f"b-value uncertainty (1-sigma): {sigma_b:.4f}")
 
 \subsection{From Raw Waves to Real-Time Alerts: The Medallion Architecture}
 
-In geophysics, the Medallion Architecture on Databricks streamlines the transition from raw seismic sensor feeds to predictive insights by organizing data into three functional stages, Figure~\ref{fig06}. The process begins with the \textbf{Bronze layer}, which ingests raw seismic waveforms from global APIs like USGS or local station streams, preserving the original signal. \textcolor{blue}{This is refined into the} \textbf{Silver layer}, where signal processing removes cultural noise \textcolor{blue}{(traffic, industrial vibrations)} to isolate tectonic activity. \textcolor{blue}{Finally,} the \textbf{Gold layer} provides curated, analytics-ready datasets used for magnitude and location prediction.
+In geophysics, the Medallion Architecture on Databricks streamlines the transition from raw seismic sensor feeds to predictive insights by organizing data into three functional stages, Figure~\ref{fig06}. The process begins with the Bronze layer, which ingests raw seismic waveforms from global APIs like USGS or local station streams, preserving the original signal. \textcolor{blue}{This is refined into the} Silver layer, where signal processing removes cultural noise \textcolor{blue}{(traffic, industrial vibrations)} to isolate tectonic activity. \textcolor{blue}{Finally,} the Gold layer provides curated, analytics-ready datasets used for magnitude and location prediction.
 
 \begin{figure}[H]
     \centering
@@ -653,27 +655,41 @@ The distributed approach to data processing corresponds to its current organisat
     \textbf{Data Centre} & \textbf{Primary Focus} & \textbf{Seismic Big Data \& EEW Activities} \\ \midrule
     \endfirsthead
     
+    % Header for subsequent pages
     \multicolumn{3}{c}{{\bfseries \tablename\ \thetable{} -- Continued from previous page}} \\
     \toprule
     \textbf{Data Centre} & \textbf{Primary Focus} & \textbf{Seismic Big Data \& EEW Activities} \\ \midrule
     \endhead
     
+    % Footer for the bottom of pages before the last one
     \midrule
     \multicolumn{3}{r}{{Continued on next page...}} \\
     \endfoot
     
+    % Final footer at the very end of the table
     \bottomrule
     \endlastfoot
 
-    \textbf{KOERI (Kandilli)} \newline \textit{Est. 1868} & Operates the National Earthquake Monitoring Center (NEMC). & Processes real-time streams for the Istanbul EEW system, utilizing borehole and surface sensors to trigger automated gas/rail shutdowns. \\ \addlinespace
+    % Table Body
+    \textbf{KOERI (Kandilli)} \newline \textit{Est. 1868 (Imperial Observatory)} & Operates the National Earthquake Monitoring Center (NEMC). & Processes real-time streams for the Istanbul EEW system, utilizing borehole and surface sensors to trigger automated gas/rail shutdowns in the Marmara region. \\ \addlinespace
     
-    \textbf{AFAD} \newline \textit{Est. 2009} & Manages the TDVMS with 1,100+ stations. & Acts as the official authority for high-velocity acceleration data used in real-time structural health monitoring. \\ \addlinespace
+    \textbf{AFAD} \newline \textit{Est. 2009 (Consolidating TEMAD/EIE)} & Manages the TDVMS (Earthquake Data Center System) with 1,100+ stations. & Acts as the official authority for high-velocity acceleration data used in real-time structural health monitoring and regional intensity mapping. \\ \addlinespace
     
-    \textbf{MTA} \newline \textit{Est. 1935 (Ankara)} & Curates the Active Fault Map of Türkiye. & Big data activities focus on GIS integration of paleoseismological data and surface rupture mapping. \\ \addlinespace
+    \textbf{MTA} \newline \textit{Est. 1935 (Ankara)} & Curates the Active Fault Map of Türkiye. & Big data activities focus on high-resolution GIS integration of paleoseismological data and surface rupture mapping to inform long-term probabilistic hazard models. \\ \addlinespace
     
-    \textbf{ITU Geophysics} \newline \textit{Est. 1952} & Houses the N. Canıtez Lab. & Pioneers AI-driven feature extraction for Marmara-specific site-response and tomography. \\ \addlinespace
+    \textbf{TPAO} \newline \textit{Est. 1954} & Manages petabyte-scale 3D/4D seismic reflection catalogs. & Utilizes high-performance computing (HPC) for deep-water imaging in the Black Sea/Marmara, providing critical crustal structure insights via legacy SEG-Y archives. \\ \addlinespace
     
-    \textbf{METU Earth Systems} \newline \textit{Est. 2002} & Integrates multi-disciplinary big data. & Blends GNSS/GPS crustal deformation with seismic catalogs to quantify slip rate and strain on the NAFZ. \\ 
+    \textbf{TÜBİTAK MAM} \newline \textit{Est. 1972 (Gebze)} & Focuses on marine geophysics and R\&D. & Processes high-resolution bathymetry and sub-bottom profiler data from the Marmara Sea to identify active submarine fault segments and liquefaction risks. \\ \addlinespace
+    
+    \textbf{Belbaşı Monitoring Center} \newline \textit{Est. 1951} & Specialized CTBT facility. & Analyzes global seismic waves for nuclear test detection; its high-precision sensors contribute to deep-crustal noise characterization and signal processing research. \\ \addlinespace
+    
+    \textbf{ITU Geophysics} \newline \textit{Est. 1952 (Department)} & Houses the N. Canıtez Lab. & Advanced academic processing of electromagnetic and seismic data; pioneers AI-driven feature extraction for Marmara-specific site-response and tomography. \\ \addlinespace
+    
+    \textbf{METU Earth Systems} \newline \textit{Est. 2002} & Integrates multi-disciplinary big data. & Primarily blending GNSS/GPS crustal deformation records with seismic catalogs to quantify the slip rate and strain accumulation along the North Anatolian Fault. \\ \addlinespace
+    
+    \textbf{Dokuz Eylül (DAUM)} \newline \textit{Est. 1987 (İzmir)} & Primary data hub for the Aegean region. & Conducts massive fault analysis and seismic cataloging to study complex graben systems and volcanic-seismic interactions. \\ \addlinespace
+    
+    \textbf{Kocaeli University} \newline \textit{Post-1999 expansion} & Center for urban geophysics. & Processes massive site-response and microzonation datasets for the Marmara industrial corridor, focusing on soil-structure interaction during high-amplitude shaking. \\ 
 
 \end{tabularx}
 
@@ -692,6 +708,20 @@ Governance and integration for earthquake monitoring must prioritize reliability
 \textcolor{blue}{\mathbf{C}_{\mathbf{x}} = \sigma_t^2 (\mathbf{A}^T \mathbf{A})^{-1}}
 \end{equation}
 \textcolor{blue}{where $\mathbf{A}$ is the Jacobian matrix of arrival time partial derivatives with respect to hypocentral coordinates, and $\sigma_t$ is the arrival time picking uncertainty.}
+
+\subsection{Implementation roadmap development}
+
+The implementation roadmap follows a phased, value-driven approach that begins with a foundational pilot to establish a secure \textcolor{blue}{"Development"} environment and parallelize one high-value seismic network as a "shadow" \textcolor{blue}{data} pipeline. This is followed by an expansion phase, where historical seismic catalogs are migrated to enable large-scale AI training and geophysicists are onboarded through persona-based training. Finally, the system moves into \textcolor{blue}{the} operational maturity by deploying mission-critical early warning dashboards and automating CI/CD pipelines in the "Prod" environment, Figure \ref{fig07}. 
+
+\begin{figure}[H]
+    \begin{center}
+	\hspace{-35pt}\includegraphics[width=13.0cm]{Fig_07.png}
+    \end{center}
+    \caption{Integrated CI/CD Pipeline for the Marmara Sea Early Warning System (EEW): From Seismic Code Repository to Live Production. Diagram source: authors.}
+    \label{fig07}
+\end{figure}
+
+To minimize disruption, a "dual-run" strategy is used, maintaining legacy systems until the Databricks Gold layer is fully validated, while ensuring domain experts retain ownership of the scientific logic.
 
 \section{Deterministic Infrastructure and Performance Optimization for EEW Systems}
 
