@@ -164,7 +164,7 @@ Türkiye is \textcolor{blue}{highly} vulnerable to seismic \textcolor{blue}{haza
 
 \subsection{Historical Outline of Seismic Events in Türkiye}
 
-The historical record of the Anatolian region reveals a relentless cycle of seismic activity, Figure~\ref{fig03}.
+The historical record of the Anatolian region reveals a relentless cycle of seismic activity, Figure~\ref{fig03}. In the Aegean region, from 496~BC to 1949~AD, the area experienced a total of 20 moderate to severe earthquakes \cite{altinok2011,papazachos2000}. Many ancient events resulted in devastating tsunamis, with notable occurrences in 1389, 1856, 1866, 1881, and 1949 \cite{yalciner2002}. The 1881 Chios-\c{C}e\c{s}me earthquake \textcolor{blue}{caused} thousands of fatalities and significant coastal changes \cite{ambraseys2000}. The $M_w$~7.4 İzmit earthquake of 17 August 1999 \textcolor{blue}{remains one of the best-studied large events in the region} \cite{Altinoketal2001,Inanetal2007}. \textcolor{blue}{Parsons (2004) estimated a} significantly heightened probability (\textcolor{blue}{$\sim$}50\%) of \textcolor{blue}{a} $M \geq 7$ event \textcolor{blue}{within} 30 \textcolor{blue}{years} \textcolor{blue}{of the 1999 stress transfer} \cite{Parsons2004}. Most recently, on February~6, 2023, Türkiye experienced a catastrophic seismic sequence with a mainshock of $M_w$~7.8, followed by \textcolor{blue}{major} earthquakes of $M_w$~7.7 and 7.6. \textcolor{blue}{These events caused total destruction in Antakya} \cite{Akcan2024,Akinci2025}.
 
 \begin{figure}[H]
     \begin{center}
@@ -173,10 +173,6 @@ The historical record of the Anatolian region reveals a relentless cycle of seis
     \caption{Historical outline of \textcolor{blue}{major} seismic events in Türkiye. Diagram source: authors.}
     \label{fig03}
 \end{figure}
-
-In the Aegean region, from 496~BC to 1949~AD, the area experienced a total of 20 moderate to severe earthquakes \cite{altinok2011,papazachos2000}. Many ancient events resulted in devastating tsunamis, with notable occurrences in 1389, 1856, 1866, 1881, and 1949 \cite{yalciner2002}. The 1881 Chios-\c{C}e\c{s}me earthquake \textcolor{blue}{caused} thousands of fatalities and significant coastal changes \cite{ambraseys2000}. The $M_w$~7.4 İzmit earthquake of 17 August 1999 \textcolor{blue}{remains one of the best-studied large events in the region} \cite{Altinoketal2001,Inanetal2007}. \textcolor{blue}{Parsons (2004) estimated a} significantly heightened probability (\textcolor{blue}{$\sim$}50\%) of \textcolor{blue}{a} $M \geq 7$ event \textcolor{blue}{within} 30 \textcolor{blue}{years} \textcolor{blue}{of the 1999 stress transfer} \cite{Parsons2004}.
-
-Most recently, on February~6, 2023, Türkiye experienced a catastrophic seismic sequence with a mainshock of $M_w$~7.8, followed by \textcolor{blue}{major} earthquakes of $M_w$~7.7 and 7.6. \textcolor{blue}{These events caused total destruction in Antakya} \cite{Akcan2024,Akinci2025}.
 
 \subsection{Seismic Risk Assessment and the Distinction Between EEW and Earthquake Forecasting}
 
@@ -256,7 +252,7 @@ F_1 = 2 \cdot \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \t
 For remote nodal arrays, smart nodes perform initial data compression and basic quality checks at the source, Table~\ref{tab02}.
 
 \keepXColumns 
-
+\begin{table}[ht]
 \begin{tabularx}{\textwidth}{@{} >{\hsize=0.8\hsize\raggedright\arraybackslash}X >{\hsize=1.2\hsize\raggedright\arraybackslash}X >{\hsize=1.0\hsize\raggedright\arraybackslash}X @{}}
     \caption{State-of-the-Art Big Data Processing in Geophysics \textcolor{blue}{(2026 Framework)}} \label{tab02} \\
     \toprule
@@ -285,6 +281,7 @@ For remote nodal arrays, smart nodes perform initial data compression and basic 
     
     \textbf{Multi-Physics Integration} & Joint inversion of gravity, magnetic, and seismic data via \textcolor{blue}{foundation} models for \textcolor{blue}{geophysical} interpretation. & Foundation Models, Graph Neural Networks (GNNs) \\ 
 \end{tabularx}
+\end{table}
 
 %----------- subsection ----------->
 \subsection{Physics-Informed Neural Networks (PINNs) and Deep Learning for Phase Picking}
@@ -305,9 +302,10 @@ The most demanding inversions are now handled by PINNs \cite{Aghamiry2021}. Unli
 
 \textcolor{blue}{For phase picking, the convolutional neural network PhaseNet} \cite{ZhuBeroza2019,Park2020,Ni2023} \textcolor{blue}{achieves a reported P-wave pick precision exceeding 95\% on the STEAD benchmark dataset, reducing manual analyst time by several orders of magnitude.}
 
-\textcolor{blue}{The uncertainty in P-wave arrival time $\sigma_t$ propagates directly into epicentral location uncertainty:}
+\textcolor{blue}{The uncertainty in P-wave arrival time $\sigma_t$ propagates directly into epicentral location uncertainty, Equation} \ref{eq:range_uncertainty}:
 
 \begin{equation}
+\label{eq:range_uncertainty}
 \textcolor{blue}{\sigma_r = V_P \cdot \sigma_t}
 \end{equation}
 
@@ -315,25 +313,34 @@ The most demanding inversions are now handled by PINNs \cite{Aghamiry2021}. Unli
 
 \subsection{Influence of Seismic Wave Diversity on Signal Processing in Marmara Geophysical Monitoring}
 
-\textcolor{blue}{Geophysical monitoring in the Marmara region requires advanced signal processing techniques because seismic recordings contain multiple wave types with distinct propagation characteristics. Bulk waves, including compressional} ($P$) and shear ($S$) waves, travel through heterogeneous crustal structures with different velocities and polarization states. Their propagation velocities are commonly expressed as
-\[
+\textcolor{blue}{Geophysical monitoring in the Marmara region requires advanced signal processing techniques because seismic recordings contain multiple wave types with distinct propagation characteristics. Bulk waves, including compressional} ($P$) and shear ($S$) waves, travel through heterogeneous crustal structures with different velocities and polarization states. Their propagation velocities are commonly expressed as Equation \ref{eq:seismic_wave_velocities}:
+
+\begin{equation}
+\label{eq:seismic_wave_velocities}
 V_P = \sqrt{\frac{K + \frac{4}{3}\mu}{\rho}},
 \qquad
 V_S = \sqrt{\frac{\mu}{\rho}},
-\]
+\end{equation}
+
 where $K$ is the bulk modulus, $\mu$ is the shear modulus, and $\rho$ is density. Since $P$-waves propagate faster than $S$-waves, arrival-time separation forms the basis of earthquake localization and early warning algorithms in the Marmara seismic network.
 
-Surface waves, particularly Rayleigh and Love waves, exhibit lower velocities and strong dispersive behavior due to stratified sedimentary basins beneath the Sea of Marmara. Their phase velocity depends on frequency,
-\[
+\textcolor{blue}{Surface waves, particularly Rayleigh and Love waves, exhibit lower velocities and strong dispersive behavior due to stratified sedimentary basins beneath the Sea of Marmara. Their phase velocity depends on frequency, Equation} \ref{eq:dispersion_phase_velocity}:
+
+\begin{equation}
+\label{eq:dispersion_phase_velocity}
 c(\omega) = \frac{\omega}{k(\omega)},
-\]
+\end{equation}
+
 where $\omega$ denotes angular frequency and $k$ is the wavenumber. Dispersion complicates waveform inversion because low-frequency components penetrate deeper structures while high-frequency components remain sensitive to shallow layers. Consequently, adaptive time-frequency filtering and wavelet transforms are frequently employed to isolate modal energy.
 
-Head waves generated at velocity discontinuities further complicate processing because critically refracted arrivals may overlap with direct body waves. In offshore monitoring systems, Rayleigh--Lamb waves propagating in thin sedimentary layers and engineered structures introduce additional multimodal interference. Their displacement field may be represented as
-\[
+\textcolor{blue}{Head waves generated at velocity discontinuities further complicate processing because critically refracted arrivals may overlap with direct body waves. In offshore monitoring systems, Rayleigh--Lamb waves propagating in thin sedimentary layers and engineered structures introduce additional multimodal interference. Their displacement field may be represented as Equation }\ref{eq:wave_displacement_field}:
+
+\begin{equation}
+\label{eq:wave_displacement_field}
 u(x,t) = A e^{i(kx-\omega t)},
-\]
-where modal interactions produce frequency-dependent attenuation and polarization rotation. Accurate discrimination of these wave classes is therefore essential for robust event detection, structural imaging, and microseismic interpretation throughout the Marmara fault system.
+\end{equation}
+
+where modal interactions produce frequency-dependent attenuation and polarization rotation. \textcolor{blue}{Accurate discrimination of these wave classes is therefore essential for robust event detection, structural imaging, and microseismic interpretation throughout the Marmara fault system}.
 
 %----------- section ----------->
 \section{Cluster Computing and Distributed Data Processing}
@@ -414,14 +421,20 @@ specifies the streaming connector, while the bootstrap server parameter identifi
 \texttt{marmara.seismic.raw}
 contains continuous waveform packets generated by remote acquisition systems deployed throughout the Marmara region.
 
-\textcolor{blue}{After ingestion, the binary Kafka payload is cast into string format and parsed into structured columns using the \texttt{from\_json()} transformation. This conversion transforms raw telemetry into tabular representations suitable for distributed analytics. The resulting stream is then grouped using 10-second tumbling windows}:
-\[
+\textcolor{blue}{After ingestion, the binary Kafka payload is cast into string format and parsed into structured columns using the \texttt{from\_json()} transformation. This conversion transforms raw telemetry into tabular representations suitable for distributed analytics. The resulting stream is then grouped using 10-second tumbling windows, Equation} \ref{eq:tumbling_window}:
+
+\begin{equation}
+\label{eq:tumbling_window}
 W(t)= [t,\; t+10s),
-\]
-where each non-overlapping interval aggregates waveform amplitudes independently for each seismic station. Windowing is fundamental in real-time seismology because continuous seismic streams cannot be processed sample-by-sample efficiently at regional scale. The aggregation stage computes the maximum waveform amplitude within each temporal window:
-\[
+\end{equation}
+
+where each non-overlapping interval aggregates waveform amplitudes independently for each seismic station. Windowing is fundamental in real-time seismology because continuous seismic streams cannot be processed sample-by-sample efficiently at regional scale. The aggregation stage computes the maximum waveform amplitude within each temporal window, Equation~\ref{eq:maximum_amplitude}:
+
+\begin{equation}
+\label{eq:maximum_amplitude}
 A_{\max} = \max(a_i),
-\]
+\end{equation}
+
 where $a_i$ represents individual amplitude samples inside the interval. Peak amplitudes are commonly used for rapid event detection, STA/LTA triggering, and early warning estimation. In operational Marmara monitoring systems, such metrics can provide immediate indicators of anomalous seismic activity.
 
 \textcolor{blue}{Finally, the processed stream is written into Delta Lake storage using append mode. The checkpoint directory maintains streaming state information and guarantees fault tolerance in the event of node failures. The command \texttt{awaitTermination()} keeps the streaming application active indefinitely, enabling uninterrupted seismic monitoring and near-real-time waveform analytics}.
@@ -723,36 +736,42 @@ print(f"b-value uncertainty (1-sigma): {sigma_b:.4f}")
 
 In geophysics, the Medallion Architecture on Databricks streamlines the transition from raw seismic sensor feeds to predictive insights by organizing data into three functional stages, Figure~\ref{fig06}. The process begins with the Bronze layer, which ingests raw seismic waveforms from global APIs like USGS or local station streams, preserving the original signal. \textcolor{blue}{This is refined into the} Silver layer, where signal processing removes cultural noise \textcolor{blue}{(traffic, industrial vibrations)} to isolate tectonic activity. \textcolor{blue}{Finally,} the Gold layer provides curated, analytics-ready datasets used for magnitude and location prediction.
 
+\textcolor{blue}{The key geophysical equations underpinning each layer are as follows. In the Silver layer, the signal-to-noise ratio (SNR) is computed over each window}, Equation~\ref{eq:snr_db}:
+
+\begin{equation}
+\label{eq:snr_db}
+\textcolor{blue}{\text{SNR}_{dB} = 10 \log_{10}\left(\frac{P_{\text{signal}}}{P_{\text{noise}}}\right)}
+\end{equation}
+
+\textcolor{blue}{where $P_{\text{signal}}$ and $P_{\text{noise}}$ are the signal and noise power estimated from pre- and post-event windows, respectively.}
+
+\textcolor{blue}{The Brune source model, widely used in the Gold layer for spectral magnitude estimation, defines the far-field displacement spectrum}, as defined in Equation~\ref{eq:brune_source_model}:
+
+\begin{equation}
+\label{eq:brune_source_model}
+\textcolor{blue}{\Omega(f) = \frac{\Omega_0}{1 + (f/f_c)^2}}
+\end{equation}
+
+\textcolor{blue}{where $\Omega_0$ is the long-period spectral level, and $f_c$ is the corner frequency related to the seismic moment $M_0$ and stress drop $\Delta\sigma$, Equation~\ref{eq:corner_frequency}:}
+
+\begin{equation}
+\label{eq:corner_frequency}
+\textcolor{blue}{f_c = 0.49 V_S \left(\frac{\Delta\sigma}{M_0}\right)^{1/3}}
+\end{equation}
+
+\textcolor{blue}{Finally, moment magnitude $M_w$ is derived from the seismic moment as in Equation~\ref{eq:moment_magnitude}:}
+
+\begin{equation}
+\label{eq:moment_magnitude}
+\textcolor{blue}{M_w = \frac{2}{3}\log_{10}(M_0) - 10.7}
+\end{equation}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Fig_06.png} 
     \caption{\textcolor{blue}{Medallion Architecture for} Geophysical Data Processing\textcolor{blue}{:} Istanbul EEW \& Seismic Analysis. Diagram source: authors.}
     \label{fig06}
 \end{figure}
-
-\textcolor{blue}{The key geophysical equations underpinning each layer are as follows.}
-
-\textcolor{blue}{In the Silver layer, the signal-to-noise ratio (SNR) is computed over each window:}
-\begin{equation}
-\textcolor{blue}{\text{SNR}_{dB} = 10 \log_{10}\left(\frac{P_{\text{signal}}}{P_{\text{noise}}}\right)}
-\end{equation}
-
-\textcolor{blue}{where $P_{\text{signal}}$ and $P_{\text{noise}}$ are the signal and noise power estimated from pre- and post-event windows, respectively.}
-
-\textcolor{blue}{The Brune source model, widely used in the Gold layer for spectral magnitude estimation, defines the far-field displacement spectrum as:}
-\begin{equation}
-\textcolor{blue}{\Omega(f) = \frac{\Omega_0}{1 + (f/f_c)^2}}
-\end{equation}
-
-\textcolor{blue}{where $\Omega_0$ is the long-period spectral level, and $f_c$ is the corner frequency related to the seismic moment $M_0$ and stress drop $\Delta\sigma$:}
-\begin{equation}
-\textcolor{blue}{f_c = 0.49 V_S \left(\frac{\Delta\sigma}{M_0}\right)^{1/3}}
-\end{equation}
-
-\textcolor{blue}{Moment magnitude $M_w$ is derived from the seismic moment as:}
-\begin{equation}
-\textcolor{blue}{M_w = \frac{2}{3}\log_{10}(M_0) - 10.7}
-\end{equation}
 
 \subsection{\textcolor{blue}{Geophysical Data} Hubs in Türkiye: Distributed Architecture}
 
