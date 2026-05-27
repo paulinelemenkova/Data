@@ -155,9 +155,9 @@ Disaster and Emergency Management Department, Institute of Earthquake Engineerin
 %----------- section ----------->
 \subsection{Background}
 
-Seismic hazard monitoring systems prioritize the early detection and probabilistic assessment of earthquake events to mitigate geotechnical risks \cite{Allen2012,Kanamori2005}. Modern geophysical centers analyze thousands of global sensor streams per second, generating millions of daily data points \cite{USGS2020,IRIS2018,Chung2020}. However, the transition to operational seismic monitoring necessitates processing capabilities that exceed the limits of traditional geophysical analysis \cite{Beroza2018,Allen2019}. The integration of Artificial Intelligence (AI) and cloud computing has fundamentally transformed this landscape, enabling the treatment of global seismic signals as unified big data repositories rather than isolated regional records \cite{Perol2018,Zhu2019,Kong2019}.
+Seismic hazard monitoring systems prioritize the early detection and probabilistic assessment of earthquake events to mitigate geotechnical risks \cite{Allen2012,Kanamori2005}. Modern geophysical centers analyze thousands of global sensor streams per second, generating millions of daily data points \cite{USGS2020,IRIS2018,Sadhukhan}. However, the transition to operational seismic monitoring necessitates processing capabilities that exceed the limits of traditional geophysical analysis \cite{Beroza2021}. The integration of Artificial Intelligence (AI) and cloud computing has fundamentally transformed this landscape, enabling the treatment of global seismic signals as unified big data repositories rather than isolated regional records \cite{ni2025review,Perol2018,Chenetal2025}.
 
-The paradigm shift from traditional geophysics to big data seismology represents a fundamental change in analytical methodology \cite{Bergen2019,Donner2019}. Contemporary seismic datasets require novel frameworks for storage and high-throughput processing to extract reliable prognostic insights \cite{Ahern2018,IRISDMC2015}. Crucially, modern seismic networks demand a departure from legacy data management systems toward distributed, scalable data science architectures, Figure~\ref{fig01}.
+The paradigm shift from traditional geophysics to big data seismology represents a fundamental change in analytical methodology \cite{Bergen2019}. Contemporary seismic datasets require novel frameworks for storage and high-throughput processing to extract reliable prognostic insights \cite{DavisHunt,IRISDMC2015}. Crucially, modern seismic networks demand a departure from legacy data management systems toward distributed, scalable data science architectures, Figure~\ref{fig01}.
 
 \begin{figure}[H]
    % \begin{center} %MDPI EE: ATTENTION: Please note that there appear to be typos and some non-English characters in this figure. Please review all labels, e.g., "SECUrE CLOUO CLIUD", and ensure that they are all correct
@@ -167,11 +167,11 @@ The paradigm shift from traditional geophysics to big data seismology represents
     \label{fig01}
 \end{figure}
 
-The ``Five Vs'' of big data---volume, velocity, variety, veracity, and value---define the principal advantages over regional geophysical databases \cite{Laney2001,Kitchin2014,Hashem2015}. While traditional archives typically manage gigabytes of localized data, modern big data systems routinely ingest petabytes of global sensor data \cite{Ahern2018}. The velocity of these systems enables the processing of real-time data streams, providing the immediate and latency-critical insights required for seismic risk evaluation and rapid decision-making \cite{gandomi2015beyond,hashem2015rise,allen2009earthquake}.
+The ``Five Vs'' of big data---volume, velocity, variety, veracity, and value---define the principal advantages over regional geophysical databases \cite{Laney2001,Kitchin2014,Hashem2015}. While traditional archives typically manage gigabytes of localized data, modern big data systems routinely ingest petabytes of global sensor data \cite{arrowsmith2022big}. The velocity of these systems enables the processing of real-time data streams, providing the immediate and latency-critical insights required for seismic risk evaluation and rapid decision-making \cite{gandomi2015beyond,hashem2015rise,allen2009earthquake}.
 
-The variety of big data in geophysics is defined by a spectrum of heterogeneous data structures \cite{li2016big,wang2019geophysical}. The complexity of formats arises from the diverse data structures and sources that must be integrated and jointly analysed \cite{chen2014big}. Even tabular CSV data typically wraps heterogeneous information pulled from multiple geophysical sensors \cite{ma2015big,kessler2019data}. Finally, the veracity dimension pertains to data quality and integrity \cite{fang2015big,reyes2017data}. Seismic datasets may include incomplete signals, duplicate event entries, inconsistent formatting, malfunctioning sensors, or outdated information \cite{mousavi2019cred}.
+The variety of big data in geophysics is defined by a spectrum of heterogeneous data structures \cite{MA201547}. The complexity of formats arises from the diverse data structures and sources that must be integrated and jointly analysed \cite{chen2014big}. Even tabular CSV data typically wraps heterogeneous information pulled from multiple geophysical sensors \cite{zhao2024artificial,Stocks2019}. Finally, the veracity dimension pertains to data quality and integrity \cite{vance2024big,Lietal2016}. Seismic datasets may include incomplete signals, duplicate event entries, inconsistent formatting, malfunctioning sensors, or outdated information \cite{mousavi2019cred}.
 
-These five dimensions create interconnected challenges that conventional seismological methods are ill-equipped to handle. Traditional analysis largely relies on manual examination of datasets, neglecting massive volumes of historical seismic data available in archives and from sensors flowing into online geophysical repositories \cite{kong2019machine}. Processing such large data massifs enables the discovery of anomalies in mantle processes with better precision and speed, yielding real-time data characterizing location and magnitude of seismic events, together with unstructured cartographic data and relevant geological characteristics \cite{perol2018convolutional,zhu2019phasenet}. Consequently, big data analytics in seismology support predictive analytics that process sensor data from thousands of stations simultaneously.
+These five dimensions create interconnected challenges that conventional seismological methods are ill-equipped to handle. Traditional analysis largely relies on manual examination of datasets which process massive volumes of historical seismic data available in archives and from sensors flowing into online geophysical repositories \cite{Kong2019,Sopher,lemenkova2023computer}. Processing such large data massifs enables the discovery of anomalies in mantle processes with better precision and speed, yielding real-time data characterizing location and magnitude of seismic events, together with unstructured cartographic data and relevant geological characteristics \cite{baumann2016big,ZhuBeroza2019}. Consequently, big data analytics in seismology support predictive analytics that process sensor data from thousands of stations simultaneously.
 
 %----------- section ----------->
 \subsection{Research Problem and Objectives}
@@ -188,13 +188,13 @@ This paper contributes to the challenge of big data technologies in geophysics b
 
 \subsection{Geology and Tectonics in Türkiye}
 
-Türkiye is highly vulnerable to seismic hazards, especially in regions near active tectonic faults \cite{Basaran2014,Kandregula2024}. Systematic geological monitoring is essential for comprehensive seismic risk assessment, underscoring the need for improved methodologies \cite{Korkmaz2013}. Seismically active areas in Türkiye lie at the margins of the Anatolian Block \cite{Jolivet2023}, within a zone of lithosphere collision involving three major tectonic plates: the Eurasian Plate, the African Plate, and the Arabian Plate.
+Türkiye is highly vulnerable to seismic hazards, especially in regions near active tectonic faults \cite{Basaran2014,Kandregula2024}. Systematic geological monitoring is essential for comprehensive seismic risk assessment, underscoring the need for improved methodologies \cite{Korkmaz2013}. Seismically active areas in Türkiye lie at the margins of the Anatolian Block \cite{Abdik}, within a zone of lithosphere collision involving three major tectonic plates: the Eurasian Plate, the African Plate, and the Arabian Plate.
 
-The Anatolian Block is driven westward as the Arabian Plate advances northward against the Eurasian Plate, while the African Plate subducts beneath the Hellenic Arc \cite{McKenzie1972,LePichon2010}. These plate interactions generate frequent and powerful earthquakes at tectonic boundaries. The most prominent feature is the North Anatolian Fault Zone (NAFZ), a 1200~km right-lateral strike-slip fault extending from the Gulf of Saros to Karlıova \cite{Barka1992,Sengor2005}. Formed \linebreak 13--11 million years ago, it remains seismically active, capable of producing earthquakes up to magnitude 8.0 \cite{Stein1997}. Current deformation, particularly in the Marmara region, is asymmetric and strongly influenced by the complex regional geology of the NAFZ \cite{Puccinelli2021}.
+The Anatolian Block is driven westward as the Arabian Plate advances northward against the Eurasian Plate, while the African Plate subducts beneath the Hellenic Arc \cite{McKenzie1972,LePichon2010}. These plate interactions generate frequent and powerful earthquakes at tectonic boundaries. The most prominent feature is the North Anatolian Fault Zone (NAFZ), a 1200~km right-lateral strike-slip fault extending from the Gulf of Saros to Karlıova \cite{Barka1992,Sengor2005,Jolivet2023_SolidEarth}. Formed \linebreak 13--11 million years ago, it remains seismically active, capable of producing earthquakes up to magnitude 8.0 \cite{Stein1997}. Current deformation, particularly in the Marmara region, is asymmetric and strongly influenced by the complex regional geology of the NAFZ \cite{schiffer2019localized,Andrieux}.
 
 \subsection{Historical Outline of Seismic Events in Türkiye}
 
-The historical record of the Anatolian region reveals a relentless cycle of seismic activity, Figure~\ref{fig03}. In the Aegean region, from 496~BC to 1949~AD, the area experienced a total of 20 moderate to severe earthquakes \cite{altinok2011,papazachos2000}. Many ancient events resulted in devastating tsunamis, with notable occurrences in 1389, 1856, 1866, 1881, and 1949 \cite{yalciner2002}. The 1881 Chios-\c{C}e\c{s}me earthquake caused thousands of fatalities and significant coastal \linebreak changes \cite{ambraseys2000}. The $M_w$~7.4 \.{I}zmit earthquake of 17 August 1999 remains one of the best-studied large events in the region \cite{Altinoketal2001,Inanetal2007}. Parsons (2004) estimated a significantly heightened probability ($\sim$50\%) of a $M \geq 7$ event within 30 years of the 1999 stress transfer \cite{Parsons2004}. Most recently, on 6 February~2023, Türkiye experienced a catastrophic seismic sequence with a mainshock of $M_w$~7.8, followed by major earthquakes of $M_w$~7.7 and 7.6. These events caused total destruction in Antakya \cite{Akcan2024,Akinci2025}.
+The historical record of the Anatolian region reveals a relentless cycle of seismic activity, Figure~\ref{fig03}. In the Aegean region, from 496~BC to 1949~AD, the area experienced a total of 20 moderate to severe earthquakes \cite{altinok2011,papazachos2000}. Many ancient events resulted in devastating tsunamis, with notable occurrences in 1389, 1856, 1866, 1881, and 1949 \cite{yalciner2002}. The 1881 Chios-\c{C}e\c{s}me earthquake caused thousands of fatalities and significant coastal \linebreak changes \cite{ambraseys2000}. The $M_w$~7.4 \.{I}zmit earthquake of 17 August 1999 remains one of the best-studied large events in the region \cite{Altinoketal2001,Inanetal2007}. Parsons (2004) estimated a significantly heightened probability ($\sim$50\%) of a $M \geq 7$ event within 30 years of the 1999 stress transfer \cite{Parsons2004}. Most recently, on 6 February~2023, Türkiye experienced a catastrophic seismic sequence with a mainshock of $M_w$~7.8, followed by major earthquakes of $M_w$~7.7 and 7.6. These events caused total destruction in Antakya \cite{Akinci2025}.
 
 \begin{figure}[H]
 \includegraphics[width=13.0cm]{Fig_03.png}
@@ -206,11 +206,11 @@ The historical record of the Anatolian region reveals a relentless cycle of seis
 
 The 2023 Kahramanmara\c{s} sequence reinforced the urgent need to clearly separate two domains of operational seismology that serve different societal functions. Research and technological development in EEW systems have become critical components of seismic risk mitigation in the Anatolian region. EEW is fundamentally a real-time detection and alerting problem: once a rupture has begun, P-wave signals are detected, source parameters are estimated within seconds, and automated alerts are issued before destructive shaking arrives. In contrast, earthquake forecasting---such as the Parsons (2004) probability estimate---is a probabilistic, long-term assessment of where and when future earthquakes are likely to occur, based on fault mechanics and historical seismicity.
 
-This distinction matters for data infrastructure: EEW requires deterministic, sub-second pipelines with strict latency constraints ($<$100~ms), while forecasting models require access to decades of historical catalogs, geodetic strain data, and paleoseismic records. The Kandilli Observatory and Earthquake Research Institute (KOERI) has operationalized a new-generation EEWS across Türkiye, leveraging a dense network of stations to issue alerts within seconds \cite{Ozeletal2026}. Innovative strategies also explore hybrid models, such as using mosque loudspeakers to disseminate warnings \cite{Eren2025}. Machine learning is transforming raw telemetry into actionable protocols \cite{Doganetal2019}, predicting potential damage zones and automatically triggering safety actions \cite{CremenGalasso2020,Specialeetal2026}.
+This distinction matters for data infrastructure: EEW requires deterministic, sub-second pipelines with strict latency constraints ($<$100~ms), while forecasting models require access to decades of historical catalogs, geodetic strain data, and paleoseismic records. The Kandilli Observatory and Earthquake Research Institute (KOERI) has operationalized a new-generation EEWS across Türkiye, leveraging a dense network of stations to issue alerts within seconds \cite{Ozeletal2026}. Innovative strategies also explore hybrid models, such as using mosque loudspeakers to disseminate warnings \cite{Eren2025}. Machine learning is transforming raw telemetry into actionable protocols, predicting potential damage zones and automatically triggering safety actions \cite{CremenGalasso2020,Specialeetal2026}.
 
 \section{Research Gap Identification and Contribution}
 
-To our knowledge, no comprehensive review exists that integrates big data processing architectures, statistical validation frameworks, and the EEW/forecasting distinction specifically for the Marmara region. While individual case studies on AI in seismology exist \cite{Bergen2019,MousaviBeroza2022}, integrative reviews addressing big data pipelines, uncertainty quantification, and cloud governance for Turkish seismic monitoring are lacking. This article provides a comprehensive analysis of the evolution of techniques for big data processing in the context of seismic risk assessment in Türkiye, with a focus on the Marmara region and the NAFZ. Mitigating earthquake risks requires both an EEW system and consistent probabilistic seismic monitoring underpinned by big data, Figure~\ref{fig04}.
+To our knowledge, no comprehensive review exists that integrates big data processing architectures, statistical validation frameworks, and the EEW/forecasting distinction specifically for the Marmara region. While individual case studies on AI in seismology exist \cite{Bergen2019,Liuetal2026}, integrative reviews addressing big data pipelines, uncertainty quantification, and cloud governance for Turkish seismic monitoring are lacking. This article provides a comprehensive analysis of the evolution of techniques for big data processing in the context of seismic risk assessment in Türkiye, with a focus on the Marmara region and the NAFZ. Mitigating earthquake risks requires both an EEW system and consistent probabilistic seismic monitoring underpinned by big data, Figure~\ref{fig04}.
 
 \begin{figure}[H]
 	\includegraphics[width=13.0cm]{Fig_04.png} %MDPI EE: Attention: Please review non-standard phrases such as "Eelisic monitoring consunstations" and check if they are correct
@@ -248,9 +248,9 @@ HPC Constraints & Data Movement & In seismic migration (e.g., RTM), moving massi
 %----------- subsection ----------->
 \subsection{Hybrid Computing: HPC and Cloud Architecture}
 
-One of the most demanding data processing tasks in geophysics involves massive datasets from nodal sensors and complex inversions, such as Full Waveform Inversion (FWI) \cite{witte2019scalable}. Since nodal datasets can reach petabyte scales, geophysicists no longer move all data to a single location; instead, they use a hybrid computing approach \cite{peter2011forward,wang2020cloud}, combining the advantages of both HPC and cloud computing \cite{fox2017big,assuncao2015big}.
+One of the most demanding data processing tasks in geophysics involves massive datasets from nodal sensors and complex inversions, such as Full Waveform Inversion (FWI) \cite{xue2024real,witte2019scalable,abdellaziz2024optimal}. Since nodal datasets can reach petabyte scales, geophysicists no longer move all data to a single location; instead, they use a hybrid computing approach \cite{peter2011forward}, combining the advantages of both HPC and cloud computing \cite{ejarque2022enabling,assuncao2015big}.
 
-Handling big data in geophysics requires a shift from sequential processing to a hybrid architecture that blends high-performance computing (HPC) with cloud-native intelligence \cite{fox2017big,hashem2015rise}. To process massive nodal datasets, geophysicists utilise a hybrid architecture combining GPU-accelerated HPC clusters with elastic cloud scalability, moving the processing code to the data to avoid massive transfer bottlenecks \cite{wang2020cloud}. FWI remains on GPU-accelerated HPC clusters due to the tight coupling required between processors. Bursty tasks such as initial signal denoising are offloaded to elastic cloud resources. The hybrid infrastructure accelerates high-resolution FWI by embedding physical laws into Physics-Informed Neural Networks (PINNs) \cite{raissi2019physics,sun2020surrogate}.
+Handling big data in geophysics requires a shift from sequential processing to a hybrid architecture that blends high-performance computing (HPC) with cloud-native intelligence \cite{ejarque2022enablinghashem2015rise}. To process massive nodal datasets, geophysicists utilise a hybrid architecture combining GPU-accelerated HPC clusters with elastic cloud scalability, moving the processing code to the data to avoid massive transfer bottlenecks \cite{krauss2023seismology,maccarthy2020seismology}. FWI remains on GPU-accelerated HPC clusters due to the tight coupling required between processors. Bursty tasks such as initial signal denoising are offloaded to elastic cloud resources. The hybrid infrastructure accelerates high-resolution FWI by embedding physical laws into Physics-Informed Neural Networks (PINNs) \cite{raissi2019physics}.
 
 To quantify the performance of this hybrid approach, we adopt the following statistical validation framework for Marmara-region EEW pipelines:
 
@@ -310,7 +310,7 @@ For remote nodal arrays, smart nodes perform initial data compression and basic 
 %----------- subsection ----------->
 \subsection{Physics-Informed Neural Networks (PINNs) and Deep Learning for Phase Picking}
 
-The most demanding inversions are now handled by PINNs \cite{Aghamiry2021}. Unlike traditional AI, which might suggest geologically impossible structures, PINNs embed the actual wave equations (the physics) into the neural network's loss function. The governing acoustic wave equation embedded in the PINN loss is
+The most demanding inversions are now handled by PINNs \cite{song2022versatile}. Unlike traditional AI, which might suggest geologically impossible structures, PINNs embed the actual wave equations (the physics) into the neural network's loss function. The governing acoustic wave equation embedded in the PINN loss is
 
 \begin{equation}
 \frac{\partial^2 u}{\partial t^2} - v^2(x%MDPI: Please confirm if the bold formatting is necessary; if not, please remove it. Please check all variables in main and equations. % Authors' reply: the bold formatting is not necessary; we removed it.
@@ -323,7 +323,7 @@ where $u(x,t)$ is the wavefield, $v(x)$ is the P-wave velocity model, and $f(x,t
 \end{equation}
 where $\lambda$ is a weighting hyperparameter controlling the trade-off between data fitting and physical consistency.
 
-For phase picking, the convolutional neural network PhaseNet \highlighting{\cite{ZhuBeroza2019,Park2020,Ni2023}} %MDPI: Citation of refs. [72--110] are missing. Please add and rearrange the reference citations so that they appear in numerical order.
+For phase picking, the convolutional neural network PhaseNet %MDPI: Citation of refs. [72--110] are missing. Please add and rearrange the reference citations so that they appear in numerical order. % Authors' reply: reference list is checked and corrected. missing doi added, wrong doi corrected.
  achieves a reported P%MDPI: Please ensure all variables/values in the equation appear in the same format in the text (normal/italic/bold/subscript/superscript). Please check all variables in main and equations. % Authors' reply: checked, correct.
 -wave pick precision exceeding 95\% on the STEAD benchmark dataset, reducing manual analyst time by several orders of magnitude.
 
@@ -912,7 +912,7 @@ Minimizing UCD while maintaining a recall $>$~0.99 for $M \geq 3.0$ events const
 
 \subsection{Hybrid Cluster Architecture for Sub-Second Earthquake Detection}
 
-In the Marmara Sea region, an EEW-optimized Databricks cluster operates as a mission-critical engine within a hybrid mosaic architecture. Azure Databricks serves as a managed, high-performance platform built upon the open-source Apache Spark engine. Spark provides the core distributed computing power to parallelize seafloor telemetry across a cluster, while Databricks enhances this with a managed runtime that optimizes memory management and I/O throughput.
+In the Marmara Sea region, an EEW-optimized Databricks cluster operates as a mission-critical engine within a hybrid mosaic architecture. Azure Databricks serves as a managed, high-performance platform built upon the open-source Apache Spark engine (\cite{Armbrust2018}). Spark provides the core distributed computing power to parallelize seafloor telemetry across a cluster, while Databricks enhances this with a managed runtime that optimizes memory management and I/O throughput.
 
 By utilizing programmatic JSON configurations and GPU-accelerated pools, the system handles seismic swarms with sub-second latency, preventing fatal memory spills during the ``Golden Seconds''. The workflow integrates seafloor smart nodes for edge-based ingestion (Bronze), Physics-Informed Neural Networks for real-time denoising (Silver), and refined Digital Twin models for hazard mitigation (Gold).
 
@@ -1030,13 +1030,15 @@ UCD & Unit Cost of Detection \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{adjustwidth}{-\extralength}{0cm}
 
-\reftitle{\highlighting{References} %MDPI: There are numerous duplicate references, and many items whose content does not match it on the doi website. Please carefully check every items.
+\reftitle{\highlighting{References} %MDPI: There are numerous duplicate references, and many items whose content does not match it on the doi website. Please carefully check every items. Authors' reply: we checked them corrected.
 }
 \begin{thebibliography}{999}
 
 \bibitem[Allen and Melgar(2019)]{Allen2012}
-\hl{Allen, R.M.; Melgar, D. Earthquake Early Warning: Advances, Scientific Challenges, and Societal Needs.} %MDPI: Refs. [1] and [7] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references.
- \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2019}, \emph{47}, 361--388. \url{https://doi.org/10.1146/annurev-earth-053018-060457}.
+Allen, R.M.; Melgar, D. Earthquake Early Warning: Advances, Scientific Challenges, and Societal Needs. \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2019}, \emph{47}, 361--388. \url{https://doi.org/10.1146/annurev-earth-053018-060457}. % Authors' reply: corrected (only Allen2012 kept)
+
+\bibitem[Arrowsmith et~al.(2022)Arrowsmith, Trugman, MacCarthy, Bergen, Lumley, and Magnani]{arrowsmith2022big}
+Arrowsmith, S.J.; Trugman, D.T.; MacCarthy, J.; Bergen, K.J.; Lumley, D.; Magnani, M.B. Big data seismology. \emph{Rev. Geophys.} \textbf{2022}, \emph{60}, e2021RG000769. \url{https://doi.org/10.1029/2021RG000769}
 
 \bibitem[Kanamori(2005)]{Kanamori2005}
 Kanamori, H. Real-time seismology and earthquake damage mitigation. \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2005}, \emph{33}, 195--214. \url{https://doi.org/10.1146/annurev.earth.33.092203.122626}.
@@ -1046,119 +1048,93 @@ U.S. Geological Survey. Earthquake Monitoring and Data Processing. 2020. Availab
 
 \bibitem[{Incorporated Research Institutions for Seismology
   (IRIS)}(2018)]{IRIS2018}
-Incorporated Research Institutions for Seismology (IRIS). Data Services and Real-Time Seismic Networks. 2018. Available online: \highlighting{\url{https://www.iris.edu/hq/programs/dmc}} %MDPI: We cannot access the link to this website. Please check and provide an available website.
+Incorporated Research Institutions for Seismology (IRIS). Data Services and Real-Time Seismic Networks. 2018. Available online: \url{https://www.iris.edu/hq/} % Authors' reply: link corrected
  (accessed on 5 May 2026).
 
-\bibitem[Chung and Beroza(2020)]{Chung2020}
-Chung, A.I.; Beroza, G.C. Seismic monitoring and big data analytics in earthquake early warning systems. \emph{Seismol. Res. Lett.} \textbf{2020}, \emph{91}, 1234--1245. \url{https://doi.org/10.1785/0220190192}.
+\bibitem[Sadhukhan(2026)Sadhukhan]{Sadhukhan}
+Sadhukhan, B. Chapter 2 - Earthquake early warning systems. Elsevier, \textbf{2026}, pp.~41--80. \url{https://doi.org/10.1016/B978-0-443-38343-4.00005-7}
 
-\bibitem[Beroza et~al.(2018)]{Beroza2018}
-Beroza, G.C.; \hl{et al.} %MDPI: Please write out the first ten authors' names before using ``et al.'' in the references. Many similar items, please carefully check all and complete names.
- Machine learning and earthquake forecasting---Next steps. \emph{Nat. Commun.} \textbf{2018}, \emph{9}, 1--3. \highlighting{\url{https://doi.org/10.1038/s41467-018-05132-6}.} %MDPI: The doi link is invalid, following higlighted doi are the same, please check it.
-
-
-\bibitem[Allen and Melgar(2019)]{Allen2019}
-\hl{Allen, R.M.; Melgar, D. Earthquake Early Warning: Advances, Scientific Challenges, and Societal Needs.} \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2019}, \emph{47}, 361--388. \url{https://doi.org/10.1146/annurev-earth-053018-060457}.
+\bibitem[Beroza et~al.(2021)]{Beroza2021}
+Beroza, G.C.; Segou, M.; Mostafa Mousavi, S. Machine learning and earthquake forecasting---Next steps. \emph{Nat. Commun.} \textbf{2021}, \emph{12}, 4761. \url{https://doi.org/10.1038/s41467-021-24952-6}. % Authors' reply: doi corrected
 
 \bibitem[Perol et~al.(2018)Perol, Gharbi, and Denolle]{Perol2018}
-\hl{Perol, T.; Gharbi, M.; Denolle, M. Convolutional neural network for earthquake detection and location.} %MDPI: Refs. [8] and [30] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references.
- \emph{Sci. Adv.} \textbf{2018}, \emph{4}, \hl{e1700578.} %MDPI: We added the page number, please confirm and check all items.
+Perol, T.; Gharbi, M.; Denolle, M. Convolutional neural network for earthquake detection and location. %MDPI: Refs. [8] and [30] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. Authors' reply: corrected (removed Ref. [30] )
+ \emph{Sci. Adv.} \textbf{2018}, \emph{4}, e1700578. %MDPI: We added the page number, please confirm and check all items.  % Authors' reply: confirm.
  \url{https://doi.org/10.1126/sciadv.1700578}.
 
-\bibitem[Zhu and Beroza(2019)]{Zhu2019}
-\hl{Zhu, W.; Beroza, G.C. PhaseNet: A deep-neural-network-based seismic arrival-time picking method.} %MDPI: Refs. [9], [31] and [69] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references.
+\bibitem[Zhu and Beroza(2019)]{ZhuBeroza2019}
+Zhu, W.; Beroza, G.C. PhaseNet: A deep-neural-network-based seismic arrival-time picking method. %MDPI: Refs. [9], [31] and [69] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. % Authors' reply: corrected, removed [31] and [69] .
  \emph{Geophys. J. Int.} \textbf{2019}, \emph{216}, 261--273. \url{https://doi.org/10.1093/gji/ggy423}.
 
 \bibitem[Kong et~al.(2019)]{Kong2019}
-\hl{Kong, Q.; et al. Machine learning in seismology: Turning data into insights.} %MDPI: Refs. [10] and [29] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references.
+Kong, Q.; et al. Machine learning in seismology: Turning data into insights. %MDPI: Refs. [10] and [29] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. % Authors' reply: corrected, removed [29] .
  \emph{Seismol. Res. Lett.} \textbf{2019}, \emph{90}, 3--14. \url{https://doi.org/10.1785/0220180259}.
 
 \bibitem[Bergen et~al.(2019)Bergen, Johnson, de~Hoop, and Beroza]{Bergen2019}
 Bergen, K.J.; Johnson, P.A.; de Hoop, M.V.; Beroza, G.C. Machine learning for data-driven discovery in solid Earth geoscience. \emph{Science} \textbf{2019}, \emph{363}, eaau0323. \url{https://doi.org/10.1126/science.aau0323}.
 
-\bibitem[Donner et~al.(2019)]{Donner2019}
-\hl{Donner, S.; et al. Seismological data analysis in the era of big data.} %MDPI: The content does not match it on doi web, please check it, and please complete volume and page number.
- \emph{Comput. Geosci.} \textbf{2019}, \emph{127}, 1--11.
- \url{https://doi.org/10.1016/j.cageo.2019.03.001}.
-
-\bibitem[Ahern et~al.(2018)Ahern, Casey, Barnes, and Trabant]{Ahern2018}
-Ahern, T.; Casey, R.; Barnes, D.; Trabant, C. Data management and distribution in modern seismology: The IRIS DMC model. \emph{Seismol. Res. Lett.} \textbf{2018}, \emph{89}, 500--509. \url{https://doi.org/10.1785/0220170190}.
+\bibitem[Davis and Hunt(2024)Davis and Hunt]{DavisHunt}
+Davis, W.; Hunt, C.R. Knowledge graphs for seismic data and metadata. \emph{Appl. Comput. Geosci.} \textbf{2024}, \emph{21}, 100151. \url{https://doi.org/10.1016/j.acags.2023.100151}
 
 \bibitem[{Incorporated Research Institutions for Seismology
   (IRIS)}(2015)]{IRISDMC2015}
 Incorporated Research Institutions for Seismology (IRIS). IRIS Data Management Center Overview. 2015. Available online: \url{https://ds.iris.edu/ds/nodes/dmc/} (accessed on 5 May 2026).
 
 \bibitem[Laney(2001)]{Laney2001}
-Laney, D. 3D Data Management: Controlling Data Volume, Velocity, and Variety. \emph{META Group Res. Note} \textbf{2001}, \hl{\emph{6}, 1.} %MDPI: We completed the volume and page number, please confirm and check all.
-\highlighting{\url{https://doi.org/10.1016/j.is.2014.07.006}.} %MDPI: Doi in refs. [15], [17] and [19] are duplicated. And the contents in this item does not match it on doi web, please revise it.
-
+Laney, D. 3D Data Management: Controlling Data Volume, Velocity, and Variety. \emph{META Group Res. Note} \textbf{2001}, \emph{6}, 1. %MDPI: We completed the volume and page number, please confirm and check all.
+ % Authors' reply: confirm; Laney 2001 is a technical report with no doi (removed erroneous entry).
 
 \bibitem[Kitchin(2014)]{Kitchin2014}
-Kitchin, R. \emph{The Data Revolution: Big Data, Open Data, Data Infrastructures and Their Consequences}; SAGE Publications: \hl{Thousand Oaks, CA, USA,} %MDPI: We added the location of the publisher. Please confirm.
+Kitchin, R. \emph{The Data Revolution: Big Data, Open Data, Data Infrastructures and Their Consequences}; SAGE Publications: Thousand Oaks, CA, USA, % Authors' reply: confirm.
  2014. \url{https://doi.org/10.4135/9781473909472}.
 
 \bibitem[Hashem et~al.(2015)]{Hashem2015}
-\hl{Hashem, I.A.T.; et al. The rise of ``big data'' on cloud computing: Review and open research issues.} %MDPI: Refs. [17] and [19] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references.
- \emph{Inf. Syst.} \textbf{2015}, \emph{47}, 98--115. \url{https://doi.org/10.1016/j.is.2014.07.006}.
+Hashem, I.A.T.; et al. The rise of ``big data'' on cloud computing: Review and open research issues. \emph{Inf. Syst.} \textbf{2015}, \emph{47}, 98--115. \url{https://doi.org/10.1016/j.is.2014.07.006}. %MDPI: Refs. [17] and [19] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. % Authors' reply: corrected (removed [19])
 
 \bibitem[Gandomi and Haider(2015)]{gandomi2015beyond}
 Gandomi, A.; Haider, M. Beyond the hype: Big data concepts, methods, and analytics. \emph{Int. J. Inf. Manag.} \textbf{2015}, \emph{35}, 137--144. \url{https://doi.org/10.1016/j.ijinfomgt.2014.10.007}.
 
-\bibitem[Hashem et~al.(2015)]{hashem2015rise}
-\hl{Hashem, I.A.; et al. The rise of ``big data'' on cloud computing: Review and open research issues.} \emph{Inf. Syst.} \textbf{2015}, \emph{47}, 98--115. \url{https://doi.org/10.1016/j.is.2014.07.006}.
-
 \bibitem[Allen et~al.(2009)]{allen2009earthquake}
 Allen, R.M.; et al. The status of earthquake early warning around the world: An introductory overview. \emph{Seismol. Res. Lett.} \textbf{2009}, \emph{80}, 682--693. \url{https://doi.org/10.1785/gssrl.80.5.682}.
 
-\bibitem[Li and Dragicevic(2016)]{li2016big}
-Li, S.; Dragicevic, S. Big data in geosciences: Challenges and opportunities. \emph{Comput. Geosci.} \textbf{2016}, \emph{89}, 109--121. \url{https://doi.org/10.1016/j.cageo.2015.10.006}.
-
-\bibitem[Wang et~al.(2019)]{wang2019geophysical}
-\hl{Wang, R.; et al. Geophysical data analysis in the era of big data.} %MDPI: The content does not match it on doi web, please check it.
- \emph{Earth-Sci. Rev.} \textbf{2019}, \emph{190}, 10--23. \url{https://doi.org/10.1016/j.earscirev.2018.12.002}.
+\bibitem[Ma et~al.(2015)Ma, Wu, Wang, Huang, Ranjan, Zomaya, and Jie]{MA201547}
+Ma, Y.; Wu, H.; Wang, L.; Huang, B.; Ranjan, R.; Zomaya, A.; Jie, W. Remote sensing big data computing: Challenges and opportunities. \emph{Future Gener. Comput. Syst.} \textbf{2015}, \emph{51}, 47--60. \url{https://doi.org/10.1016/j.future.2014.10.029}
 
 \bibitem[Chen et~al.(2014)Chen, Mao, and Liu]{chen2014big}
 Chen, M.; Mao, S.; Liu, Y. Big data: A survey. \emph{Mob. Netw. Appl.} \textbf{2014}, \emph{19}, 171--209. \url{https://doi.org/10.1007/s11036-013-0489-0}.
 
-\bibitem[Ma et~al.(2015)]{ma2015big}
-Ma, X.; et al. Big data-driven geoscience: Challenges and perspectives. \emph{Int. J. Digit. Earth} \textbf{2015}, \emph{8}, 734--752. \highlighting{\url{https://doi.org/10.1080/17538947.2014.951049}.}
+\bibitem[Zhao et~al.(2024)]{zhao2024artificial}
+Zhao, T.; Wang, S.; Ouyang, C.; Chen, M.; Liu, C.; Zhang, J.; Yu, L.; Wang, F.; Xie, Y.; Li, J.; Wang, F.; Grunwald, S.; Wong, B.M.; Zhang, F.; Qian, Z.; Xu, Y.; Yu, C.; Han, W.; Sun, T.; Shao, Z.; Qian, T.; Chen, Z.; Zeng, J.; Zhang, H.; Letu, H.; Zhang, B.; Wang, L.; Luo, L.; Shi, C.; Su, H.; Zhang, H.; Yin, S.; Huang, N.; Zhao, W.; Li, N.; Zheng, C.; Zhou, Y.; Huang, C.; Feng, D.; Xu, Q.; Wu, Y.; Hong, D.; Wang, Z.; Lin, Y.; Zhang, T.; Kumar, P.; Plaza, A.; Chanussot, J.; Zhang, J.; Shi, J.; Wang, L. Artificial intelligence for geoscience: Progress, challenges, and perspectives. \emph{The Innovation} \textbf{2024}, \emph{5}, 100691. \url{https://doi.org/10.1016/j.xinn.2024.100691 }% Authors' reply: Ref corrected to updated reference
 
-\bibitem[Kessler et~al.(2019)]{kessler2019data}
-Kessler, B.; et al. Data management challenges in geosciences. \emph{Data Sci. J.} \textbf{2019}, \emph{18}, 21. \url{https://doi.org/10.5334/dsj-2019-021}.
+\bibitem[Stocks et~al.(2019)]{Stocks2019}
+Stocks, K.I.; Schramski, S.; Virapongse, A.; Kempler, L. Geoscientists' perspectives on cyberinfrastructure needs: A collection of user scenarios. \emph{Data Science Journal} \textbf{2019}, \emph{18}, 21. \url{https://doi.org/10.5334/dsj-2019-021}
+\
+\bibitem[Vance et~al.(2024)]{vance2024big}
+Vance, T.C.; Huang, T.; Butler, K.A. Big data in Earth science: Emerging practice and promise. \emph{Science} \textbf{2024}, \emph{383}, eadh9607. \url{https://doi.org/10.1126/science.adh9607}% Authors' reply: corrected
 
-\bibitem[Fang et~al.(2015)]{fang2015big}
-Fang, H.; et al. Big data in earth sciences: Emerging challenges and opportunities. \emph{J. Earth Sci.} \textbf{2015}, \emph{26}, 431--441. \highlighting{\url{https://doi.org/10.1007/s12583-015-0559-y}.}
-
-\bibitem[Reyes et~al.(2017)]{reyes2017data}
-Reyes, O.; et al. Data quality issues in big data analytics. \emph{Inf. Syst.} \textbf{2017}, \emph{63}, 175--193. \url{https://doi.org/10.1016/j.is.2016.06.001}.
+\bibitem[Liu et~al.(2016)Liu, Li, Li, and Wu]{Lietal2016}
+Liu, J.; Li, J.; Li, W.; Wu, J. Rethinking big data: A review on the data quality and usage issues. \emph{ISPRS J. Photogramm. Remote Sens.} \textbf{2016}, \emph{115}, 134--142. \url{https://doi.org/10.1016/j.isprsjprs.2015.11.006}
 
 \bibitem[Mousavi et~al.(2019)]{mousavi2019cred}
-\hl{Mousavi, S.M.; et al. CRED: A deep residual network of convolutional and recurrent units for earthquake signal detection.} %MDPI: Refs. [28] and [91] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references.
- \emph{Sci. Rep.} \textbf{2019}, \emph{9}, 10267. \highlighting{\url{https://doi.org/10.1038/s41598-019-45749-5}.}
-
-\bibitem[Kong et~al.(2019)]{kong2019machine}
-\hl{Kong, Q.; et al. Machine learning in seismology: Turning data into insights.} \emph{Seismol. Res. Lett.} \textbf{2019}, \emph{90}, 3--14. \url{https://doi.org/10.1785/0220180259}.
-
-\bibitem[Perol et~al.(2018)]{perol2018convolutional}
-\hl{Perol, T.; et al. Convolutional neural network for earthquake detection and location.} \emph{Sci. Adv.} \textbf{2018}, \emph{4}, e1700578. \url{https://doi.org/10.1126/sciadv.1700578}.
-
-\bibitem[Zhu and Beroza(2019)]{zhu2019phasenet}
-\hl{Zhu, W.; Beroza, G.C. PhaseNet: A deep-neural-network-based seismic arrival-time picking method.} \emph{Geophys. J. Int.} \textbf{2019}, \emph{216}, 261--273. \url{https://doi.org/10.1093/gji/ggy423}.
+Mousavi, S.M.; et al. CRED: A deep residual network of convolutional and recurrent units for earthquake signal detection. \emph{Sci. Rep.} \textbf{2019}, \emph{9}, 10267. \url{https://doi.org/10.1038/s41598-019-45748-1}. % %MDPI: Refs. [28] and [91] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. Authors' reply: corrected, ref [91] deleted.
 
 \bibitem[Sen(2009)]{Sen2009}
-Sen, T.K. Probabilistic Seismic Hazard Analysis. In \emph{Fundamentals of Seismic Loading on Structures}; Sen, T.K., Ed.; Wiley: \hl{Hoboken, NJ, USA,} %MDPI: We added the location of the publisher. Please confirm.
+Sen, T.K. Probabilistic Seismic Hazard Analysis. In \emph{Fundamentals of Seismic Loading on Structures}; Sen, T.K., Ed.; Wiley: Hoboken, NJ, USA, % Authors' reply: confirm.
 2009. \url{https://doi.org/10.1002/9780470742341.ch7}.
 
 \bibitem[Liggins et~al.(2013)Liggins, Betts, and McGuire]{Liggins2013}
-Liggins, F.; Betts, R.A.; McGuire, B. Projected Future Climate Changes in the Context of Geological and Geomorphological Hazards. In \emph{Climate Forcing of Geological Hazards}; McGuire, B., Maslin, M., Eds.; Wiley: \hl{Hoboken, NJ, USA,} %MDPI: We added the location of the publisher. Please confirm.
+Liggins, F.; Betts, R.A.; McGuire, B. Projected Future Climate Changes in the Context of Geological and Geomorphological Hazards. In \emph{Climate Forcing of Geological Hazards}; McGuire, B., Maslin, M., Eds.; Wiley: Hoboken, NJ, USA, % Authors' reply: confirm.
  2013. \url{https://doi.org/10.1002/9781118482698.ch2}.
 
 \bibitem[Dowrick(2009)]{Dowrick2009}
-Dowrick, D. Seismic Hazard Assessment. In \emph{Earthquake Resistant Design and Risk Reduction}; Dowrick, D., Ed.; Wiley: \hl{Hoboken, NJ, USA,} %MDPI: We added the location of the publisher. Please confirm.
+Dowrick, D. Seismic Hazard Assessment. In \emph{Earthquake Resistant Design and Risk Reduction}; Dowrick, D., Ed.; Wiley: Hoboken, NJ, USA, % Authors' reply: confirm.
  2009. \url{https://doi.org/10.1002/9780470747018.ch4}.
 
 \bibitem[Liu et~al.(2024)Liu, Gu, and Zhang]{Liu2024}
 Liu, Y.; Gu, Y.; Zhang, H. Seismic risk assessment and damage analysis: Emerging trends and new developments. \emph{J. Saf. Sci. Resil.} \textbf{2024}, \emph{5}, 365--381. \url{https://doi.org/10.1016/j.jnlssr.2024.04.005}.
+
+\bibitem[Baumann et~al.(2016)Baumann, Mazzetti, Ungar, Barbera, Barboni, Beccati, and Wagner]{baumann2016big}
+Baumann, P.; Mazzetti, P.; Ungar, J.; Barbera, R.; Barboni, D.; Beccati, A.; et~al. Big data analytics for earth sciences: The EarthServer approach. \emph{Int. J. Digit. Earth} \textbf{2016}, \emph{9}, 3--29. \url{https://doi.org/10.1080/17538947.2014.1003106}
 
 \bibitem[Ba{\c{s}}aran-Uysal et~al.(2014)Ba{\c{s}}aran-Uysal, Sezen, {\"O}zden,
   and Karaca]{Basaran2014}
@@ -1171,11 +1147,11 @@ Sunil Kandregula, R.; Kothyari, G.C.; Chauhan, G.; Thakkar, M.G. Tectono-geomorp
 \bibitem[Korkmaz et~al.(2013)Korkmaz, Ay, Sari, and Celik]{Korkmaz2013}
 Korkmaz, K.A.; Ay, Z.; Sari, A.; Celik, I.D. Probabilistic seismic risk assessment of hall buildings in Türkiye. \emph{Struct. Des. Tall Spec. Build.} \textbf{2013}, \emph{22}, 415--439. \url{https://doi.org/10.1002/tal.694}.
 
-\bibitem[Jolivet et~al.(2023)]{Jolivet2023}
-Jolivet, L.; et al. The Anatolian Block: Tectonics and Seismicity. \emph{Tectonophysics} \textbf{2023}, \emph{850}, 229718. \url{https://doi.org/10.1016/j.tecto.2023.229718}.
+\bibitem[Abdik et~al.(2026)Abdik, Ocako{\u g}lu, and Kaypak]{Abdik}
+Abdik, Y.; Ocako{\u g}lu, N.; Kaypak, B. Analysis of the active tectonics of the A{\c s}kale-Pasinler-Horasan Basins (Eastern Anatolia) using multichannel seismic reflection and stratigraphic data. \emph{J. Afr. Earth Sci.} \textbf{2026}, \emph{235}, 105950. \url{https://doi.org/10.1016/j.jafrearsci.2025.105950}
 
 \bibitem[McKenzie(1972)]{McKenzie1972}
-McKenzie, D. Active Tectonics of the Mediterranean Region. \emph{Geophys. J. Int.} \textbf{1972}, \emph{30}, 109--185. \href{https://doi.org/10.1111/j.1365-246X.1972.tb05088.x}{\hl{https://doi.org/10.1111/j.1365-\linebreak 246X.1972.tb05088.x}}.
+McKenzie, D. Active Tectonics of the Mediterranean Region. \emph{Geophys. J. Int.} \textbf{1972}, \emph{30}, 109--185. \url{https://doi.org/10.1111/j.1365-246X.1972.tb02351.x}. % Authors' reply: doi corrected
 
 \bibitem[Le~Pichon and Kreemer(2010)]{LePichon2010}
 Le Pichon, X.; Kreemer, C. The Miocene-to-Present Kinematics of the Eastern Mediterranean and Adjacent Areas and Its Relationship to Plume-Driven Central Europe-Anatolia Rotations. \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2010}, \emph{38}, 323--351. \url{https://doi.org/10.1146/annurev-earth-040809-152419}.
@@ -1185,84 +1161,84 @@ Barka, A. The North Anatolian fault zone. \emph{Ann. Tectonicae} \textbf{1992}, 
 
 \bibitem[Sengör et~al.(2005)Sengör, Tüysüz, Imren, Sakınç, Eyidoğan,
   Görür, Le~Pichon, and Rangin]{Sengor2005}
-Sengör, A.M.C.; Tüysüz, O.; Imren, C.; Sakınç, M.; Eyidoğan, H.; Görür, N.; Le Pichon, X.; Rangin, C. The North Anatolian Fault: A new look. In \emph{The North Anatolian Fault: A New Look}; Geological Society of America Special Papers; \hl{GSA Publication: Boulder, CO, USA,} %MDPI: We added the name of the publisher and their location. Please confirm.
- 2005; Volume 393, pp. 1--72. \highlighting{\url{https://doi.org/10.1130/2005.2393(01)}.}
+Sengör, A.M.C.; Tüysüz, O.; Imren, C.; Sakınç, M.; Eyidoğan, H.; Görür, N.; Le Pichon, X.; Rangin, C. The North Anatolian Fault: A new look. In \emph{The North Anatolian Fault: A New Look}; Geological Society of America Special Papers; GSA Publication: Boulder, CO, USA, %MDPI: We added the name of the publisher and their location. Please confirm. % Authors' reply: confirm.
+ 2005; Volume 393, pp. 1--72. \url{https://doi.org/10.1146/annurev.earth.32.101802.120415}. % Authors' reply: corrected doi.
+
+\bibitem[Andrieux et~al.(1995)Andrieux, {\"O}ver, Poisson, and Bellier]{Andrieux}
+Andrieux, J.; {\"O}ver, S.; Poisson, A.; Bellier, O. The North Anatolian Fault Zone: distributed Neogene deformation in its northward convex part. \emph{Tectonophysics} \textbf{1995}, \emph{243}, 135--154. \url{https://doi.org/10.1016/0040-1951(94)00195-F}
 
 \bibitem[Stein et~al.(1997)Stein, Barka, and Dieterich]{Stein1997}
 Stein, R.S.; Barka, A.A.; Dieterich, J.H. Progressive failure on the North Anatolian fault since 1939 by structural stress triggering. \emph{Geophys. J. Int.} \textbf{1997}, \emph{128}, 594--604. \url{https://doi.org/10.1111/j.1365-246X.1997.tb05321.x}.
 
-\bibitem[Puccinelli et~al.(2021)]{Puccinelli2021}
-Puccinelli, J.; et al. Asymmetric crustal deformation along the North Anatolian Fault Zone. \emph{Earth Planet. Sci. Lett.} \textbf{2021}, \emph{554}, 116657. \url{https://doi.org/10.1016/j.epsl.2020.116657}.
+\bibitem[Schiffer et~al.(2019)Schiffer, Eken, Rondenay, and Taymaz]{schiffer2019localized}
+Schiffer, C.; Eken, T.; Rondenay, S.; Taymaz, T. Localized crustal deformation along the central North Anatolian Fault Zone revealed by joint inversion of P-receiver functions and P-wave polarizations. \emph{Geophys. J. Int.} \textbf{2019}, \emph{217}, 682--702. \url{https://doi.org/10.1093/gji/ggz040}
 
 \bibitem[Altinok et~al.(2011)Altinok, Alpar, \"Ozer, and Aykurt]{altinok2011}
 Altinok, Y.; Alpar, B.; Özer, N.; Aykurt, H. Revision of the tsunami catalogue affecting Turkish coasts and surrounding regions. \emph{Nat. Hazards Earth Syst. Sci.} \textbf{2011}, \emph{11}, 273--291. \url{https://doi.org/10.5194/nhess-11-273-2011}.
 
 \bibitem[Papazachos and Papazachou(2003)]{papazachos2000}
-Papazachos, B.C.; Papazachou, C. \emph{The Earthquakes of Greece}; Ziti Publications: Thessaloniki, Greece, 2003.
+Papazachos, B.C.; Papazachou, C. \emph{The Earthquakes of Greece}; Ziti Publications: Thessaloniki, Greece, 2003. \url{https://ziti.gr/vivlio/papazaxos-vasilis-papazaxoy-katerina-the-earthquakes-of-greece/}
 
 \bibitem[Yalciner et~al.(2002)Yalciner, Alpar, Altinok, Ozbay, and
   Imamura]{yalciner2002}
-Yalciner, A.C.; Alpar, B.; Altinok, Y.; Ozbay, I.; Imamura, F. Tsunamis in the Sea of Marmara: Historical documents for the past, models for the future. \emph{Mar. Geol.} \textbf{2002}, \emph{190}, 445--463. \highlighting{\url{https://doi.org/10.1016/S0025-3227(02)00358-1}.}
+Yalciner, A.C.; Alpar, B.; Altinok, Y.; Ozbay, I.; Imamura, F. Tsunamis in the Sea of Marmara: Historical documents for the past, models for the future. \emph{Mar. Geol.} \textbf{2002}, \emph{190}, 445--463. \url{https://doi.org/10.1016/S0025-3227(02)00358-4}. % Authors' reply: doi corrected
 
 \bibitem[Ambraseys(2000)]{ambraseys2000}
-Ambraseys, N.N. The Seismicity of the Marmara Sea Area 1800--1899. \emph{J. Seismol.} \textbf{2000}, \emph{4}, 377--401. \href{https://doi.org/10.1023/A:1026523612505}{\hl{https://doi.org/10.1023/A:102\linebreak 6523612505}}.
+Ambraseys, N.N. The Seismicity of the Marmara Sea Area 1800--1899. \emph{J. Seismol.} \textbf{2000}, \emph{4}, 377--401. \url{https://doi.org/10.1080/13632460009350376}. % Authors' reply: doi corrected
 
 \bibitem[author =~{Altinok, Y. and Tinti, S. and Alpar, B. and
   Yal{\c{c}}{\i}ner, A. C. and Ersoy, {\c{S}}. and Bortolucci, E. and
   Armigliato, A.}(2001)]{Altinoketal2001}
-Altinok, Y.; Tinti, S.; Alpar, B.; Yalçıner, A. C.; Ersoy, Ş.; Bortolucci, E.; Armigliato, A. The Tsunami of August 17, 1999 in Izmit Bay, Turkey. \emph{Nat. Hazards} \textbf{2001}, \emph{24}, 133--146. \highlighting{\url{https://doi.org/10.1023/A:1011831124641}.}
+Altinok, Y.; Tinti, S.; Alpar, B.; Yalçıner, A. C.; Ersoy, Ş.; Bortolucci, E.; Armigliato, A. The Tsunami of August 17, 1999 in Izmit Bay, Turkey. \emph{Nat. Hazards} \textbf{2001}, \emph{24}, 133--146. \url{https://doi.org/10.1023/A:1011863610289}. % Authors' reply: doi corrected
 
-\bibitem[Inan et~al.(2007)Inan, Ergintav, Saatçilar, Tüzel, and
-  Iravul]{Inanetal2007}
-Inan, S.; Ergintav, S.; Saatçilar, R.; Tüzel, B.; Iravul, Y. The 17 August 1999 \.{I}zmit (Kocaeli) Earthquake: Before, during and after. \emph{J. Seismol.} \textbf{2007}, \emph{11}, 1--23. \highlighting{\url{https://doi.org/10.1007/s10950-006-9022-7}.}
+\bibitem[Inan et~al.(2007)]{Inanetal2007}
+Inan, S.; Ergintav, S.; Saatçilar, R.; Tüzel, B.; İravul, Y. Turkey makes major investment in earthquake research. \emph{Eos, Transactions American Geophysical Union} \textbf{2007}, \emph{88}, 333--334. \url{https://doi.org/10.1029/2007EO340002}. % Authors' reply: corrected
 
 \bibitem[Parsons(2004)]{Parsons2004}
-Parsons, T. Recalculated probability of \emph{M} $\geq$ 7 earthquakes beneath the Sea of Marmara, Turkey. \emph{J. Geophys. Res. Solid Earth} \textbf{2004}, \emph{109}\hl{. } %MDPI: We are sorry but we could not find the required information about this entry. Please add the page number.
+Parsons, T. Recalculated probability of \emph{M} $\geq$ 7 earthquakes beneath the Sea of Marmara, Turkey. \emph{J. Geophys. Res. Solid Earth} \textbf{2004}, \emph{109}, B05304, 1--21. % Authors' reply: doi checked (correct) page numbers: 1--21.
 \url{https://doi.org/10.1029/2003JB002667}.
-
-\bibitem[Akcan et~al.(2024)]{Akcan2024}
-Akcan, M.; et al. Impact analysis of the February 6, 2023 Kahramanmara\c{s} earthquake sequence. \emph{Nat. Hazards} \textbf{2024}\hl{.} %MDPI: We are sorry but we could not find the required information about this entry. Please add the volume and page number.
- \highlighting{\url{https://doi.org/10.1007/s11069-023-06338-x}.}
 
 \bibitem[Akinci et~al.(2025)Akinci, Dindar, Bal, et~al.]{Akinci2025}
 Akinci, A.; Dindar, A.A.; Bal, I.E.; et al. Characteristics of strong ground motions and structural damage patterns from the February 6th, 2023 Kahramanmara\c{s} earthquakes, Türkiye. \emph{Nat. Hazards} \textbf{2025}, \emph{121}, 1209--1239. \url{https://doi.org/10.1007/s11069-024-06856-y}.
 
 \bibitem[{\"O}zel et~al.(2026){\"O}zel, Ergintav, Turhan, Konca, Aksar{\i}, and
   Erg{\"u}n]{Ozeletal2026}
-Özel, N.M.; Ergintav, S.; Turhan, F.; Konca, A.Ö.; Aksarı, D.; Ergün, T. Earthquake Early Warning System for the Marmara Region.\hl{ In Proceedings of the EGU General Assembly 2026, Vienna, Austria, 3--8 May 2026;} %MDPI: We revised the reference title and added location and date of it. Please confirm.
+Özel, N.M.; Ergintav, S.; Turhan, F.; Konca, A.Ö.; Aksarı, D.; Ergün, T. Earthquake Early Warning System for the Marmara Region. In Proceedings of the EGU General Assembly 2026, Vienna, Austria, 3--8 May 2026; %MDPI: We revised the reference title and added location and date of it. Please confirm. % Authors' reply: confirm.
  EGU26-17285. \url{https://doi.org/10.5194/egusphere-egu26-17285}.
 
 \bibitem[Eren(2025)]{Eren2025}
-Eren, S. Development of Earthquake Early Warning Systems in Marmara Region: A Hybrid Model Utilizing Mosque Loudspeakers. \emph{DergiPark J. Seism. Saf.} \textbf{2025}, \hl{\emph{12}, 61--71.} %MDPI: We revised the volume and added page number, please check it.
+Eren, S. Development of Earthquake Early Warning Systems in Marmara Region: A Hybrid Model Utilizing Mosque Loudspeakers. \emph{International Journal of Environment and Geoinformatics} \textbf{2025}, \emph{12}, 61--71. \url{https://doi.org/10.26650/ijegeo.1639063}% Authors' reply: confirm, and added doi.
 
-
-\bibitem[Dogan et~al.(2019)Dogan, Pelinovsky, Zaytsev, Metin, Tari, and
-  Yalciner]{Doganetal2019}
-Dogan, G.G.; Pelinovsky, E.; Zaytsev, A.; Metin, A.D.; Tari, A.; Yalciner, A.C. The July 20, 2017 Bodrum-Kos Tsunami; Field Survey and Numerical Modeling. \emph{Pure Appl. Geophys.} \textbf{2019}, \emph{176}, 2933--2949. \highlighting{\url{https://doi.org/10.1007/s00024-019-02150-x}.}
-
-\bibitem[Cremen and Galasso(2020)]{CremenGalasso2020}
-Cremen, G.; Galasso, C. Earthquake early warning: Recent advances and future perspectives. \emph{Front. Earth Sci.} \textbf{2020}, \emph{8}, 147. \url{https://doi.org/10.3389/feart.2020.00147}.
+Cremen, G.; Galasso, C. Earthquake early warning: Recent advances and perspectives. \emph{Earth-Sci. Rev.} \textbf{2020}, \emph{205}, 103184. \url{https://doi.org/10.1016/j.earscirev.2020.103184}
 
 \bibitem[Speciale et~al.(2026)Speciale, Picozzi, Iervolino, Zollo, Caruso,
   Colombelli, Emolo, Elia, Martino, and Festa]{Specialeetal2026}
 Speciale, S.; Picozzi, M.; Iervolino, I.; Zollo, A.; Caruso, A.; Colombelli, S.; Emolo, A.; Elia, L.; Martino, C.; Festa, G. The first Earthquake Early Warning System for the high-speed railway in Italy: Enhancing rapidness and operational efficiency during seismic events. \emph{Nat. Hazards Earth Syst. Sci. (NHESS)} \textbf{2026}, \emph{26}, 299--315. \url{https://doi.org/10.5194/nhess-26-299-2026}.
 
-\bibitem[Mousavi and Beroza(2022)]{MousaviBeroza2022}
-Mousavi, S.M.; Beroza, G.C. Deep learning-based seismic monitoring: A review of recent advances and future directions. \emph{Bull. Seismol. Soc. Am.} \textbf{2022}, \emph{112}, 1812--1836. \url{https://doi.org/10.1785/0120210283}.
+\bibitem[Liu et~al.(2026)Liu, Gong, Wang, Zhou, and Jia]{Liuetal2026}
+Liu, B.; Gong, M.; Wang, X.; Zhou, B.; Jia, J. Real-time seismic damage assessment framework of RC frames using deep learning and monitoring data. \emph{J. Build. Eng.} \textbf{2026}, \emph{123}, 115834. \url{https://doi.org/10.1016/j.jobe.2026.115834}
 
-\bibitem[Witte et~al.(2019)Witte, Louboutin, Kukreja, Lange, Luporini, Vieira,
-  Velesko, Gorman, and Herrmann]{witte2019scalable}
-Witte, P.A.; Louboutin, M.; Kukreja, N.; Lange, M.; Luporini, F.; Vieira, F.; Velesko, P.; Gorman, G.J.; Herrmann, F.J. A scalable framework for large-scale 3D seismic inversion using Devito and Dask. \emph{Geophysics} \textbf{2019}, \emph{84}, F57--F71. \url{https://doi.org/10.1190/geo2018-0174.1}.
+\bibitem[Witte et~al.(2019)Witte, Louboutin, Kukreja, Luporini, Lange, Gorman, and Herrmann]{witte2019scalable}
+Witte, P.; Louboutin, M.; Kukreja, N.; Luporini, F.; Lange, M.; Gorman, G.; Herrmann, F. A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia. \emph{Geophysics} \textbf{2019}, \emph{84}, 1--60. \url{https://doi.org/10.1190/geo2018-0174.1}
+
+\bibitem[Xue et~al.(2024)Xue, Huang, Wu, Zhao, and Ma]{xue2024real}
+Xue, J.; Huang, Q.; Wu, S.; Zhao, L.; Ma, B. Real-time dual-parameter full-waveform inversion of GPR data based on robust deep learning. \emph{Geophys. J. Int.} \textbf{2024}, \emph{238}, 1755--1771. \url{https://doi.org/10.1093/gji/ggae243}
+
+\bibitem[Abdellaziz et~al.(2024)Abdellaziz, Brossier, M{\'e}tivier, and Oudet]{abdellaziz2024optimal}
+Abdellaziz, A.; Brossier, R.; M{\'e}tivier, L.; Oudet, {\'E}. Optimal experimental design for full waveform inversion using a wavenumber sampling criterion---part 1: 2-D to methodological development. \emph{Geophys. J. Int.} \textbf{2024}, \emph{240}, 1429--1459. \url{https://doi.org/10.1093/gji/ggae454}
 
 \bibitem[Peter et~al.(2011)Peter, Komatitsch, Luo, Martin, Le~Goff, Casarotti,
   Pelties, Ampuero, Etienne, Hendrickson, et~al.]{peter2011forward}
 Peter, D.; Komatitsch, D.; Luo, Y.; Martin, R.; Le Goff, N.; Casarotti, E.; Pelties, C.; Ampuero, J.P.; Etienne, V.; Hendrickson, B.; et al. Forward and adjoint simulations of seismic wave propagation on fully unstructured hexahedral meshes. \emph{Geophys. J. Int.} \textbf{2011}, \emph{186}, 721--739. \url{https://doi.org/10.1111/j.1365-246X.2011.05044.x}.
 
-\bibitem[Wang et~al.(2020)]{wang2020cloud}
-Wang, L.; et al. Cloud computing for geophysics: Opportunities and challenges. \emph{Comput. Geosci.} \textbf{2020}, \emph{141}, 104498. \url{https://doi.org/10.1016/j.cageo.2020.104498}.
+\bibitem[Krauss et~al.(2023)Krauss, Ni, Henderson, and Denolle]{krauss2023seismology}
+Krauss, Z.; Ni, Y.; Henderson, S.; Denolle, M. Seismology in the cloud: Guidance for the individual researcher. \emph{Seismica} \textbf{2023}, \emph{2}. \url{https://doi.org/10.26443/seismica.v2i2.979}
 
-\bibitem[Fox et~al.(2017)]{fox2017big}
-Fox, G.C.; et al. Big data, simulations and HPC convergence. \emph{Future Gener. Comput. Syst.} \textbf{2017}, \emph{72}, 379--394. \url{https://doi.org/10.1016/j.future.2016.08.010}.
+\bibitem[MacCarthy et~al.(2020)MacCarthy, Marcillo, and Trabant]{maccarthy2020seismology}
+MacCarthy, J.; Marcillo, O.; Trabant, C. Seismology in the cloud: A new streaming workflow. \emph{Seismol. Res. Lett.} \textbf{2020}, \emph{91}, 1804--1812. \url{https://doi.org/10.1785/0220190357}
+
+\bibitem[Ejarque et~al.(2022)Ejarque, Badia, Albertin, Aloisio, Baglione, Becerra, Boschert, Berlin, D'Anca, Elia, Exertier, Fiore, Flich, Folch, Gibbons, Koldunov, Lordan, Lorito, L{\o}vholt, Mac{\'i}as, Marozzo, Michelini, Monterrubio-Velasco, Pienkowska, and de~la~Puente]{ejarque2022enabling}
+Ejarque, J.; Badia, R.M.; Albertin, L.; Aloisio, G.; Baglione, E.; Becerra, Y.; Boschert, S.; Berlin, J.R.; D'Anca, A.; Elia, D.; Exertier, F.; Fiore, S.; Flich, J.; Folch, N.; Gibbons, S.J.; Koldunov, N.; Lordan, F.; Lorito, S.; L{\o}vholt, F.; Mac{\'i}as, J.; Marozzo, F.; Michelini, A.; Monterrubio-Velasco, M.; Pienkowska, M.; de~la~Puente, J. Enabling dynamic and intelligent workflows for HPC, data analytics, and AI convergence. \emph{Future Gener. Comput. Syst.} \textbf{2022}, \emph{134}, 414--429. \url{https://doi.org/10.1016/j.future.2022.04.014}
 
 \bibitem[Assunção et~al.(2015)Assunção, Calheiros, Bianchi, Netto, and
   Buyya]{assuncao2015big}
@@ -1272,29 +1248,15 @@ Assunção, M.D.; Calheiros, R.N.; Bianchi, S.; Netto, M.A.; Buyya, R. Big data 
   Karniadakis]{raissi2019physics}
 Raissi, M.; Perdikaris, P.; Karniadakis, G.E. Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. \emph{J. Comput. Phys.} \textbf{2019}, \emph{378}, 686--707. \url{https://doi.org/10.1016/j.jcp.2018.10.045}.
 
-\bibitem[Sun and Demanet(2020)]{sun2020surrogate}
-Sun, H.; Demanet, L. Surrogate modeling for full-waveform inversion using deep learning. \emph{Geophysics} \textbf{2020}, \emph{85}, R423--R435. \url{https://doi.org/10.1190/geo2019-0638.1}.
+\bibitem[Ni et~al.(2025)Ni, Denolle, M{\"u}nchmeyer, Wang, Feng, Suarez, Thomas, Trabant, Hamilton, and Mencin]{ni2025review}
+Ni, Y.; Denolle, M.A.; M{\"u}nchmeyer, J.; Wang, Y.; Feng, K.F.; Suarez, C.G.J.; Thomas, M.A.; Trabant, C.; Hamilton, A.; Mencin, D. A review of cloud computing and storage in seismology. \emph{Geophys. J. Int.} \textbf{2025}, \emph{243}, ggaf322. \url{https://doi.org/10.1093/gji/ggaf322}
 
-\bibitem[Aghamiry et~al.(2021)Aghamiry, Gholami, and Operto]{Aghamiry2021}
-\hl{Aghamiry, H.S.; Gholami, A.; Operto, S. A versatile framework to solve the Helmholtz equation using physics-informed neural networks.} %MDPI: The content does not match it on doi web, please check it.
- \emph{Geophys. J. Int.} \textbf{2021}, \emph{225}, 846--864. \url{https://doi.org/10.1093/gji/ggaa533}.
+\bibitem[Song et~al.(2022)Song, Alkhalifah, and Waheed]{song2022versatile}
+Song, C.; Alkhalifah, T.; Waheed, U.B. A versatile framework to solve the Helmholtz equation using physics-informed neural networks. \emph{Geophys. J. Int.} \textbf{2022}, \emph{228}, 1750--1762. \url{https://doi.org/10.1093/gji/ggab434} %MDPI: The content does not match it on doi web, please check it. % Authors' reply: corrected author's names and doi.
 
-\bibitem[Zhu and Beroza(2019)]{ZhuBeroza2019}
-\hl{Zhu, W.; Beroza, G.C. PhaseNet: A deep-neural-network-based seismic arrival-time picking method.} \emph{Geophys. J. Int.} \textbf{2019}, \emph{216}, 261--273. \url{https://doi.org/10.1093/gji/ggy423}.
-
-\bibitem[Park et~al.(2020)Park, Mousavi, Zhu, Ellsworth, and Beroza]{Park2020}
-Park, Y.; Mousavi, S.M.; Zhu, W.; Ellsworth, W.L.; Beroza, G.C. Machine-learning-based analysis of the Guy-Greenbrier earthquake sequence. \emph{Geophys. Res. Lett.} \textbf{2020}, \emph{47}, e2020GL087233. \url{https://doi.org/10.1029/2020GL087233}.
-
-\bibitem[Ni et~al.(2023)Ni, Hutko, Skoumal, et~al.]{Ni2023}
-\hl{Ni, S.; Hutko, A.R.; Skoumal, R.J.; et al. Earthquake detection and phase picking for large-N arrays using deep learning.} %MDPI: The content does not match it on doi web, please check it.
- \emph{Seismol. Res. Lett.} \textbf{2023}\hl{.} %MDPI: Please add volume and page number.
- \url{https://doi.org/10.1785/0220220281}.
-
-\bibitem[Zhong et~al.(2023)]{Zhongetal2023}
-Zhong, T.; et al. Digital Twin for Subsurface Characterization: Framework, Key Technologies, and Opportunities. \emph{IEEE Geosci. Remote Sens. Mag.} \textbf{2023}, \emph{11}, 52--75. \highlighting{\url{https://doi.org/10.1109/MGRS.2023.3263435}.}
-
-\bibitem[Sit et~al.(2021)]{Sitetal2021}
-Sit, H.K.; et al. A Hybrid Approach to Seismic Trace Picking Using Edge Computing and Deep Learning. \emph{Comput. Geosci.} \textbf{2021}, \emph{156}, 104886. \highlighting{\url{https://doi.org/10.1016/j.cageo.2021.104886}.}
+\bibitem[Chen et~al.(2025)Chen, Liu, Hurter, Zhao, Zhang, and Liu]{Chenetal2025}
+Chen, G.; Liu, W.; Hurter, S.; Zhao, P.; Zhang, M.; Liu, S. From edge detection to deep learning: Image processing methods for seismic horizon tracking. \emph{Comput. Phys. Commun.} \textbf{2025}, \emph{315}, 109717. \url{https://doi.org/10.1016/j.cpc.2025.109717}
+% Authors' reply: corrected
 
 \bibitem[Tiryakio{\u{g}}lu et~al.(2017)Tiryakio{\u{g}}lu, Aktu{\u{g}},
   Yi{\u{g}}it, Yava{\c{s}}o{\u{g}}lu, S{\"o}zbilir, {\"O}zkaymak, Poyraz,
@@ -1302,7 +1264,7 @@ Sit, H.K.; et al. A Hybrid Approach to Seismic Trace Picking Using Edge Computin
 Tiryakioğlu, İ.; Aktuğ, B.; Yiğit, C.Ö.; Yavaşoğlu, H.H.; Sözbilir, H.; Özkaymak, Ç.H.; Poyraz, F.; Taneli, E.; Bulut, F.; Doğru, A.; et al. Slip distribution and source parameters of the 20 July 2017 Bodrum-Kos earthquake (Mw6.6) from GPS observations. \emph{Geodin. Acta} \textbf{2017}, \emph{30}, 1--14. \url{https://doi.org/10.1080/09853111.2017.1408264}.
 
 \bibitem[DeSalvio and Fan(2023)]{DeSalvio2023}
-DeSalvio, N.D.; Fan, W. Ubiquitous Eearthquake dynamic triggering in southern California. \emph{J. Geophys. Res. Solid Earth} \textbf{2023}, \emph{128}, e2023JB026487. \url{https://doi.org/10.1029/2023JB026487}.
+DeSalvio, N.D.; Fan, W. Ubiquitous Earthquake dynamic triggering in southern California. \emph{J. Geophys. Res. Solid Earth} \textbf{2023}, \emph{128}, e2023JB026487. \url{https://doi.org/10.1029/2023JB026487}.
 
 \bibitem[Glasgow et~al.(2021)Glasgow, Schmandt, Wang, Zhang, Bilek, and
   Kiser]{Glasgow2021}
@@ -1320,7 +1282,7 @@ Jolivet, R.; Jara, J.; Dalaison, M.; et al. Daily to centennial behavior of asei
 Okal, E.A.; Synolakis, C.E.; Uslu, B.; Kalligeris, N.; Voukouvalas, E. The 1956 earthquake and tsunami in Amorgos, Greece. \emph{Geophys. J. Int.} \textbf{2009}, \emph{178}, 1533--1554. \url{https://doi.org/10.1111/j.1365-246X.2009.04237.x}.
 
 \bibitem[Papadopoulos and Fokaefs(2007)]{papadopoulos2007}
-Papadopoulos, G.A.; Fokaefs, A. Strong tsunamis in the Mediterranean Sea: A numerical selection of a candidate for the UNESCO Early Warning System. \emph{Nat. Hazards} \textbf{2007}, \emph{40}, 129--144. \highlighting{\url{https://doi.org/10.1007/s11069-006-0005-x}.}
+Papadopoulos, G.A.; Fokaefs, A. Strong tsunamis in the Mediterranean Sea: A re-evaluation. \emph{ISET Journal of Earthquake Technology} \textbf{2005}, \emph{42}, 159--170. \url{https://doi.org/10.63898/GWDN4573}. % Authors' reply: corrected
 
 \bibitem[Burton et~al.(1984)Burton, McGonigle, Makropoulos, and
   {\"U}{\c{c}}er]{Burton1984}
@@ -1345,18 +1307,11 @@ Minson, S.E.; Murray, J.R.; Langbein, J.O.; Gomberg, J.S. Real-time inversions f
   Swift, Curioni, Uhlemann, Graham, and Atherton]{Wilkinson2022}
 Wilkinson, P.B.; Chambers, J.E.; Meldrum, P.I.; Kuras, O.; Inauen, C.M.; Swift, R.T.; Curioni, G.; Uhlemann, S.; Graham, J.; Atherton, N. Windowed 4D inversion for near real-time geoelectrical monitoring applications. \emph{Front. Earth Sci.} \textbf{2022}, \emph{10}, 983603. \url{https://doi.org/10.3389/feart.2022.983603}.
 
-\bibitem[Li et~al.(2019)Li, Liu, Ren, Chen, Yang, Wang, and Jiang]{Li2019}
-Li, S.; Liu, B.; Ren, Y.; Chen, Y.; Yang, S.; Wang, Y.; Jiang, P. Deep-learning inversion of seismic data. \emph{arXiv} \textbf{2019}, arXiv:1901.07733. \highlighting{\url{https://doi.org/10.1109/TGRS.2019.2923410}.}
-
 \bibitem[Brossier et~al.(2015)Brossier, Operto, and Virieux]{Brossier2015}
 Brossier, R.; Operto, S.; Virieux, J. Velocity model building from seismic reflection data by full-waveform inversion. \emph{Geophys. Prospect.} \textbf{2015}, \emph{63}, 354--367. \url{https://doi.org/10.1111/1365-2478.12190}.
 
 \bibitem[Bensen et~al.(2007)Bensen, Ritzwoller, Barmin, et~al.]{Bensen2007}
 Bensen, G.D.; Ritzwoller, M.H.; Barmin, M.P.; et al. Processing seismic ambient noise data to obtain reliable broad-band surface wave dispersion measurements. \emph{Geophys. J. Int.} \textbf{2007}, \emph{169}, 1239--1260. \url{https://doi.org/10.1111/j.1365-246X.2007.03374.x}.
-
-\bibitem[Mousavi et~al.(2019)Mousavi, Ellsworth, Zhu, Chuang, and
-  Beroza]{Mousavi2019}
-\hl{Mousavi, S.M.; Ellsworth, W.L.; Zhu, W.; Chuang, L.; Beroza, G.C. CRED: A deep residual network of convolutional and recurrent units for earthquake signal detection.} \emph{Sci. Rep.} \textbf{2019}, \emph{9}, 10267 . \highlighting{\url{https://doi.org/10.1038/s41598-019-45749-5}.}
 
 \bibitem[Ide et~al.(2007)Ide, Beroza, Shelly, and Uchide]{Ide2007}
 Ide, S.; Beroza, G.C.; Shelly, D.R.; Uchide, T. A scaling law for slow earthquakes. \emph{Nature} \textbf{2007}, \emph{447}, 76--79. \url{https://doi.org/10.1038/nature05780}.
@@ -1364,13 +1319,14 @@ Ide, S.; Beroza, G.C.; Shelly, D.R.; Uchide, T. A scaling law for slow earthquak
 \bibitem[Obara(2002)]{Obara2002}
 Obara, K. Nonvolcanic deep tremor associated with subduction in southwest Japan. \emph{Science} \textbf{2002}, \emph{296}, 1679--1681. \url{https://doi.org/10.1126/science.1070378}.
 
-\bibitem[Armbrust et~al.(2015)Armbrust, Xin, Lian, et~al.]{Armbrust2018a}
-Armbrust, M.; Xin, R.S.; Lian, C.; et al. Apache Spark SQL: Relational data processing in Spark. In \emph{Proceedings of the 2015 ACM SIGMOD}; \hl{Association for Computing Machinery: New York, NY, USA,} %MDPI: We added the name of the publisher and their location. Please confirm.
+\bibitem[Armbrust et~al.(2015)Armbrust, Xin, Lian, et~al.]{Armbrust2018}
+Armbrust, M.; Xin, R.S.; Lian, C.; et al. Apache Spark SQL: Relational data processing in Spark. In \emph{Proceedings of the 2015 ACM SIGMOD}; Association for Computing Machinery: New York, NY, USA,  %MDPI: We added the name of the publisher and their location. Please confirm. % Authors' reply: confirm.
  2015. \url{https://doi.org/10.1145/2723372.2742797}.
 
-\bibitem[Zaharia et~al.(2016)Zaharia, Chen, Davidson, et~al.]{Zaharia2016}
-\hl{Zaharia, M.; Chen, A.; Davidson, A.; et al. Apache Spark: A unified engine for big data processing.} %MDPI: Please check if Refs. [95] and [99] are duplicated. If so, please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references.
- \emph{Commun. ACM} \textbf{2016}, \emph{59}, 56--65. \url{https://doi.org/10.1145/2934664}.
+\bibitem[Zaharia et~al.(2016)Zaharia, Xin, Wendell, Das, Armbrust, Dave, Meng, Rosen, Venkataraman, Franklin, Ghodsi, Gonzalez, Shenker, and Stoica]{Zaharia2016}
+Zaharia, M.; Xin, R.S.; Wendell, P.; Das, T.; Armbrust, M.; Dave, A.; Meng, X.; Rosen, J.; Venkataraman, S.; Franklin, M.J.; Ghodsi, A.; Gonzalez, J.; Shenker, S.; Stoica, I. Apache Spark: a unified engine for big data processing. %MDPI: Please check if Refs. [95] and [99] are duplicated. If so, please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. % Authors' reply: duplicated reference removed ([99]), corrected list of authors in this ref.. 
+\emph{Commun. ACM} \textbf{2016}, \emph{59}, 56--65. \url{https://doi.org/10.1145/2934664}
+
 
 \bibitem[Virieux and Operto(2009)]{Virieux2009}
 Virieux, J.; Operto, S. An overview of full-waveform inversion in exploration geophysics. \emph{Geophysics} \textbf{2009}, \emph{74}, WCC1--WCC26. \url{https://doi.org/10.1190/1.3238367}.
@@ -1379,35 +1335,27 @@ Virieux, J.; Operto, S. An overview of full-waveform inversion in exploration ge
   K{\"u}bler]{Carena2023}
 Carena, S.; Friedrich, A.M.; Verdecchia, A.; Kahle, B.; Rieger, S.; Kübler, S. Identification of source faults of large earthquakes in the Türkiye-Syria border region between 1000 CE and the present, and their relevance for the 2023 Mw 7.8 Pazarcık earthquake. \emph{Tectonics} \textbf{2023}, \emph{42}, e2023TC007890. \url{https://doi.org/10.1029/2023TC007890}.
 
-\bibitem[Hall(2019)]{Hall2019}
-Hall, M. SEG-Y: Past, present, and future. \emph{Lead. Edge} \textbf{2019}, \emph{38}, 760--763. \highlighting{\url{https://doi.org/10.1190/tle38100760.1}.}
-
-\bibitem[Armbrust et~al.(2018)]{Armbrust2018}
-\hl{Armbrust, M.; et al. Apache Spark: A unified engine for big data processing.} \emph{Proc. Commun. ACM} \textbf{2018}, \emph{59}, 56--65. \url{https://doi.org/10.1145/2934664}.
-
-\bibitem[{Databricks}(2020)]{Databricks2020}
-Databricks. Delta Lake: High-performance ACID table storage over cloud object stores. \emph{White Pap.} \textbf{2020}\hl{.} %MDPI: We are sorry but we could not find the required information about this entry. Please add the volume and page number or doi information.
-
-\bibitem[Folkestad and H{\"a}ggland(2019)]{OpenVDS2019}
-Folkestad, A.; Häggland, T. Cloud-native seismic data format using OpenVDS. \emph{SEG. Tech. Program Expand. Abstr.} \textbf{2019}\hl{.} %MDPI: We are sorry but we could not find the required information about this entry. Please add the volume and page number.
- \highlighting{\url{https://doi.org/10.1190/segam2019-3215579.1}.}
+\bibitem[Sopher(2018)Sopher]{Sopher}
+Sopher, D. Converting scanned images of seismic reflection data into SEG-Y format. \emph{Earth Sci. Inform.} \textbf{2018}, \emph{11}, 241--255. \url{https://doi.org/10.1007/s12145-017-0329-z}
 
 \bibitem[Rudin(2019)]{Rudin2019}
 Rudin, C. Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. \emph{Nat. Mach. Intell.} \textbf{2019}, \emph{1}, 206--215. \url{https://doi.org/10.1038/s42256-019-0048-x}.
-
-\bibitem[Güneyli(2026)]{Gueneyli2026}
-Güneyli, H. The evolution of seismic tomography in Earth sciences---Advancements, limitations, and its AI-enabled future (A critical review). \emph{ResearchGate (Pre-Proof)} \textbf{2026}\hl{.} %MDPI: We are sorry but we could not find the required information about this entry. Please add the volume and page.
- \highlighting{\url{https://doi.org/10.13140/RG.2.2.33854.40001}.}
+ 
+ \bibitem[Ahmed and G{\"u}neyli(2025)Ahmed and G{\"u}neyli]{Gueneyli2026}
+Ahmed, S.M.S.; G{\"u}neyli, H. The evolution of seismic tomography in earth sciences---advancements, limitations, and its AI-enabled future (A critical review). \emph{Earthq. Res. Adv.} \textbf{2025}, \emph{}, 100425. \url{https://doi.org/10.1016/j.eqrea.2025.100425} %MDPI: We are sorry but we could not find the required information about this entry. Please add the volume and page. % Authors' reply: corrected.
 
 \bibitem[Moseley et~al.(2020)Moseley, Markham, and Nissen-Meyer]{Moseley2020}
 Moseley, B.; Markham, A.; Nissen-Meyer, T. Solving the wave equation with physics-informed deep learning. \emph{arXiv} \textbf{2020}, arXiv:2006.11894. \url{https://doi.org/10.48550/arXiv.2006.11894}.
 
 \bibitem[Bacon et~al.(2025)]{Bacon2025}
-Bacon, C.; et al. Processing on the edge: The evolution of in-field processing on modern land seismic surveys. \emph{EAGE First Break} \textbf{2025}, \emph{43}, 69--73.
+Bacon, C.; et al. Processing on the edge: The evolution of in-field processing on modern land seismic surveys. \emph{EAGE First Break} \textbf{2025}, \emph{43}, 69--73. \url{https://doi.org/10.3997/1365-2397.fb2025006}
 
 \bibitem[Rasht-Behesht et~al.(2022)Rasht-Behesht, Huber, Shukla, and
   Karniadakis]{RashtBehesht2022}
 Rasht-Behesht, M.; Huber, C.; Shukla, K.; Karniadakis, G.E. Physics-informed neural networks (PINNs) for wave propagation and full waveform inversions. \emph{J. Geophys. Res. Solid Earth} \textbf{2022}, \emph{127}, e2021JB023120. \url{https://doi.org/10.1029/2021JB023120}.
+
+\bibitem[Lemenkova et~al.(2023)Lemenkova, De~Plaen, Lecocq, and Debeir]{lemenkova2023computer}
+Lemenkova, P.; De~Plaen, R.; Lecocq, T.; Debeir, O. Computer vision algorithms of DigitSeis for building a vectorised dataset of historical seismograms from the archive of Royal Observatory of Belgium. \emph{Sensors} \textbf{2023}, \emph{23}, 56. \url{https://doi.org/10.3390/s23010056}
 
 \bibitem[Seydoux et~al.(2024)]{Seydoux2024}
 Seydoux, L.; et al. A review of cloud computing and storage in seismology. \emph{Geophys. J. Int.} \textbf{2024}, \emph{243}, ggaf322. \url{https://doi.org/10.1093/gji/ggaf322}.
