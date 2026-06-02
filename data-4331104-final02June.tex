@@ -1,0 +1,1496 @@
+%  LaTeX support: latex@mdpi.com 
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
+
+%=================================================================
+\documentclass[data,article,accept,pdftex,moreauthors]{Definitions/mdpi} 
+\usepackage[utf8]{inputenc}   % Enable UTF-8 input encoding for body text
+\usepackage[T1]{fontenc}      % Enable proper font encoding for special chars
+
+%=================================================================
+%----------
+% journal
+%----------
+
+% MDPI internal commands
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\externaleditor{ }
+\datereceived{6 May 2026} 
+\daterevised{20 May 2026} %
+\dateaccepted{26 May 2026} 
+\datepublished{} 
+%\hreflink{https://doi.org/} % If needed use \linebreak
+% --- Table/array packages (loaded once) ---
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+%\usepackage{booktabs}
+%\usepackage[flushleft]{threeparttable}
+%\usepackage{ltablex}
+%\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{adjustbox}
+% --- Math packages ---
+\usepackage{amsmath,mathtools,amsthm}
+\setcounter{MaxMatrixCols}{15}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+% --- Color and text packages ---
+\usepackage{xcolor}
+\usepackage{textcomp}   % load before gensymb
+\usepackage{gensymb}
+\usepackage{soul}  % for highlighting
+% --- Listing/code packages ---
+\usepackage{listings}
+% captionsetup for listings (caption is loaded by the mdpi class)
+\captionsetup[lstlisting]{
+    position=top,      % caption on top
+    labelfont=bf,      % only label (Listing 1.1) is bold
+    textfont=rm,       % caption text is normal
+    labelsep=period
+}
+% --- Misc packages ---
+\usepackage{float}
+\usepackage{chngcntr}
+%\counterwithin*{equation}{section}
+\usepackage[super]{nth}
+% This resets the equation counter at every new section
+%\counterwithin{equation}{section}
+
+%=================================================================
+\graphicspath{{figures/}}
+
+% Fix: Tell hyperref (loaded by mdpi.cls) how to handle \hl, \highlighting,
+% \orcidA, and Unicode in PDF metadata. \hypersetup is safe before \begin{document}
+% because mdpi.cls loads hyperref during \documentclass processing.
+% We also suppress PDF metadata fields that contain problematic content.
+\makeatletter
+\AtEndPreamble{%
+  \pdfstringdefDisableCommands{%
+    \let\hl\@firstofone
+    \let\highlighting\@firstofone
+    \let\hspace\@gobble
+    \let\orcidA\@gobble
+    \let\textsuperscript\@gobble
+  }%
+}
+\makeatother
+
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepmagenta}{RGB}{195,12,214}
+\definecolor{deepgreen}{RGB}{29,122,30}
+\definecolor{mintgreen}{RGB}{192,249,192}
+\definecolor{codepurple}{RGB}{204, 0, 153}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{GainsboroPurple}{RGB}{247,176,247}
+\definecolor{LightSlateGrey}{RGB}{124,118,118}
+%    
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{LightSlateGrey},
+    keywordstyle=\color{deepgreen}\bfseries,
+    emphstyle=\color{deepred},
+    numberstyle=\tiny\color{deepblue},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+%=================================================================
+\Title{Artificial %MDPI: The article title is different from the ones submitted online at susy.mdpi.com. Please confirm which is correct. % Authors' reply: correct - Artificial  Intelligence and Big Data Analytics for Seismic Hazard Assessment: Methodological Advances and Computational Frameworks for the Marmara Region, Türkiye
+ Intelligence and Big Data Analytics for Seismic Hazard Assessment: Methodological Advances and Computational Frameworks for the Marmara Region, Türkiye}
+
+%\TitleCitation{Artificial Intelligence and Big Data Analytics for Seismic Hazard Assessment: Methodological Advances and Computational Frameworks for the Marmara Region, T\"{u}rkiye}
+
+\newcommand{\orcidauthorA}{0000-0002-5759-1089}
+
+\Author{Polina %MDPI: Please carefully check the accuracy of names and affiliations.
+ Lemenkova *\texorpdfstring{\orcidA{}}{}, Abdullah %MDPI: The names highlighted is different from the ones submitted online at susy.mdpi.com. Please confirm which is correct. % Authors' reply: no, we did not change names. Our names are Polina Lemenkova and Abdullah Can Z\"{u}lfikar. 
+ Can Z\"{u}lfikar}
+
+\AuthorNames{Polina Lemenkova, Abdullah Can Z\"{u}lfikar}
+
+%\AuthorCitation{Lemenkova, P.; Zülfikar, A.C.} 
+
+\address[1]{%
+Disaster and Emergency Management Department, Institute of Earthquake Engineering and Disaster Management, Istanbul Technical University, \.{I}T\"{U} %MDPI: Please check for any unnecessary redundant descriptions that can be removed. % Authors' reply: Ok, we removed Ayaza\u{g}a, Maslak Kamp\"{u}s\"{u}, - name of Campus. 
+ 34469 \.{I}stanbul, T\"{u}rkiye; aczulfikar@itu.edu.tr %MDPI: We added the email addresses here according to those submitted online at susy.mdpi.com. Please confirm. % Authors' reply: yes, we confirm.
+}
+
+\corres{\texorpdfstring{\hangafter=1 \hangindent=1.05em \hspace{-0.82em}}{}Correspondence: lemenkova@itu.edu.tr}
+
+\abstract{The Marmara region of Türkiye, situated along the North Anatolian Fault Zone (NAFZ), constitutes one of the most seismically active and densely monitored zones globally. Given the region's high vulnerability and the catastrophic impacts of historical events---notably the 1999 \.{I}zmit and 2023 Kahramanmara\c{s} sequences---there is a critical need for advanced seismic hazard risk assessment (SHRA) methods that move beyond static models. This review examines the paradigm shift from traditional geophysics to big data seismology, characterized by the ``Five Vs'': volume, velocity, variety, veracity, and value. Critically, we distinguish between two fundamentally different problems: Earthquake Early Warning (EEW), which operates on sub-second timescales after rupture initiation, and probabilistic earthquake forecasting, which operates on timescales of years to decades. The study discusses how cloud-native platforms such as Azure Databricks, combined with data pipelines using Apache Kafka (version 3.5.1) and Apache Spark (version 4.1.2), %MDPI: Please state which version of the software was used. % Authors' reply: Apache Kafka (version 3.5.1) and Apache Spark (version 4.1.2)
+ enable the real-time processing of petabyte-scale seismic sensor streams. Key technological tools, including Physics-Informed Neural Networks (PINNs) and deep learning models such as PhaseNet, are analyzed for their demonstrated ability to enhance EEW systems through sub-second phase picking and automated event detection. Seismic tomography is also undergoing AI-enabled transformation, yielding higher-resolution subsurface imaging. We present statistical validation metrics and uncertainty quantification methods essential for credible hazard assessment. By addressing computational bottlenecks through hybrid computing architectures and edge computing, this framework aims to improve the warning lead time for Istanbul's critical infrastructure. This work provides a structured roadmap for bridging the gap between traditional seismic data analysis and operational predictive analytics in the Marmara region.}
+
+\keyword{big data; seismology; cloud computing; geophysics; machine learning; earthquake early warning; signal processing; Apache Spark; North Anatolian Fault} 
+
+\PACS{91.30.Ab; 91.30.Pd; 07.05.Mh; 89.20.Ff} %MDPI: Please check if there should be a space after each dot, please check all. % Authors' reply: PACS codes are correct as given; no spaces after dots are required, as this follows the standard PACS notation format where dots separate hierarchical classification levels within each code.
+\MSC{86A15; 68T07}
+\JEL{Q54; C45; O33}
+
+\begin{document}
+
+%----------- section ----------->
+\section{Introduction}
+
+%----------- section ----------->
+\subsection{Background}
+
+Seismic hazard monitoring systems prioritize the early detection and probabilistic assessment of earthquake events to mitigate geotechnical risks \cite{Gueneyli2026,Allen2012,Kanamori2005}. Modern geophysical centers analyze thousands of global sensor streams per second, generating millions of daily data points \cite{USGS2020,IRIS2018,Sadhukhan}. However, the transition to operational seismic monitoring necessitates processing capabilities that exceed the limits of traditional geophysical analysis \cite{Beroza2021}. The integration of Artificial Intelligence (AI) and cloud computing has fundamentally transformed this landscape, enabling the treatment of global seismic signals as unified big data repositories rather than isolated regional records \cite{ni2025review,Perol2018,Chenetal2025}.
+
+The paradigm shift from traditional geophysics to big data seismology represents a fundamental change in analytical methodology \cite{Bergen2019,moshou2022data,amadorluna2024kernel,zhang2024earthquake}. Contemporary seismic datasets require novel frameworks for storage and high-throughput processing to extract reliable prognostic insights \cite{DavisHunt,IRISDMC2015}. Crucially, modern seismic networks demand a departure from legacy data management systems toward distributed, scalable data science architectures, Figure~\ref{fig01}.
+
+\begin{figure}[H]
+   % \begin{center} %MDPI EE: ATTENTION: Please note that there appear to be typos and some non-English characters in this figure. Please review all labels, e.g., "SECUrE CLOUO CLIUD", and ensure that they are all correct % Authors' reply: we corrected the text on the figure. The misprinted text is "Secure Cloud", also removed duplicated word
+	\includegraphics[width=13.0cm]{Fig_01.png}
+   % \end{center}
+    \caption{Big data in geophysics and seismology: the 5Vs framework. Diagram source: authors.}
+    \label{fig01}
+\end{figure}
+
+The ``Five Vs'' of big data---volume, velocity, variety, veracity, and value---define the principal advantages over regional geophysical databases \cite{Laney2001,Kitchin2014,Hashem2015}. While traditional archives typically manage gigabytes of localized data, modern big data systems routinely ingest petabytes of global sensor data \cite{arrowsmith2022big}. The velocity of these systems enables the processing of real-time data streams, providing the immediate and latency-critical insights required for seismic risk evaluation and rapid decision-making \cite{gandomi2015beyond,allen2009earthquake}.
+
+The variety of big data in geophysics is defined by a spectrum of heterogeneous data structures \cite{MA201547}. The complexity of formats arises from the diverse data structures and sources that must be integrated and jointly analysed \cite{chen2014big}. Even tabular CSV data typically wraps heterogeneous information pulled from multiple geophysical sensors \cite{zhao2024artificial,Stocks2019}. Finally, the veracity dimension pertains to data quality and integrity \cite{vance2024big,Lietal2016}. Seismic datasets may include incomplete signals, duplicate event entries, inconsistent formatting, malfunctioning sensors, or outdated information \cite{mousavi2019cred}.
+
+These five dimensions create interconnected challenges that conventional seismological methods are ill-equipped to handle. Traditional analysis largely relies on manual examination of datasets which process massive volumes of historical seismic data available in archives and from sensors flowing into online geophysical repositories \cite{Kong2019,Sopher,lemenkova2023computer}. Processing such large data massifs enables the discovery of anomalies in mantle processes with better precision and speed, yielding real-time data characterizing location and magnitude of seismic events, together with unstructured cartographic data and relevant geological characteristics \cite{baumann2016big,ZhuBeroza2019}. Consequently, big data analytics in seismology support predictive analytics that process sensor data from thousands of stations simultaneously.
+
+%----------- section ----------->
+\subsection{Research Problem and Objectives}
+
+Big data technologies are revolutionizing geophysics by enabling dynamic, high-resolution risk assessment. In Seismic Hazard Risk Assessment (SHRA), big data has shifted the paradigm from static, low-frequency maps to dynamic, real-time monitoring models. Data integration and real-time processing allow historical data analysis, current data monitoring, and future data forecasting \cite{Sen2009}. Recent decades have witnessed diverse geological and climate hazards whose cumulative effects on the environment are well-documented \cite{Liggins2013}. Seismic risks are particularly prominent due to their devastating consequences for society, demanding effective quantitative seismic risk assessment \linebreak methods \cite{Dowrick2009,Liu2024}.
+
+Before proceeding, it is essential to distinguish between two fundamentally different scientific problems that are often conflated in the literature: (i) earthquake early warning (EEW) operates on timescales of seconds, detecting P-waves from an initiated rupture and issuing alerts before the destructive S-waves arrive; and (ii) earthquake forecasting operates on timescales of years to decades, using probabilistic seismicity models to estimate long-term rupture probability. These two paradigms require distinct data architectures, latency constraints, and validation frameworks.
+
+The Turkish government has demonstrated remarkable commitment to seismic risk mitigation through two decades of systematic emergency preparedness initiatives \cite{ismep2026}; however, advancing these efforts requires integrating modern big data analytics frameworks and Python-based geophysical tools to enhance real-time seismic monitoring and response capabilities. Addressing this technological gap is both timely and critical, as seismological research increasingly demands scalable, high-performance computational solutions capable of processing heterogeneous data streams in real time. 
+
+This paper contributes to the challenge of big data technologies in geophysics by analyzing how data pipelines support modern operational seismic hazard risk assessment. We discuss SHRA in the context of big data and high-scale geophysical analytics, bridging the gap between traditional data analysis in seismology and predictive analytics. Unlike conventional approaches that rely on processing single CSV files, a modern big data pipeline can architect an SHRA system that handles the volumes, velocity, and variety of seismic signals simultaneously.
+
+%----------- section ----------->
+
+\section{Seismic Vulnerability in Türkiye: From Tectonic Plate Interactions to Historical Disaster Impacts}
+
+\subsection{Geology and Tectonics in Türkiye}
+
+Türkiye is highly vulnerable to seismic hazards, especially in regions near active tectonic faults \cite{Basaran2014,Kandregula2024}. Systematic geological monitoring is essential for comprehensive seismic risk assessment, underscoring the need for improved methodologies \cite{Korkmaz2013}. Seismically active areas in Türkiye lie at the margins of the Anatolian Block \cite{Abdik}, within a zone of lithosphere collision involving three major tectonic plates: the Eurasian Plate, the African Plate, and the Arabian Plate.
+
+The Anatolian Block is driven westward as the Arabian Plate advances northward against the Eurasian Plate, while the African Plate subducts beneath the Hellenic Arc \cite{McKenzie1972,LePichon2010}. These plate interactions generate frequent and powerful earthquakes at tectonic boundaries. The most prominent feature is the North Anatolian Fault Zone (NAFZ), a 1200~km right-lateral strike-slip fault extending from the Gulf of Saros to Karlıova \cite{Barka1992,Sengor2005,Jolivet2023_SolidEarth}. Formed \linebreak 13--11 million years ago, it remains seismically active, capable of producing earthquakes up to magnitude 8.0 \cite{Stein1997}. Current deformation, particularly in the Marmara region, is asymmetric and strongly influenced by the complex regional geology of the NAFZ \cite{schiffer2019localized,Andrieux}.
+
+\subsection{Historical Outline of Seismic Events in Türkiye}
+
+The historical record of the Anatolian region reveals a relentless cycle of seismic activity, Figure~\ref{fig03}. In the Aegean region, from 496~BC to 1949~AD, the area experienced a total of 20 moderate to severe earthquakes \cite{altinok2011,papazachos2000}. The 1956 Amorgos earthquake and tsunami is one of the largest instrumentally recorded events in the region \cite{okals2009}. Strong tsunamis in the Mediterranean have been systematically re-evaluated for EEW planning \cite{papadopoulos2007}. Seismic risk across T\"{u}rkiye, the Aegean, and the eastern Mediterranean has been shaped by recurrent large-magnitude earthquakes over historical timescales \cite{Burton1984}. Many ancient events resulted in devastating tsunamis, with notable occurrences in 1389, 1856, 1866, 1881, and 1949 \cite{yalciner2002}. The 1881 Chios-\c{C}e\c{s}me earthquake caused thousands of fatalities and significant coastal \linebreak changes \cite{ambraseys2000}. The $M_w$~7.4 \.{I}zmit earthquake of 17 August 1999 remains one of the best-studied large events in the region \cite{Altinoketal2001,Inanetal2007}. A significantly heightened probability ($\sim$50\%) of a $M \geq 7$ event has been estimated within 30 years of the 1999 stress transfer \cite{Parsons2004}. Dynamic triggering of tectonic tremors and earthquakes has been documented in the broader region following major seismic sequences \cite{Yao2024,DeSalvio2023}. Most recently, on 6 February~2023, Türkiye experienced a catastrophic seismic sequence with a mainshock of $M_w$~7.8, followed by major earthquakes of $M_w$~7.7 and 7.6. These events caused total destruction in Antakya, including severe damage to historical mosques and minarets \cite{Akinci2025,Toprak2025,Yilmaz2025}. The 2017 Bodrum-Kos earthquake (M$_w$~6.6) provided important geodetic constraints on fault slip distribution from GPS observations \cite{Tiryakiogluetal2017}.
+
+\begin{figure}[H]
+\includegraphics[width=13.0cm]{Fig_03.png}
+    \caption{Historical outline of major seismic events in Türkiye. Diagram source: authors.} %MDPI EE: ATTENTION: The years in this diagram do not seem to line up in order and with the pictured timeline % Authors' reply: we corrected the figure by adding reference number of the events on the time line and their descriptions.
+    \label{fig03}
+\end{figure}
+
+\subsection{Seismic Risk Assessment and the Distinction Between EEW and Earthquake Forecasting}
+
+The 2023 Kahramanmara\c{s} sequence \cite{Hussain2023,Carena2023} reinforced the urgent need to clearly separate two domains of operational seismology that serve different societal functions. Research and technological development in EEW systems have become critical components of seismic risk mitigation in the Anatolian region. EEW is fundamentally a real-time detection and alerting problem: once a rupture has begun, P-wave signals are detected, source parameters are estimated within seconds, and automated alerts are issued before destructive shaking arrives. In contrast, earthquake forecasting---such as the probability estimate---is a probabilistic, long-term assessment of where and when future earthquakes are likely to occur, based on fault mechanics and historical seismicity.
+
+This distinction matters for data infrastructure: EEW requires deterministic, sub-second pipelines with strict latency constraints ($<$100~ms), while forecasting models require access to decades of historical catalogs, geodetic strain data, and paleoseismic records. The Kandilli Observatory and Earthquake Research Institute (KOERI) has operationalized a new-generation EEWS across Türkiye, leveraging a dense network of stations to issue alerts within seconds \cite{Ozeletal2026}. Innovative strategies also explore hybrid models, such as using mosque loudspeakers to disseminate warnings \cite{Eren2025}. Machine learning is transforming raw telemetry into actionable protocols, predicting potential damage zones and automatically triggering safety actions \cite{Specialeetal2026}. For high-stakes life-safety decisions, interpretable models are preferable to opaque black-box systems \cite{Rudin2019}.
+
+\section{Research Gap Identification and Contribution}
+
+To our knowledge, no comprehensive review exists that integrates big data processing architectures, statistical validation frameworks, and the EEW/forecasting distinction specifically for the Marmara region. While individual case studies on AI in seismology exist \cite{Liuetal2026}, integrative reviews addressing big data pipelines, uncertainty quantification, and cloud governance for Turkish seismic monitoring are lacking. This article provides a comprehensive analysis of the evolution of techniques for big data processing in the context of seismic risk assessment in Türkiye, with a focus on the Marmara region and the NAFZ. Mitigating earthquake risks requires both an EEW system and consistent probabilistic seismic monitoring underpinned by big data, Figure~\ref{fig04}.
+
+\begin{figure}[H]
+	\includegraphics[width=13.0cm]{Fig_04.png} %MDPI EE: Attention: Please review non-standard phrases such as "Eelisic monitoring consunstations" and check if they are correct % Authors' reply: misprint correct - "Seismic monitoring stations"
+	    \caption{Development %MDPI: Please confirm whether the incomplete content in this figure affects scientific understanding and if it does, please revise it. % Authors' reply: the figure is completed (added cropped text - Source: Disaster and Emergency Management, Earthquake Early Warning in Istanbul & Turkey, 2026). It now fully supports scientific understanding of the text.
+ of Big Data in Seismology, EEW \& Geophysical Monitoring in Istanbul, Türkiye. Diagram source: authors.}
+    \label{fig04}
+\end{figure}
+
+The current limitations of conventional seismological processing are summarized in Table~\ref{tab01}, which highlights both the technical constraints and their implications for Marmara region monitoring.
+
+\begin{table}[H]
+\caption{Limitations of existing geophysical processing approaches and their Marmara-region implications.\label{tab01}}
+
+\begin{adjustwidth}{-\extralength}{0cm}
+\begin{tabularx}{\fulllength}{llL}
+\toprule
+\textbf{Approach} & \textbf{Core Constraint} & \textbf{Big Data \& Geophysical Impact} \\ \midrule
+Traditional Inversion & Non-uniqueness & Multiple subsurface models satisfy the same observed data. High-dimensionality exacerbates uncertainty quantification; confidence intervals on hazard maps are rarely reported.\\%MDPI: Please confirm if the linespace below this line should be replaced with midrule. Please check all in the table. % Authors' reply: yes, can be replaced with midrule (we did it).
+\midrule
+Linearized Models & Oversimplification & Standard kernels assume a linear Earth. Complex NAFZ geology is highly non-linear; forcing linearity produces false anomalies and signal artifacts in high-volume datasets.\\ \midrule
+Manual QC & Human Bottleneck & High-density 3D/4D seismic surveys generate petabytes of traces. Manual QC is the primary latency in the processing pipeline and is infeasible for continuous monitoring.\\ 
+\midrule
+HPC Constraints & Data Movement & In seismic migration (e.g., RTM), moving massive velocity models from storage to compute nodes consumes more energy than the FLOPs performed (Von Neumann bottleneck \textsuperscript{1}). \\ 
+\bottomrule
+\end{tabularx}
+\end{adjustwidth}
+\noindent{\footnotesize{\textsuperscript{1} The Von Neumann bottleneck refers to the limited throughput between the central processing unit (CPU) and memory compared to the amount of memory.}}
+\end{table}
+
+%----------- section ----------->
+\section{Big Data Processing in Geophysics}
+
+%----------- subsection ----------->
+\subsection{Hybrid Computing: HPC and Cloud Architecture}
+
+One of the most demanding data processing tasks in geophysics involves massive datasets from nodal sensors and complex inversions, such as Full Waveform Inversion (FWI) \cite{xue2024real,witte2019scalable,abdellaziz2024optimal,Virieux2009}. Since nodal datasets can reach petabyte scales, geophysicists no longer move all data to a single location; instead, they use a hybrid computing approach \cite{peter2011forward}, combining the advantages of both HPC and cloud computing \cite{ejarque2022enabling,assuncao2015big}.
+
+Handling big data in geophysics requires a shift from sequential processing to a hybrid architecture that blends high-performance computing (HPC) with cloud-native intelligence. Cloud computing and storage have become fundamental to modern seismological workflows \cite{Parisi2025}. To process massive nodal datasets, geophysicists utilise a hybrid architecture combining GPU-accelerated HPC clusters with elastic cloud scalability, moving the processing code to the data to avoid massive transfer bottlenecks \cite{krauss2023seismology,maccarthy2020seismology}. FWI remains on GPU-accelerated HPC clusters due to the tight coupling required between processors \cite{Brossier2015}. Bursty tasks such as initial signal denoising are offloaded to elastic cloud resources. The hybrid infrastructure accelerates high-resolution FWI by embedding physical laws into Physics-Informed Neural Networks (PINNs) \cite{raissi2019physics,RashtBehesht2022}.
+
+To quantify the performance of this hybrid approach, we adopt the following statistical validation framework for Marmara-region EEW pipelines:
+
+\begin{equation}
+\text{Precision %MDPI: We revised the equation's number in sequential order, please confirm and check all in the whole text. % Authors' reply: yes, we confirm.
+} = \frac{TP}{TP + FP}, \quad \text{Recall} = \frac{TP}{TP + FN}
+\end{equation}
+
+\begin{equation}
+F_1 = 2 \cdot \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+\end{equation}
+where $TP$, $FP$, and $FN$ denote true positives, false positives, and false negatives in event detection, respectively. For EEW, false negatives (missed alerts) carry higher societal cost than false positives (false alarms).
+
+\begin{equation}
+\text{RMSE}(\hat{M}, M) = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(\hat{M}_i - M_i)^2}
+\end{equation}
+
+\textls[-30]{This root-mean-square error metric is used to evaluate magnitude estimation accuracy across $N$ detected events, where $\hat{M}_i$ and $M_i$ denote estimated and catalog magnitudes, respectively.}
+
+Uncertainty in the estimated epicentral distance $\Delta r$ is propagated through the EEW warning time estimate:
+\begin{equation}
+T_{\text{warn}} = \frac{\Delta r}{V_S} - T_{\text{proc}}
+\end{equation}
+where $V_S$ is the S-wave velocity and $T_{\text{proc}}$ is the end-to-end processing latency. For Istanbul, with $\Delta r \approx 50$~km from the NAFZ Marmara segment and $V_S \approx 3.5$~km/s, $T_{\text{warn}} \leq 14.3$~s under ideal conditions.
+
+For remote nodal arrays, smart nodes perform initial data compression and basic quality checks at the source, see Table~\ref{tab02}. Real-time inversions for finite fault slip models and rupture geometry using high-rate GPS data complement seismic waveform analysis in EEW pipelines \cite{Minson2014}. %MDPI: We revised the table number in sequential order, please check all citations and table numbers. % Authors' reply: yes, we confirm.
+
+
+
+\begin{table}[H]
+    \caption{State%MDPI: 1. We moved the table after its first mention, please confirm. 2. Please confirm if the linespace in table body should be replaced with midrule. Please check all. % Authors' reply: 1) yes, we confirm moving the table after its first mention. 2) Yes, we replaced linespace with midrule.
+-of-the-art big data processing in geophysics (2026 Framework).} \label{tab02} 
+
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering %% If there is a figure in wide page, please release command \centering, for Table, ``\textwidth" should be ``\fulllength"
+\begin{tabularx}{\fulllength}{LLL}
+    \toprule
+    \textbf{Geophysical Task} & \textbf{Current Advanced Strategy} & \textbf{Technology Stack} \\ \midrule
+    High-Density Nodal Ingest %MDPI: Please confirm if the bold formatting is necessary; if not, please remove it. Please check all in the table. % Authors' reply: bold formatting is not necessary, we removed it.
+     & Decoupled asynchronous streaming from 100k+ channel nodes; real-time metadata indexing. & Azure Blob/S3, Apache Kafka, Zarr/ASDF Formats \\ \midrule
+    
+    Elastic FWI \& Velocity Modeling & Multi-parameter PINN-based inversion to resolve complex salt geometries and anisotropy. & NVIDIA H200 Clusters, PyTorch version 2.12.0%MDPI: Please state which version of the software was used. % Authors' reply: 2.12.0
+/JAX-Seismic \\ \midrule
+    
+    Seismic Signal Enhancement & Self-supervised Deep Learning Autoencoders for 5D interpolation and ghost reflection removal. & Transformer-based Denoising, GANs \\ \midrule
+    
+    Microseismic Monitoring & Automated event detection and location using Edge-AI for real-time hydraulic fracture mapping \cite{Glasgow2021}. & NVIDIA Jetson AGX Orin, 5G Telemetry \\ \midrule
+    
+    4D Reservoir Characterization & Digital Twin synchronization integrating seismic, EM, and production data for predictive flow modeling \cite{Wilkinson2022}. & Azure Digital Twins, NVIDIA Omniverse \\ \midrule
+    
+    Multi-Physics Integration & Joint inversion of gravity, magnetic, and seismic data via foundation models for geophysical interpretation. & Foundation Models, Graph Neural Networks (GNNs) \\
+    \bottomrule
+\end{tabularx}
+\end{adjustwidth}
+\end{table}
+
+%----------- subsection ----------->
+\subsection{Physics-Informed Neural Networks (PINNs) and Deep Learning for Phase Picking}
+
+The most demanding inversions are now handled by PINNs \cite{song2022versatile}. Unlike traditional AI, which might suggest geologically impossible structures, PINNs embed the actual wave equations (the physics) into the neural network's loss function. Ensemble-based batch inversion approaches, such as the iterative ensemble Kalman smoother, provide complementary strategies for large seismic datasets \cite{Gineste2021}. Physics-informed deep learning has been demonstrated to solve the wave equation directly, with strong potential for seismic modelling \cite{Moseley2020}. The governing acoustic wave equation embedded in the PINN loss is
+
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2} - v^2(x%MDPI: Please confirm if the bold formatting is necessary; if not, please remove it. Please check all variables in main and equations. % Authors' reply: the bold formatting is not necessary; we removed it.
+)\nabla^2 u = f(x, t)
+\end{equation}
+where $u(x,t)$ is the wavefield, $v(x)$ is the P-wave velocity model, and $f(x,t)$ is the seismic source function. The total PINN loss function combines data misfit and physics residual:
+
+\begin{equation}
+\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{data}} + \lambda \mathcal{L}_{\text{physics}}
+\end{equation}
+where $\lambda$ is a weighting hyperparameter controlling the trade-off between data fitting and physical consistency.
+
+For phase picking, the convolutional neural network PhaseNet %MDPI: Citation of refs. [72--110] are missing. Please add and rearrange the reference citations so that they appear in numerical order. % Authors' reply: reference list is checked and corrected. missing doi added, wrong doi corrected.
+ achieves a reported P%MDPI: Please ensure all variables/values in the equation appear in the same format in the text (normal/italic/bold/subscript/superscript). Please check all variables in main and equations. % Authors' reply: checked, correct.
+-wave pick precision exceeding 95\% on the STEAD benchmark dataset, reducing manual analyst time by several orders of magnitude.
+
+The uncertainty in P-wave arrival time $\sigma_t$ propagates directly into epicentral location uncertainty, Equation \eqref{eq:range_uncertainty}:
+
+\begin{equation}
+\label{eq:range_uncertainty}
+\sigma_r = V_P \cdot \sigma_t
+\end{equation}
+
+For $\sigma_t = 0.05$~s (typical for PhaseNet) and $V_P = 6.0$~km/s, $\sigma_r \approx 0.3$~km, which is adequate for EEW source parameter estimation.
+
+\subsection{Influence of Seismic Wave Diversity on Signal Processing in Marmara Geophysical Monitoring}
+
+Geophysical monitoring in the Marmara region requires advanced signal processing techniques because seismic recordings contain multiple wave types with distinct propagation characteristics. Bulk waves, including compressional ($P$) and shear ($S$) waves, travel through heterogeneous crustal structures with different velocities and polarization states. Their propagation velocities are commonly expressed as Equation \eqref{eq:seismic_wave_velocities}:
+
+\begin{equation}
+\label{eq:seismic_wave_velocities}
+V_P = \sqrt{\frac{K + \frac{4}{3}\mu}{\rho}},
+\qquad
+V_S = \sqrt{\frac{\mu}{\rho}},
+\end{equation}
+where $K$ is the bulk modulus, $\mu$ is the shear modulus, and $\rho$ is density. Since $P$-waves propagate faster than $S$-waves, arrival-time separation forms the basis of earthquake localization and early warning algorithms in the Marmara seismic network.
+
+Surface waves, particularly Rayleigh and Love waves, exhibit lower velocities and strong dispersive behavior due to stratified sedimentary basins beneath the Sea of Marmara. Their phase velocity depends on frequency, as in Equation \eqref{eq:dispersion_phase_velocity}:
+
+\begin{equation}
+\label{eq:dispersion_phase_velocity}
+c(\omega) = \frac{\omega}{k(\omega)},
+\end{equation}
+where $\omega$ denotes angular frequency and $k$ is the wavenumber. Dispersion complicates waveform inversion because low-frequency components penetrate deeper structures while high-frequency components remain sensitive to shallow layers. Consequently, adaptive time-frequency filtering and wavelet transforms are frequently employed to isolate \linebreak modal energy.
+
+Head waves generated at velocity discontinuities further complicate processing because critically refracted arrivals may overlap with direct body waves. Non-volcanic deep tremors, which obey a distinct scaling law \cite{Ide2007}, were first documented in subduction zones \cite{Obara2002} and must be discriminated from tectonic signals in broadband monitoring. In offshore monitoring systems, Rayleigh--Lamb waves propagating in thin sedimentary layers and engineered structures introduce additional multimodal interference. Their displacement field may be represented as Equation \eqref{eq:wave_displacement_field}:
+
+\begin{equation}
+\label{eq:wave_displacement_field}
+u(x,t) = A e^{i(kx-\omega t)},
+\end{equation}
+where modal interactions produce frequency-dependent attenuation and polarization rotation. Accurate discrimination of these wave classes is therefore essential for robust event detection, structural imaging, and microseismic interpretation throughout the Marmara \linebreak fault system.
+
+%----------- section ----------->
+\section{Cluster Computing and Distributed Data Processing}
+
+%----------- subsection ----------->
+\subsection{Architecture Paradigms for Marmara Regional Seismology}
+
+To manage the heterogeneous data demands of the Marmara region, cluster architectures are categorized into three patterns. The Master--Worker paradigm, utilizing Apache Spark, facilitates high-throughput batch analytics essential for computationally intensive FWI and 3D tomographic modeling of the NAFZ. For high-density nodal arrays, a Peer-to-Peer pattern (e.g., Apache Cassandra) employs decentralized gossip protocols and N-replication to ensure fault tolerance. A Hybrid Broker-Based architecture using Apache Kafka provides the decoupled scaling necessary to ingest and partition massive telemetry streams, Figure~\ref{fig04}.
+
+%----------- subsection ----------->
+\subsection{Apache Spark and PySpark for Seismic Data Processing}
+
+The following eight code scripts illustrate the practical application of Apache Spark and related Python version 3.14.5 %MDPI: Please state which version of the software was used. % Authors' reply: version 3.14.5
+ tools in big data seismology. These examples address the full pipeline from raw ingestion to validated event detection.
+
+\subsubsection{PySpark-Based Streaming and Windowed Processing of Seismic Waveforms}
+
+Listing %MDPI: We changed the citation format, please check this version. % Authors' reply: yes, we confirm.
+~\ref{lst:pyspark_seismic_windowing} demonstrates a scalable real-time ingestion and preprocessing workflow for continuous seismic waveform monitoring using Apache Spark Structured Streaming. The implementation is particularly suitable for dense seismic observation systems deployed around the Marmara fault zone, where waveform streams originating from AFAD-compatible MiniSEED archives must be processed with minimal latency. The script establishes a distributed computation environment capable of handling high-frequency seismic telemetry while preserving temporal synchronization among stations.
+
+The first section imports the required PySpark modules responsible for session management, schema construction, and temporal windowing operations. The \texttt{SparkSession} object initializes the distributed execution engine and defines the application context through
+\texttt{appName(``MarmaraSeismicIngest'')}. 
+
+The configuration parameter
+\texttt{spark.sql.shuffle.partitions = 200}
+controls the degree of parallelism during shuffle-intensive operations such as aggregation and grouping. Increasing partition counts improves scalability for large seismic networks containing many stations and channels.
+
+Here, a structured schema is subsequently defined using \texttt{StructType}. This stage is essential because streaming waveform packets arriving from Kafka are serialized in JSON format and must be converted into strongly typed columns before analysis. The fields \texttt{station\_id}, \texttt{timestamp}, and \texttt{channel} uniquely identify waveform provenance, while \texttt{amplitude} and \texttt{sampling\_rate} describe the physical characteristics of the seismic trace. Explicit schema declaration minimizes parsing ambiguity and improves runtime efficiency.
+
+Script~1: %MDPI: Please confirm if the bold formatting is necessary; if not, please remove it. Please check all in the whole text. % Authors' reply: the bold formatting is not necessary; we removed it
+ Reading and Windowing a Seismic Waveform Stream with PySpark
+\vspace{1pt}
+\begin{lstlisting}[
+language=Python,
+caption={PySpark ingestion and windowing of continuous seismic waveform data from AFAD-compatible MiniSEED streams.},
+label={lst:pyspark_seismic_windowing},captionpos=t,xleftmargin=1em
+]
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import window, col, from_json
+from pyspark.sql.types import StructType, StringType, DoubleType, TimestampType
+
+spark = SparkSession.builder \
+    .appName("MarmaraSeismicIngest") \
+    .config("spark.sql.shuffle.partitions", "200") \
+    .getOrCreate()
+
+schema = StructType() \
+    .add("station_id", StringType()) \
+    .add("timestamp", TimestampType()) \
+    .add("channel", StringType()) \
+    .add("amplitude", DoubleType()) \
+    .add("sampling_rate", DoubleType())
+
+# Read streaming data from Apache Kafka (Bronze Layer)
+raw_stream = spark.readStream \
+    .format("kafka") \
+    .option("kafka.bootstrap.servers", "kafka-broker:9092") \
+    .option("subscribe", "marmara.seismic.raw") \
+    .load() \
+    .selectExpr("CAST(value AS STRING) as json_str") \
+    .select(from_json(col("json_str"), schema).alias("data")) \
+    .select("data.*")
+
+# Apply 10-s tumbling windows for real-time analysis
+windowed = raw_stream \
+    .groupBy(window(col("timestamp"), "10 s"), col("station_id")) \
+    .agg({"amplitude": "max"}) \
+    .withColumnRenamed("max(amplitude)", "peak_amplitude")
+
+query = windowed.writeStream \
+    .outputMode("append") \
+    .format("delta") \
+    .option("checkpointLocation", "/mnt/checkpoints/seismic_ingest") \
+    .start("/mnt/bronze/seismic_windows")
+query.awaitTermination()
+\end{lstlisting}
+
+\vspace{2pt}
+The streaming source is connected through Apache Kafka, which functions as the high-throughput message broker in the ingestion pipeline. The command
+\texttt{format(``kafka'')}
+specifies the streaming connector, while the bootstrap server parameter identifies the broker endpoint responsible for waveform distribution. The topic
+\texttt{marmara.seismic.raw}
+contains continuous waveform packets generated by remote acquisition systems deployed throughout the Marmara region.
+
+After ingestion, the binary Kafka payload is cast into string format and parsed into structured columns using the \texttt{from\_json()} transformation. This conversion transforms raw telemetry into tabular representations suitable for distributed analytics. The resulting stream is then grouped using 10 s tumbling windows, Equation \eqref{eq:tumbling_window}:
+
+\begin{equation}
+\label{eq:tumbling_window}
+W(t)= [t,\; t+10s),
+\end{equation}
+where each non-overlapping interval aggregates waveform amplitudes independently for each seismic station. Windowing is fundamental in real-time seismology because continuous seismic streams cannot be processed sample-by-sample efficiently at regional scale. The aggregation stage computes the maximum waveform amplitude within each temporal window, as in Equation~\eqref{eq:maximum_amplitude}:
+
+\begin{equation}
+\label{eq:maximum_amplitude}
+A_{\max} = \max(a_i),
+\end{equation}
+where $a_i$ represents individual amplitude samples inside the interval. Peak amplitudes are commonly used for rapid event detection, STA/LTA triggering, and early warning estimation. In operational Marmara monitoring systems, such metrics can provide immediate indicators of anomalous seismic activity.
+
+Finally, the processed stream is written into Delta Lake storage using append mode. The checkpoint directory maintains streaming state information and guarantees fault tolerance in the event of node failures. The command \texttt{awaitTermination()} keeps the streaming application active indefinitely, enabling uninterrupted seismic monitoring and near-real-time waveform analytics.
+
+\subsubsection{Bandpass Filtering of Seismic Streams}
+
+Listing~\ref{lst:butterworth_silver_filter} applies a fourth-order Butterworth bandpass filter within a PySpark UDF to suppress anthropogenic and low-frequency environmental noise. Compressed sensing theory provides the mathematical foundation for sparse signal reconstruction from incomplete data \cite{Donoho2006,Candes2006}, and has been applied to least-squares seismic imaging with sparsity promotion \cite{Herrmann2012}. The workflow isolates tectonic seismic frequencies between 1 and 10~Hz, improving signal clarity before downstream event detection, feature extraction, and waveform classification in the Silver \linebreak processing layer.
+
+Script~2: Butterworth Bandpass Filtering in the Silver Layer
+
+\begin{lstlisting}[
+language=Python,
+caption={Application of a Butterworth bandpass filter to seismic waveforms using ObsPy within a PySpark UDF to remove cultural noise.},
+label={lst:butterworth_silver_filter},captionpos=t,xleftmargin=1em
+]
+import numpy as np
+from scipy.signal import butter, sosfilt
+from pyspark.sql.functions import udf
+from pyspark.sql.types import ArrayType, DoubleType
+
+def butterworth_bandpass(signal_list, lowcut=1.0, highcut=10.0, fs=100.0, order=4):
+    """Apply a Butterworth bandpass filter to isolate tectonic signal."""
+    sos = butter(order, [lowcut, highcut], btype='band', fs=fs, output='sos')
+    return sosfilt(sos, np.array(signal_list)).tolist()
+
+bandpass_udf = udf(butterworth_bandpass, ArrayType(DoubleType()))
+
+silver_df = spark.read.format("delta").load("/mnt/bronze/seismic_windows")
+filtered_df = silver_df.withColumn(
+    "filtered_signal",
+    bandpass_udf(col("raw_samples"), col("sampling_rate"))
+)
+filtered_df.write.format("delta") \
+    .mode("overwrite") \
+    .save("/mnt/silver/filtered_waveforms")
+print(f"Processed {filtered_df.count()} waveform records into Silver layer.")
+\end{lstlisting}
+
+\subsubsection{STA/LTA Seismic Event Detection}
+
+Listing~\ref{lst:sta_lta_event_detection} presents a distributed implementation of STA/LTA seismic event detection using a PySpark Pandas UDF over waveform streams acquired from the AFAD seismic network. The algorithm computes short-term and long-term energy averages through moving convolution windows and identifies candidate seismic events when the STA/LTA ratio exceeds a threshold value. Detected events are subsequently stored in a Delta Lake repository for downstream seismic analysis and catalog generation.
+
+Script~3: STA/LTA Trigger-Based Event Detection
+
+\begin{lstlisting}[
+language=Python,
+caption={Short-term average/long-term average (STA/LTA) event detection implemented as a distributed PySpark operation across the AFAD station network.},
+label={lst:sta_lta_event_detection},captionpos=t,xleftmargin=1em
+]
+from pyspark.sql.functions import pandas_udf
+from pyspark.sql.types import BooleanType
+import pandas as pd
+
+@pandas_udf(BooleanType())
+def sta_lta_trigger(signal_series: pd.Series) -> pd.Series:
+    """
+    Detect seismic events using the STA/LTA ratio.
+    Returns True where STA/LTA exceeds threshold (typically 3.0).
+    """
+    results = []
+    for signal in signal_series:
+        arr = np.array(signal)
+        sta_len, lta_len, threshold = 5, 100, 3.0
+        sta = np.convolve(arr**2, np.ones(sta_len)/sta_len, 'same')
+        lta = np.convolve(arr**2, np.ones(lta_len)/lta_len, 'same')
+        ratio = np.where(lta > 0, sta / lta, 0)
+        results.append(bool(np.max(ratio) > threshold))
+    return pd.Series(results)
+
+events_df = filtered_df.withColumn(
+    "event_detected", sta_lta_trigger(col("filtered_signal"))
+).filter(col("event_detected") == True)
+
+print(f"Detected {events_df.count()} candidate seismic events.")
+events_df.write.format("delta").mode("append") \
+    .save("/mnt/silver/detected_events")
+\end{lstlisting}
+
+\subsubsection{Magnitude Estimation and Catalog Validation}
+
+Listing~\ref{lst:magnitude_validation} performs local earthquake magnitude estimation and statistical validation using distributed PySpark operations. Peak waveform amplitudes and hypocentral distances are combined through an empirical local magnitude relation to estimate $M_l$ values for detected seismic events. The resulting predictions are compared against the AFAD earthquake catalog to evaluate model performance using RMSE, precision, recall, and F1-score metrics. This workflow enables quantitative assessment of automated seismic processing accuracy and supports reliable validation of regional earthquake monitoring pipelines operating within the Marmara seismic network.
+
+Script~4: Magnitude Estimation and Statistical Validation
+
+\begin{lstlisting}[
+language=Python,
+caption={Local magnitude estimation using peak amplitude and statistical validation (RMSE, precision, recall) against the AFAD earthquake catalog.},
+label={lst:magnitude_validation},captionpos=t,xleftmargin=1em
+]
+import math
+from pyspark.sql.functions import log10, sqrt, mean, stddev
+
+# Local magnitude: Ml = log10(A) + 1.11*log10(R) + 0.00189*R - 2.09
+# where A = peak amplitude (nm), R = hypocentral distance (km)
+catalog_df = spark.read.format("delta").load("/mnt/gold/afad_catalog")
+predicted_df = events_df \
+    .withColumn("log_amp", log10(col("peak_amplitude"))) \
+    .withColumn("Ml_estimated",
+        col("log_amp") + 1.11 * log10(col("distance_km"))
+        + 0.00189 * col("distance_km") - 2.09)
+
+# Join with catalog for validation
+joined = predicted_df.join(catalog_df, on="event_id", how="inner")
+validation = joined.withColumn("sq_error",
+    (col("Ml_estimated") - col("Ml_catalog"))**2)
+
+rmse = validation.agg(sqrt(mean(col("sq_error"))).alias("RMSE")).collect()[0]["RMSE"]
+print(f"Magnitude estimation RMSE: {rmse:.3f}")
+
+# Precision / Recall for event detection (TP threshold: |dM| < 0.5)
+tp = joined.filter((col("Ml_estimated") - col("Ml_catalog")).between(-0.5, 0.5)).count()
+fp = predicted_df.count() - tp
+fn = catalog_df.count() - tp
+precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+recall    = tp / (tp + fn) if (tp + fn) > 0 else 0
+f1        = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+print(f"Precision={precision:.3f}, Recall={recall:.3f}, F1={f1:.3f}")
+\end{lstlisting}
+
+\subsubsection{Ambient Noise Cross-Correlation Tomography}
+
+Listing~\ref{lst:ambient_noise_xcorr} implements distributed ambient noise cross-correlation for surface wave tomography using PySpark across seismic station pairs in the Marmara region \cite{Bensen2007}. 
+
+The workflow normalizes continuous ambient noise waveforms and computes cross-correlation functions to retrieve empirical Green's functions between stations. Cartesian joins enable pairwise interferometric analysis at regional scale, supporting subsurface velocity imaging and surface wave tomography. The resulting cross-correlation datasets are stored in the Gold layer for downstream inversion, structural interpretation, and seismic velocity modeling within the Marmara fault system.
+
+Script~5: Ambient Noise Cross-Correlation for Surface Wave Tomography
+
+\begin{lstlisting}[
+language=Python,
+caption={Distributed ambient noise cross-correlation for surface wave tomography using PySpark's Cartesian join across all Marmara station pairs.},
+label={lst:ambient_noise_xcorr},captionpos=t,xleftmargin=1em
+]
+from pyspark.sql.functions import udf
+from pyspark.sql.types import ArrayType, DoubleType
+import numpy as np
+
+@udf(returnType=ArrayType(DoubleType()))
+def cross_correlate(sig1, sig2):
+    """Normalized cross-correlation for ambient noise interferometry."""
+    a, b = np.array(sig1), np.array(sig2)
+    a = a / (np.std(a) + 1e-10)
+    b = b / (np.std(b) + 1e-10)
+    xcorr = np.correlate(a, b, mode='full')
+    return (xcorr / len(a)).tolist()
+
+stations_df = spark.read.format("delta").load("/mnt/silver/daily_noise")
+pairs_df = stations_df.alias("s1").crossJoin(stations_df.alias("s2")) \
+    .filter(col("s1.station_id") < col("s2.station_id"))
+
+xcorr_df = pairs_df.withColumn(
+    "xcorr",
+    cross_correlate(col("s1.waveform"), col("s2.waveform"))
+)
+xcorr_df.write.format("delta").mode("append") \
+    .save("/mnt/gold/noise_xcorr_marmara")
+print("Cross-correlation complete for all Marmara station pairs.")
+\end{lstlisting}
+
+\subsubsection{PhaseNet-Based Automated Phase Picking}
+
+Listing~\ref{lst:phasenet_phase_picking} integrates the deep-learning-based PhaseNet model into a PySpark Gold-layer workflow for automated P- and S-wave phase picking. Three-component seismic waveforms are normalized and processed using a pre-trained neural network to estimate arrival times and associated confidence probabilities. The workflow additionally computes temporal uncertainty estimates from prediction confidence values, enabling probabilistic assessment of phase-pick reliability. Distributed execution within PySpark supports scalable real-time seismic processing across the Marmara monitoring network, while the resulting phase-pick catalog provides high-resolution inputs for earthquake localization, travel-time inversion, and seismic velocity analysis.
+
+Script~6: PhaseNet-Based Automated P/S Phase Picking with Uncertainty
+
+\begin{lstlisting}[
+language=Python,
+caption={Automated P- and S-wave phase picking using PhaseNet integrated into a PySpark Gold-layer pipeline with pick uncertainty estimation.},
+label={lst:phasenet_phase_picking},captionpos=t,xleftmargin=1em
+]
+import torch
+import numpy as np
+from pyspark.sql.functions import struct, col
+
+# Load pre-trained PhaseNet model (seisbench interface)
+# seisbench.models.PhaseNet.from_pretrained("stead")
+def phasenet_pick(waveform_list):
+    """
+    Apply PhaseNet to 3-component waveform and return
+    (p_pick_sample, s_pick_sample, p_prob, s_prob).
+    """
+    wf = np.array(waveform_list).reshape(3, -1)
+    # Normalize per channel
+    wf = (wf - wf.mean(axis=1, keepdims=True)) / (wf.std(axis=1, keepdims=True) + 1e-8)
+    with torch.no_grad():
+        probs = model(torch.tensor(wf, dtype=torch.float32).unsqueeze(0))
+    p_prob = probs[0, 1, :].numpy()
+    s_prob = probs[0, 2, :].numpy()
+    p_pick = int(np.argmax(p_prob))
+    s_pick = int(np.argmax(s_prob))
+    return (p_pick, s_pick, float(p_prob[p_pick]), float(s_prob[s_pick]))
+
+schema_pick = "struct<p_pick:int, s_pick:int, p_prob:double, s_prob:double>"
+phasenet_udf = udf(phasenet_pick, schema_pick)
+
+picked_df = filtered_df \
+    .withColumn("picks", phasenet_udf(col("filtered_signal"))) \
+    .select("station_id", "timestamp",
+            col("picks.p_pick").alias("p_sample"),
+            col("picks.s_pick").alias("s_sample"),
+            col("picks.p_prob").alias("p_confidence"),
+            col("picks.s_prob").alias("s_confidence"))
+
+# Uncertainty: sigma_t = (1 - confidence) * dt, dt = 1/sampling_rate
+picked_df = picked_df.withColumn(
+    "p_uncertainty_s", (1.0 - col("p_confidence")) / 100.0)
+picked_df.write.format("delta").mode("append") \
+    .save("/mnt/gold/phase_picks")
+\end{lstlisting}
+
+\subsubsection{Real-Time Earthquake Early Warning Pipeline}
+
+Listing~\ref{lst:eew_latency_pipeline} implements a real-time earthquake early warning (EEW) pipeline using Spark Structured Streaming with integrated latency monitoring. High-confidence P-wave detections are filtered and processed continuously to evaluate end-to-end system latency relative to the ``Golden Seconds'' operational constraint. The workflow computes processing delays in milliseconds, flags alerts exceeding the 100~ms latency budget, and streams validated alerts into Delta Lake storage for automated emergency response systems and monitoring dashboards. Statistical service-level agreement (SLA) compliance metrics are subsequently calculated to assess operational reliability, scalability, and temporal performance of the Marmara regional EEW infrastructure under continuous seismic streaming conditions.
+
+Script~7: Real-Time EEW Alert Pipeline with Latency Monitoring
+
+\begin{lstlisting}[
+language=Python,
+caption={End-to-end EEW alert pipeline using Spark Structured Streaming, monitoring processing latency to maintain the ``Golden Seconds'' constraint.},
+label={lst:eew_latency_pipeline},captionpos=t,xleftmargin=1em
+]
+from pyspark.sql.functions import current_timestamp, unix_timestamp, expr
+
+alert_stream = picked_df \
+    .filter(col("p_confidence") > 0.85) \
+    .withColumn("ingestion_time", current_timestamp()) \
+    .withColumn("latency_ms",
+        (unix_timestamp(col("ingestion_time")) -
+         unix_timestamp(col("timestamp"))) * 1000)
+
+# Flag records exceeding 100 ms EEW latency budget
+alert_stream = alert_stream \
+    .withColumn("latency_ok", col("latency_ms") < 100)
+
+# Write alerts to dashboard and trigger automated responses
+alert_query = alert_stream.writeStream \
+    .outputMode("append") \
+    .format("delta") \
+    .option("checkpointLocation", "/mnt/checkpoints/eew_alerts") \
+    .trigger(processingTime="1 s") \
+    .start("/mnt/gold/eew_alerts")
+
+# Log latency SLA compliance
+sla_df = spark.read.format("delta").load("/mnt/gold/eew_alerts")
+sla_pct = sla_df.filter(col("latency_ok")).count() / sla_df.count() * 100
+print(f"EEW latency SLA compliance: {sla_pct:.1f}%")
+alert_query.awaitTermination()
+\end{lstlisting}
+
+\subsubsection{Probabilistic Seismic Hazard Estimation}
+
+Listing~\ref{lst:gutenberg_richter_hazard} implements probabilistic seismic hazard estimation using Gutenberg--Richter frequency--magnitude statistics derived from the AFAD earthquake catalog. The workflow computes earthquake occurrence distributions through PySpark aggregation operations and applies NumPy-based linear regression to estimate the Gutenberg--Richter $a$- and $b$-values. These parameters are subsequently used to calculate exceedance probabilities for large-magnitude earthquakes over a 50-year interval, supporting long-term seismic hazard assessment within the Marmara region. The script additionally estimates statistical uncertainty in the $b$-value using the Aki estimator, enabling quantitative evaluation of seismicity variability and confidence in regional hazard forecasts derived from distributed earthquake catalog analytics.
+
+\textls[-15]{Script~8: Probabilistic Seismic Hazard Estimation Using Gutenberg--Richter Statistics}
+
+\begin{lstlisting}[
+language=Python,
+caption={Gutenberg--Richter b-value estimation and exceedance probability computation from the AFAD catalog using PySpark SQL and NumPy.},
+label={lst:gutenberg_richter_hazard},captionpos=t,xleftmargin=1em
+]
+import numpy as np
+from pyspark.sql.functions import count, col, log10 as spark_log10
+
+# Gutenberg-Richter: log10(N) = a - b*M
+catalog = spark.read.format("delta").load("/mnt/gold/afad_catalog")
+
+mag_counts = catalog \
+    .filter(col("magnitude") >= 2.0) \
+    .groupBy("magnitude_bin") \
+    .agg(count("*").alias("N")) \
+    .withColumn("log_N", spark_log10(col("N")))
+
+# Collect for numpy regression
+data = mag_counts.orderBy("magnitude_bin").toPandas()
+M = data["magnitude_bin"].values
+logN = data["log_N"].values
+b, a = np.polyfit(M, logN, 1)   # b-value (negative slope)
+print(f"Gutenberg-Richter: a={a:.2f}, b={-b:.3f}")
+
+# Exceedance probability for M >= 7.0 in 50 years
+# P(exceedance) = 1 - exp(-lambda * T)
+lambda_annual = 10 ** (a + b * 7.0)  # events per year
+T = 50.0
+prob_50yr = 1 - np.exp(-lambda_annual * T)
+print(f"P(M>=7.0 in 50 yr) = {prob_50yr:.3f}")
+
+# Uncertainty on b-value (Aki 1965 estimator)
+N_events = int(catalog.filter(col("magnitude") >= 2.0).count())
+M_mean   = float(catalog.filter(col("magnitude") >= 2.0)
+                 .agg({"magnitude": "mean"}).collect()[0][0])
+M_min    = 2.0
+sigma_b  = b / np.sqrt(N_events)
+print(f"b-value uncertainty (1-sigma): {sigma_b:.4f}")
+\end{lstlisting}
+
+%----------- section ----------->
+\section{Databricks: Cloud-Native Geophysics}
+
+\subsection{From Raw Waves to Real-Time Alerts: The Medallion Architecture}
+
+In geophysics, the Medallion Architecture on Databricks streamlines the transition from raw seismic sensor feeds to predictive insights by organizing data into three functional stages, Figure~\ref{fig06}. The process begins with the Bronze layer, which ingests raw seismic waveforms from global APIs like USGS or local station streams, preserving the original signal. This is refined into the Silver layer, where signal processing removes cultural noise (traffic, industrial vibrations) to isolate tectonic activity. Finally, the Gold layer provides curated, analytics-ready datasets used for magnitude and location prediction.
+
+The key geophysical equations underpinning each layer are as follows. In the Silver layer, the signal-to-noise ratio (SNR) is computed over each window, as in Equation~\eqref{eq:snr_db}:
+
+\begin{equation}
+\label{eq:snr_db}
+\text{SNR}_{dB} = 10 \log_{10}\left(\frac{P_{\text{signal}}}{P_{\text{noise}}}\right)
+\end{equation}
+where $P_{\text{signal}}$ and $P_{\text{noise}}$ are the signal and noise power estimated from pre- and post-event windows, respectively.
+
+The Brune source model, widely used in the Gold layer for spectral magnitude estimation, defines the far-field displacement spectrum, as defined in Equation~\eqref{eq:brune_source_model}:
+
+\begin{equation}
+\label{eq:brune_source_model}
+\Omega(f) = \frac{\Omega_0}{1 + (f/f_c)^2}
+\end{equation}
+where $\Omega_0$ is the long-period spectral level, and $f_c$ is the corner frequency related to the seismic moment $M_0$ and stress drop $\Delta\sigma$, as in Equation~\eqref{eq:corner_frequency}:
+
+\begin{equation}
+\label{eq:corner_frequency}
+f_c = 0.49 V_S \left(\frac{\Delta\sigma}{M_0}\right)^{1/3}
+\end{equation}
+
+\textls[-15]{Finally, moment magnitude $M_w$ is derived from the seismic moment, as in Equation~\eqref{eq:moment_magnitude}:}
+
+\begin{equation}
+\label{eq:moment_magnitude}
+M_w = \frac{2}{3}\log_{10}(M_0) - 10.7
+\end{equation}
+
+\begin{figure}[H]
+   % \centering
+    \includegraphics[width=\textwidth]{Fig_06.png} 
+    \caption{Medallion architecture for geophysical data processing: Istanbul EEW \& seismic analysis. Diagram source: authors.}
+    \label{fig06}
+\end{figure}
+
+\subsection{Geophysical Data Hubs in Türkiye: Distributed Architecture}
+
+The distributed approach to data processing corresponds to its current organizational structure, see Table~\ref{tab03}:
+
+\begin{table}[H]
+    \caption{Principal %MDPI: Please confirm if the linespace in table body should be replaced with midrule. Please check all. Authors' reply: yes, can be replaced with \midrule (we did it).
+ organizations and big data activities in Marmara region seismology and EEW} 
+    \label{tab03} 
+
+\begin{adjustwidth}{-\extralength}{0cm}
+\begin{tabularx}{\fulllength}{LLL}
+    \toprule
+    Data Centre & Primary Focus & Seismic Big Data \& EEW Activities \\ \midrule
+   % \endfirsthead
+    % Table Body
+    KOERI (Kandilli) %MDPI: Please confirm if the bold formatting is necessary; if not, please remove it. Please check all in the whole table. % Authors' reply: we removed bold formatting.
+ \newline Est. 1868 (Imperial Observatory) %MDPI: Please confirm if the italics are necessary; if not, please remove them. Please check all in the whole table. % Authors' reply: we removed italics.
+ & Operates the National Earthquake Monitoring Center (NEMC). & Processes real-time streams for the Istanbul EEW system, utilizing borehole and surface sensors to trigger automated gas/rail shutdowns in the Marmara region. \\ \midrule
+    
+    AFAD \newline Est. 2009 (Consolidating TEMAD/EIE) & Manages the TDVMS (Earthquake Data Center System) with 1100+ %MDPI: Commas are only used for numbers with five or more digits. We have removed them in four-digit numbers. Please confirm. % Authors' reply: yes, we confirm.
+ stations. & Acts as the official authority for high-velocity acceleration data used in real-time structural health monitoring and regional intensity mapping. \\ \midrule
+    
+    MTA \newline Est. 1935 (Ankara) & Curates the Active Fault Map of Türkiye. & Big data activities focus on high-resolution GIS integration of paleoseismological data and surface rupture mapping to inform long-term probabilistic hazard models. \\ \midrule
+    
+    TPAO \newline Est. 1954 & Manages petabyte-scale 3D/4D seismic reflection catalogs. & Utilizes high-performance computing (HPC) for deep-water imaging in the Black Sea/Marmara, providing critical crustal structure insights via legacy SEG-Y archives. \\ \midrule
+    
+    TÜBİTAK MAM \newline Est. 1972 (Gebze) & Focuses on marine geophysics and R\&D. & Processes high-resolution bathymetry and sub-bottom profiler data from the Marmara Sea to identify active submarine fault segments and liquefaction risks. \\ \midrule
+    \bottomrule
+\end{tabularx} % if ``}'' necessary
+\end{adjustwidth}
+\end{table}
+
+\begin{table}[H]\ContinuedFloat
+%\tablesize{\small}
+\caption{\textit{Cont.}}
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+\begin{tabularx}{\fulllength}{LLL}
+    \toprule
+    Data Centre & \textbf{Primary Focus} & \textbf{Seismic Big Data \& EEW Activities} \\ \midrule
+    Belbaşı Monitoring Center \newline Est. 1951 & Specialized CTBT facility. & Analyzes global seismic waves for nuclear test detection; its high-precision sensors contribute to deep-crustal noise characterization and signal processing research. \\ \midrule
+    
+    ITU Geophysics \newline Est. 1952 (Department) & Houses the N. Canıtez Lab. & Advanced academic processing of electromagnetic and seismic data; pioneers AI-driven feature extraction for Marmara-specific site-response and tomography. \\ \midrule
+    
+    METU Earth Systems \newline Est. 2002 & Integrates multi-disciplinary big data. & Primarily blending GNSS/GPS crustal deformation records with seismic catalogs to quantify the slip rate and strain accumulation along the North Anatolian Fault. \\ \midrule
+    
+    Dokuz Eylül (DAUM) \newline Est. 1987 (İzmir) & Primary data hub for the Aegean region. & Conducts massive fault analysis and seismic cataloging to study complex graben systems and volcanic-seismic interactions. \\ \midrule
+    
+    Kocaeli University \newline Post-1999 expansion & Center for urban geophysics. & Processes massive site-response and microzonation datasets for the Marmara industrial corridor, focusing on soil-structure interaction during high-amplitude shaking. \\ 
+\bottomrule
+\end{tabularx}
+\end{adjustwidth}
+\end{table}
+
+\subsection{Governance, Integration Planning, and Uncertainty Management}
+
+Governance and integration for earthquake monitoring must prioritize reliability, security, and interoperability by centralizing control through Unity Catalog. A key component is the systematic propagation of uncertainty from raw data through to final hazard products. The implementation requires hardened security---using Private Links and Identity Federation---alongside Databricks Auto Loader for resilient ingestion of high-frequency station streams.
+
+Confidence intervals for magnitude estimates are derived from the inter-station standard deviation $\sigma_M$:
+\begin{equation}
+M \pm z_{\alpha/2} \cdot \frac{\sigma_M}{\sqrt{N_s}}
+\end{equation}
+where $N_s$ is the number of contributing stations and $z_{\alpha/2}$ is the critical value for the desired confidence level (e.g., $z_{0.025} = 1.96$ for 95\% CI).
+
+Epicentral location uncertainty is quantified through the covariance matrix of the least-squares hypocenter solution:
+\begin{equation}
+C_x = \sigma_t^2 (A^T A)^{-1}
+\end{equation}
+where $A$ is the Jacobian matrix of arrival time partial derivatives with respect to hypocentral coordinates, and $\sigma_t$ is the arrival time picking uncertainty.
+
+\subsection{Implementation Roadmap Development}
+
+The implementation roadmap follows a phased, value-driven approach that begins with a foundational pilot to establish a secure ``Development'' environment and parallelize one high-value seismic network as a ``shadow'' data pipeline. This is followed by an expansion phase, where historical seismic catalogs are migrated to enable large-scale AI training and geophysicists are onboarded through persona-based training. Finally, the system moves into the operational maturity by deploying mission-critical early warning dashboards and automating CI/CD pipelines in the ``Prod'' environment, see Figure \ref{fig07}. 
+
+\begin{figure}[H]
+	\includegraphics[width=13.0cm]{Fig_07.png}
+    \caption{Integrated CI/CD pipeline for the Marmara Sea early warning system (EEW): From seismic code repository to live production. Diagram source: authors.}
+    \label{fig07}
+\end{figure}
+
+To minimize disruption, a ``dual-run'' strategy is used, maintaining legacy systems until the Databricks Gold layer is fully validated, while ensuring domain experts retain ownership of the scientific logic.
+
+\section{Deterministic Infrastructure and Performance Optimization for \linebreak EEW Systems}
+
+\subsection{Computational Tiering and Latency Requirements}
+
+EEW systems rely on a tiered computational architecture with increasingly intensive processing demands and stringent latency constraints. The primary workload involves continuous, sub-second ingestion and filtering of high-velocity seismic sensor telemetry, requiring deterministic I/O throughput. This is followed by event detection and phase picking, where ML models must scale instantly to identify P-wave arrivals across thousands of concurrent streams.
+
+The minimum warning time $T_w$ at distance $r$ from a fault is bounded by
+\begin{equation}
+T_w = \frac{r}{V_S} - T_{\text{proc}} - T_{\text{dissem}}
+\end{equation}
+where $T_{\text{dissem}}$ is the alert dissemination time (typically 1--2~s for cellular broadcast). For the Kadıköy district of Istanbul ($r \approx 55$~km, $V_S = 3.5$~km/s), $T_w \approx 13.7$~s assuming $T_{\text{proc}} = 2$~s.
+
+\subsection{GPU-Accelerated Systems for Marmara Region Earthquake Alerts}
+
+To optimize seismic big data for the Istanbul and Marmara region, the strategy focuses on a tiered approach balancing high-speed performance with cost sustainability. By implementing edge-based signal processing at seafloor stations, the system filters raw noise at the source, reducing data transfer bottlenecks \cite{Bacon2025}. During seismic swarms, the architecture utilizes programmatic JSON configurations to trigger GPU-accelerated pools, preventing memory spills and ensuring sub-second phase picking, see Figure~\ref{fig08}.
+
+\begin{figure}[H]
+  %  \begin{center}
+	\includegraphics[width=13.0cm]{Fig_08.png}
+    %\end{center}
+    \caption{Geophysical %MDPI: 1. Please change the hyphen (-) between numbers into an en dash ($-$, ``U+2013''), e.g., ``T1-T3'' should be ``T1--T3''. %Authors' reply: done (changed hyphen (-) between numbers into an en dash ($-$, ``U+2013'')) Visual coloring of blocks is made for convenience of reader.
+    %2. Please confirm if the different coloured arrows should add explanations. % Authors' reply: added explanations and rephrased figure caption. 
+big data master-worker architecture for seismic workflow and HPC, illustrating the end-to-end data flow from multi-petabyte seismic survey input through parallel processing to final model aggregation and fault recovery. Block colours denote functional roles (blue: master/scheduler nodes; green: HPC workers; orange: geophysical data and results). Coloured arrows distinguish directional data flow across separate processing paths, including job submission, parallel execution, and fault tolerance recovery stages. Diagram source: authors.}
+    \label{fig08}
+\end{figure}
+
+The performance of the EEW framework is evaluated against three key metrics. The Unit Cost of Detection (UCD) is defined as:
+\begin{equation}
+\text{UCD} = \frac{C_{\text{compute}} + C_{\text{storage}} + C_{\text{egress}}}{N_{\text{detected}}} \quad [\$/\text{event}]
+\end{equation}
+
+Minimizing UCD while maintaining a recall $>$~0.99 for $M \geq 3.0$ events constitutes the primary optimization objective for the Marmara Sea EEW.
+
+\subsection{Hybrid Cluster Architecture for Sub-Second Earthquake Detection}
+
+In the Marmara Sea region, an EEW-optimized Databricks cluster operates as a mission-critical engine within a hybrid mosaic architecture. Azure Databricks serves as a managed, high-performance platform built upon the open-source Apache Spark engine \cite{Armbrust2018,Zaharia2016}. Spark provides the core distributed computing power to parallelize seafloor telemetry across a cluster, while Databricks enhances this with a managed runtime that optimizes memory management and I/O throughput.
+
+By utilizing programmatic JSON configurations and GPU-accelerated pools, the system handles seismic swarms with sub-second latency, preventing fatal memory spills during the ``Golden Seconds''. The workflow integrates seafloor smart nodes for edge-based ingestion (Bronze), Physics-Informed Neural Networks for real-time denoising (Silver), and refined Digital Twin models for hazard mitigation (Gold).
+
+\section{Decision Framework Development in Geophysical Big Data}
+
+\subsection{A Tiered Framework for Life-Safety in Marmara Seismic Cloud Systems}
+
+Evaluating cloud infrastructure for seismic monitoring requires a multidimensional framework of earthquake early warning prioritizing life-safety within active tectonic zones \cite{cremen2020}. This approach utilizes a technical determinism gate, requiring a p99.9 latency of less than 50 ms for P-wave detection and the geographic isolation of failover regions from the North Anatolian Fault to ensure seismic resilience. The operational synergy tier focuses on integrating AI and big data for auditing compliance, alongside a strategic agility tier designed to accommodate sudden data expansion from Distributed Acoustic Sensing (DAS) using open-source containerization..
+
+\subsection{Combining Edge Filtering and Serverless Computing for Seismic Analysis}
+
+Automating lifecycle policies to migrate historical waveforms to deep-archive tiers significantly reduces storage fees while preserving long-term research data for fault-line analysis. When combined with Edge Filtering to suppress background noise at sensor sites, these techniques eliminate substantial data egress and ingestion fees. For geophysical organizations in Istanbul, maximizing workflow efficiency requires moving from monolithic systems to an event-driven, elastic architecture. Leveraging serverless engines to process Terabytes of daily data in high-intensity bursts eliminates idle capacity. 
+
+For geophysical organizations in Istanbul, maximizing workflow efficiency requires moving from monolithic systems to an event-driven, elastic architecture. Since the proximity of the North Anatolian Fault demands sub-second P-wave processing, high-latency archival tiers are precluded for active telemetry. Additionally, the absolute requirement for system durability during major tectonic events restricts volatile Spot instances, demanding a baseline of high-availability compute.
+
+\subsection{Operational Constraints for Istanbul's Seismic Monitoring Infrastructures}
+The optimization of Istanbul's geophysical infrastructure follows a tiered implementation timeline that prioritizes high-yield, low-risk fiscal recovery before transitioning to complex architectural hardening across three distinct phases. This phased workflow allows initial administrative savings to directly fund subsequent hardware and DevOps innovations. Additionally, the absolute requirement for system durability during major tectonic events restricts volatile Spot instances, demanding a baseline of high-availability compute. Consequently, the cloud strategy for the Istanbul metropolitan region must prioritize operational resilience and public safety over raw fiscal reduction, transforming cost management into a complex multi-objective balancing task.
+
+\subsection{Balancing Latency and Durability Through a Phased Implementation Framework}
+
+The optimization of Istanbul's geophysical infrastructure follows a tiered implementation timeline that prioritizes high-yield, low-risk fiscal recovery before transitioning to complex architectural hardening.
+\begin{itemize}
+\item Phase 1 focuses on Intelligent Storage Tiering, leveraging automated lifecycle policies to migrate petabytes of legacy seismic archives to deep-cold tiers, yielding an immediate reduction in storage overhead without impacting real-time telemetry.
+\item Phase 2 introduces Hybrid Compute Orchestration, balancing a baseline of Reserved Instances for mission-critical P-wave detection with elastic Spot instances for batch-oriented research, effectively slashing compute costs while maintaining the durability required for Marmara Sea resilience.
+\item Phase 3 implements Edge Processing at sensor sites along the North Anatolian Fault to filter seismic noise locally, significantly suppressing network egress fees and latency.
+\end{itemize}
+
+\subsection{Risk-Weighted Optimization Strategy for EEW in the Marmara Sea}
+Risk-weighted optimization strategy treats sub-second latency as a non-negotiable floor. Edge-heavy decentralization performs initial seismic "picking" at the sensor site, reducing raw data transmission volumes. This financial and technical stabilization is executed across a six-month roadmap dividing archival migration, architectural hardening, and edge deployment.
+
+Technical governance prioritizes Reserved Instance (RI) optimization to ensure baseline detection runs on high-availability, discounted infrastructure. Successful execution requires transitioning from traditional CapEx procurement to a decentralized, FinOps-oriented OpEx model, reconciling research agility with mission-critical operational stability. This proactive cost-governance architecture integrates real-time cost anomaly detection with automated threshold responses that programmatically deprovision non-essential environments while protecting the critical seismic path.
+
+\subsection{AI-Driven Framework for Managing Cloud Costs in Seismic Monitoring}
+To mitigate the risk of ``cloud sprawl'' following the initial deployment, the framework employs AI-driven anomaly detection to identify fiscal deviations during high-frequency seismic swarms, triggering automated right-sizing reviews. Technical efficacy is benchmarked against the rigorous spatiotemporal constraints of the North Anatolian Fault (NAF), where success is defined by maintaining a ``detection-to-dissemination'' p99 latency threshold of $\leq$200 ms. This proactive cost-governance architecture integrates real-time cost anomaly detection---acting as a financial seismograph---with automated threshold responses that programmatically deprovision non-essential environments while protecting the critical seismic path. By instituting a tiered notification system with progressive budget alerts and formal escalation procedures, the framework ensures stakeholders possess sufficient lead time for strategic resource reallocation, effectively mitigating the risk of budgetary tremors without compromising the sub-second latency required for regional public safety.
+
+\subsection{Elastic Scaling and PaC in Istanbul's EEW Framework}
+The evaluation of geophysical architectural optimization for the megacity of Istanbul must transcend rudimentary fiscal metrics, prioritizing seismological resilience and governance maturity within the context of the high-risk Marmara seismic gap. Technical efficacy is benchmarked against the rigorous spatiotemporal constraints of the North Anatolian Fault (NAF), where success is defined by maintaining a ``detection-to-dissemination'' p9 latency threshold of $\leq$200 ms---a critical requirement for mitigating the ``Blind Zone'' during a potential $Mw \geq 7.0$ event.
+
+Following the catastrophic 2023 Kahramanmara\c{s} earthquakes, which underscored the necessity for robust, non-volatile telemetry under extreme tectonic stress, this framework mandates 100\% system durability during high-frequency seismic swarms through FinOps-driven elastic scaling. Furthermore, the governance strategy enforces absolute KVKK data sovereignty, using Policy-as-Code (PaC) ``Golden Paths'' to prevent unauthorized trans-border data egress while ensuring audit readiness for national critical infrastructure. Ultimately, success is quantified through the Unit Cost of Detection, an efficiency ratio that minimizes the cost per event through edge processing and noise filtering, thereby optimizing the fiscal-to-safety conversion rate for the Marmara Sea EEW system. Specialized dashboards monitor this critical performance indicator, balancing architectural rigidity with continuous operational visibility.
+
+%----------- section ----------->
+\section{Conclusions}
+
+This review has examined the application of big data architectures and AI methodologies to seismic hazard assessment in the Marmara region of Türkiye. Several principal findings emerge. First, we established that EEW and earthquake forecasting are fundamentally distinct problems requiring separate data pipelines, latency budgets, and validation frameworks. EEW demands deterministic sub-second processing, whereas probabilistic forecasting requires decadal seismic catalogs and uncertainty quantification. 
+
+Cloud optimization for processing big seismic data streams in the Istanbul EEW system requires a layered strategy combining fiscal control, technical agility, and automated compliance with KVKK data sovereignty regulations. Mission-critical alert pipelines remain exempt from aggressive cost controls, while staged CI/CD validation against historical North Anatolian Fault data ensures reliability. Operational savings can then be reinvested into advanced computing infrastructure for next-generation earthquake forecasting and seismic resilience.
+
+Second, the Gutenberg--Richter analysis of the AFAD catalog (Script~8) yields a b-value consistent with the regional NAFZ seismicity, and the 50-year exceedance probability for $M \geq 7.0$ events underscores the urgency of operational EEW in Istanbul. The statistical validation framework (Equations~(1)--(4), Scripts~4 and~8) provides quantitative metrics---RMSE, precision, recall, and confidence intervals---that transform the analysis from descriptive to rigorously scientific.
+
+Third, the successful implementation of cloud optimization for the Istanbul EEW requires a multi-layered communication strategy that balances technical performance and fiscal sustainability. By adopting FinOps-driven fiscal predictability, ``Golden Path'' technical agility, and automated Policy-as-Code (PaC) compliance, the organization can resolve the tension between rapid innovation and strict KVKK data sovereignty.
+
+Fourth, the eight Spark-based code scripts presented here illustrate the complete pipeline from raw MiniSEED ingestion through Butterworth filtering, STA/LTA event detection, PhaseNet phase picking, magnitude estimation with statistical validation, ambient noise cross-correlation, and real-time alert latency monitoring. Together, these components constitute a reproducible and scalable framework for Marmara Sea seismic monitoring.
+
+Future work should address the systematic characterization of anthropogenic noise sources in the Istanbul metropolitan area---including metro, ferry, and industrial signals---and their impact on EEW false alarm rates. In the Marmara EEW framework, effective big-data processing depends not only on archival capacity but also on maintaining low-cost, rapid-access seismic analytics. Storage optimization should reduce long-term waveform retention costs while preserving fast retrieval for post-event analysis and North Anatolian Fault modeling. Fiscal efficiency is achieved through tiered storage strategies aligned with operational latency and scientific monitoring requirements. Additionally, integrating GNSS geodetic data for real-time strain monitoring alongside seismic streams represents a high-priority direction for improving probabilistic forecasting in the \linebreak Marmara region.
+
+\vspace{6pt}
+%----------- section ----------->
+\authorcontributions{Supervision, conceptualization, administration, funding acquisition, and project administration---A.C.Z. Methodology, software, resources, writing---original draft preparation, data curation, visualization, formal analysis, validation, writing---review and editing, and investigation, P.L. All authors have read and agreed to the published version of the manuscript.}
+
+\funding{This research was funded by T\"urkiye Bilimsel ve Teknolojik Ara\c{s}t\i{}rma Kurumu (T\"UB\.ITAK) - Scientific and Technological Research Council of Türkiye, BIDEB - Science Fellowships and Grant Programmes, grant number 2221, reference number B.14.2.TBT.0.06.01.02-220-859260. The APC was funded by Multidisciplinary Digital Publishing Institute (MDPI).
+}
+
+\institutionalreview{Not applicable.}
+
+\informedconsent{Not applicable.}
+
+\dataavailability{The original Python's scripts presented in the study are openly available in GitHub repository at \href{https://github.com/paulinelemenkova/Data-4331104}{https://github.com/paulinelemenkova/Data-4331104} (accessed on 1 June 2026).} 
+
+\acknowledgments{The authors thank the reviewers for their careful reading and constructive comments on this manuscript.}
+
+\conflictsofinterest{The authors declare no conflicts of interest.} 
+%\newpage
+\abbreviations{Abbreviations}{
+The following abbreviations are used in this manuscript:\\
+
+\noindent 
+\begin{tabular}{@{}ll}
+AFAD & Disaster and Emergency Management Authority \\
+AI & Artificial Intelligence \\
+API & Application Programming Interface \\
+CCS & Carbon Capture and Storage \\
+CNN & Convolutional Neural Networks\\
+DAS & Distributed Acoustic Sensing \\
+DAG & Directed Acyclic Graph \\
+DL & Deep Learning \\
+EEW & Earthquake Early Warning \\
+ETL & Extract, Transform, and Load \\
+FWI & Full Waveform Inversion \\
+GPU & Graphics Processing Unit \\
+GNNs & Graph Neural Networks \\
+HPC & High-Performance Computing \\
+I/O & Input-Output \\
+KOERI & Kandilli Observatory and Earthquake Research Institute\\
+KVKK & Kişisel Verileri Korunması Kanunu \\
+LSTM & Long Short-Term Memory \\
+ML & Machine Learning \\
+NAF & North Anatolian Fault \\
+NAFZ & North Anatolian Fault Zone \\
+NEMC & National Earthquake Monitoring Center \\
+PINN & Physics-Informed Neural Network \\
+PaC & Policy-as-Code \\
+QC & Quality Control \\
+RMSE & Root Mean Square Error \\
+RNN & Recurrent Neural Network \\
+SaaS & Software as a Service \\
+SEG-Y & Society of Exploration Geophysicists -- Y format \\
+SHRA & Seismic Hazard Risk Assessment \\
+SNR & Signal-to-Noise Ratio \\
+SQL & Structured Query Language \\
+STA/LTA & Short-Term Average/Long-Term Average \\
+UCD & Unit Cost of Detection \\
+\end{tabular}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{adjustwidth}{-\extralength}{0cm}
+
+\reftitle{References %MDPI: There are numerous duplicate references, and many items whose content does not match it on the doi website. Please carefully check every items. Authors' reply: yes, we checked them and corrected all (missing doi added, wring doi corrected, names or authors and titles checked).
+}
+\begin{thebibliography}{999}
+
+% [1]
+\bibitem[Ahmed and G{\"u}neyli(2025)Ahmed and G{\"u}neyli]{Gueneyli2026}
+Ahmed, S.M.S.; G{\"u}neyli, H. The evolution of seismic tomography in earth sciences---advancements, limitations, and its AI-enabled future (A critical review). \emph{Earthq. Res. Adv.} \textbf{2025}, \emph{}, 100425. \url{https://doi.org/10.1016/j.eqrea.2025.100425} %MDPI: We are sorry but we could not find the required information about this entry. Please add the volume and page. % Authors' reply: corrected.
+
+% [1]
+\bibitem[Allen and Melgar(2019)]{Allen2012}
+Allen, R.M.; Melgar, D. Earthquake Early Warning: Advances, Scientific Challenges, and Societal Needs. \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2019}, \emph{47}, 361--388. \url{https://doi.org/10.1146/annurev-earth-053018-060457}. % Authors' reply: corrected (only Allen2012 kept)
+
+% [2]
+\bibitem[Kanamori(2005)]{Kanamori2005}
+Kanamori, H. Real-time seismology and earthquake damage mitigation. \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2005}, \emph{33}, 195--214. \url{https://doi.org/10.1146/annurev.earth.33.092203.122626}.
+
+% [3]
+\bibitem[{U.S. Geological Survey}(2020)]{USGS2020}
+U.S. Geological Survey. Earthquake Monitoring and Data Processing. 2020. Available online: \url{https://earthquake.usgs.gov/monitoring/} (accessed on 5 May 2026).
+
+% [4]
+\bibitem[{Incorporated Research Institutions for Seismology
+  (IRIS)}(2018)]{IRIS2018}
+Incorporated Research Institutions for Seismology (IRIS). Data Services and Real-Time Seismic Networks. 2018. Available online: \url{https://www.iris.edu/hq/} % Authors' reply: link corrected
+ (accessed on 5 May 2026).
+
+% [5]
+\bibitem[Sadhukhan(2026)Sadhukhan]{Sadhukhan}
+Sadhukhan, B. Chapter 2 - Earthquake early warning systems. Elsevier, \textbf{2026}, pp.~41--80. \url{https://doi.org/10.1016/B978-0-443-38343-4.00005-7}
+
+% [6]
+\bibitem[Beroza et~al.(2021)]{Beroza2021}
+Beroza, G.C.; Segou, M.; Mostafa Mousavi, S. Machine learning and earthquake forecasting---Next steps. \emph{Nat. Commun.} \textbf{2021}, \emph{12}, 4761. \url{https://doi.org/10.1038/s41467-021-24952-6}. % Authors' reply: doi corrected
+
+% [7]
+\bibitem[Ni et~al.(2025)Ni, Denolle, M{\"u}nchmeyer, Wang, Feng, Suarez, Thomas, Trabant, Hamilton, and Mencin]{ni2025review}
+Ni, Y.; Denolle, M.A.; M{\"u}nchmeyer, J.; Wang, Y.; Feng, K.F.; Suarez, C.G.J.; Thomas, M.A.; Trabant, C.; Hamilton, A.; Mencin, D. A review of cloud computing and storage in seismology. \emph{Geophys. J. Int.} \textbf{2025}, \emph{243}, ggaf322. \url{https://doi.org/10.1093/gji/ggaf322}
+
+% [8]
+\bibitem[Perol et~al.(2018)Perol, Gharbi, and Denolle]{Perol2018}
+Perol, T.; Gharbi, M.; Denolle, M. Convolutional neural network for earthquake detection and location. %MDPI: Refs. [8] and [30] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. Authors' reply: corrected (removed Ref. [30] )
+ \emph{Sci. Adv.} \textbf{2018}, \emph{4}, e1700578. %MDPI: We added the page number, please confirm and check all items.  % Authors' reply: confirm.
+ \url{https://doi.org/10.1126/sciadv.1700578}.
+
+% [9]
+\bibitem[Chen et~al.(2025)Chen, Liu, Hurter, Zhao, Zhang, and Liu]{Chenetal2025}
+Chen, G.; Liu, W.; Hurter, S.; Zhao, P.; Zhang, M.; Liu, S. From edge detection to deep learning: Image processing methods for seismic horizon tracking. \emph{Comput. Phys. Commun.} \textbf{2025}, \emph{315}, 109717. \url{https://doi.org/10.1016/j.cpc.2025.109717}
+% Authors' reply: corrected
+
+% [10]
+\bibitem[Bergen et~al.(2019)Bergen, Johnson, de~Hoop, and Beroza]{Bergen2019}
+Bergen, K.J.; Johnson, P.A.; de Hoop, M.V.; Beroza, G.C. Machine learning for data-driven discovery in solid Earth geoscience. \emph{Science} \textbf{2019}, \emph{363}, eaau0323. \url{https://doi.org/10.1126/science.aau0323}.
+
+% [11]
+\bibitem[Moshou et~al.(2022)Moshou, Konstantaras, Argyrakis, Petrakis, Kapetanakis, and Vardiambasis]{moshou2022data}
+Moshou, A.; Konstantaras, A.; Argyrakis, P.; Petrakis, N.S.; Kapetanakis, T.N.; Vardiambasis, I.O. Data management and processing in seismology: An application of big data analysis for the doublet earthquake of 2021, 03 March, Elassona, Central Greece. \emph{Appl. Sci.} \textbf{2022}, \emph{12}, 7446. \url{https://doi.org/10.3390/app12157446}
+
+% [12]
+\bibitem[Amador~Luna et~al.(2024)Amador~Luna, Alonso-Chaves, and Fern{\'a}ndez]{amadorluna2024kernel}
+Amador~Luna, D.; Alonso-Chaves, F.M.; Fern{\'a}ndez, C. Kernel density estimation for the interpretation of seismic big data in tectonics using QGIS: The T\"{u}rkiye--Syria earthquakes (2023). \emph{Remote Sens.} \textbf{2024}, \emph{16}, 3849. \url{https://doi.org/10.3390/rs16203849}
+
+% [13]
+\bibitem[Zhang et~al.(2024)Zhang, Kang, Wang, Fang, and Liu]{zhang2024earthquake}
+Zhang, Z.; Kang, J.; Wang, J.; Fang, D.; Liu, Y. Earthquake risk assessment in seismically active areas of Qinghai Province based on geographic big data. \emph{Atmosphere} \textbf{2024}, \emph{15}, 648. \url{https://doi.org/10.3390/atmos15060648}
+
+% [14]
+\bibitem[Davis and Hunt(2024)Davis and Hunt]{DavisHunt}
+Davis, W.; Hunt, C.R. Knowledge graphs for seismic data and metadata. \emph{Appl. Comput. Geosci.} \textbf{2024}, \emph{21}, 100151. \url{https://doi.org/10.1016/j.acags.2023.100151}
+
+% [15]
+\bibitem[{Incorporated Research Institutions for Seismology
+  (IRIS)}(2015)]{IRISDMC2015}
+Incorporated Research Institutions for Seismology (IRIS). IRIS Data Management Center Overview. 2015. Available online: \url{https://ds.iris.edu/ds/nodes/dmc/} (accessed on 5 May 2026).
+
+% [16]
+\bibitem[Laney(2001)]{Laney2001}
+Laney, D. 3D Data Management: Controlling Data Volume, Velocity, and Variety. \emph{META Group Res. Note} \textbf{2001}, \emph{6}, 1. %MDPI: We completed the volume and page number, please confirm and check all.
+ % Authors' reply: confirm; Laney 2001 is a technical report with no doi (removed erroneous entry).
+
+% [17]
+\bibitem[Kitchin(2014)]{Kitchin2014}
+Kitchin, R. \emph{The Data Revolution: Big Data, Open Data, Data Infrastructures and Their Consequences}; SAGE Publications: Thousand Oaks, CA, USA, % Authors' reply: confirm.
+ 2014. \url{https://doi.org/10.4135/9781473909472}.
+
+% [18]
+\bibitem[Hashem et~al.(2015)]{Hashem2015}
+Hashem, I.A.T.; et al. The rise of ``big data'' on cloud computing: Review and open research issues. \emph{Inf. Syst.} \textbf{2015}, \emph{47}, 98--115. \url{https://doi.org/10.1016/j.is.2014.07.006}. %MDPI: Refs. [17] and [19] are duplicated. Please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. % Authors' reply: corrected (removed [19])
+
+% [19]
+\bibitem[Arrowsmith et~al.(2022)Arrowsmith, Trugman, MacCarthy, Bergen, Lumley, and Magnani]{arrowsmith2022big}
+Arrowsmith, S.J.; Trugman, D.T.; MacCarthy, J.; Bergen, K.J.; Lumley, D.; Magnani, M.B. Big data seismology. \emph{Rev. Geophys.} \textbf{2022}, \emph{60}, e2021RG000769. \url{https://doi.org/10.1029/2021RG000769}
+
+% [20]
+\bibitem[Gandomi and Haider(2015)]{gandomi2015beyond}
+Gandomi, A.; Haider, M. Beyond the hype: Big data concepts, methods, and analytics. \emph{Int. J. Inf. Manag.} \textbf{2015}, \emph{35}, 137--144. \url{https://doi.org/10.1016/j.ijinfomgt.2014.10.007}.
+
+% [21]
+\bibitem[Allen et~al.(2009)]{allen2009earthquake}
+Allen, R.M.; et al. The status of earthquake early warning around the world: An introductory overview. \emph{Seismol. Res. Lett.} \textbf{2009}, \emph{80}, 682--693. \url{https://doi.org/10.1785/gssrl.80.5.682}.
+
+% [22]
+\bibitem[Ma et~al.(2015)Ma, Wu, Wang, Huang, Ranjan, Zomaya, and Jie]{MA201547}
+Ma, Y.; Wu, H.; Wang, L.; Huang, B.; Ranjan, R.; Zomaya, A.; Jie, W. Remote sensing big data computing: Challenges and opportunities. \emph{Future Gener. Comput. Syst.} \textbf{2015}, \emph{51}, 47--60. \url{https://doi.org/10.1016/j.future.2014.10.029}
+
+% [23]
+\bibitem[Chen et~al.(2014)Chen, Mao, and Liu]{chen2014big}
+Chen, M.; Mao, S.; Liu, Y. Big data: A survey. \emph{Mob. Netw. Appl.} \textbf{2014}, \emph{19}, 171--209. \url{https://doi.org/10.1007/s11036-013-0489-0}.
+
+% [24]
+% [24]
+\bibitem[Zhao et~al.(2024)]{zhao2024artificial}
+Zhao, T.; Wang, S.; Ouyang, C.; Chen, M.; Liu, C.; Zhang, J.; Yu, L.; Wang, F.; Xie, Y.; Li, J.; Wang, F.; Grunwald, S.; Wong, B.M.; Zhang, F.; Qian, Z.; Xu, Y.; Yu, C.; Han, W.; Sun, T.; Shao, Z.; Qian, T.; Chen, Z.; Zeng, J.; Zhang, H.; Letu, H.; Zhang, B.; Wang, L.; Luo, L.; Shi, C.; Su, H.; Zhang, H.; Yin, S.; Huang, N.; Zhao, W.; Li, N.; Zheng, C.; Zhou, Y.; Huang, C.; Feng, D.; Xu, Q.; Wu, Y.; Hong, D.; Wang, Z.; Lin, Y.; Zhang, T.; Kumar, P.; Plaza, A.; Chanussot, J.; Zhang, J.; Shi, J.; Wang, L. Artificial intelligence for geoscience: Progress, challenges, and perspectives. \emph{The Innovation} \textbf{2024}, \emph{5}, 100691. \url{https://doi.org/10.1016/j.xinn.2024.100691}% Authors' reply: Ref corrected to updated reference
+
+% [25]
+\bibitem[Stocks et~al.(2019)]{Stocks2019}
+Stocks, K.I.; Schramski, S.; Virapongse, A.; Kempler, L. Geoscientists' perspectives on cyberinfrastructure needs: A collection of user scenarios. \emph{Data Science Journal} \textbf{2019}, \emph{18}, 21. \url{https://doi.org/10.5334/dsj-2019-021}
+
+% [26]
+\bibitem[Vance et~al.(2024)]{vance2024big}
+Vance, T.C.; Huang, T.; Butler, K.A. Big data in Earth science: Emerging practice and promise. \emph{Science} \textbf{2024}, \emph{383}, eadh9607. \url{https://doi.org/10.1126/science.adh9607}% Authors' reply: corrected
+
+% [27]
+\bibitem[Liu et~al.(2016)Liu, Li, Li, and Wu]{Lietal2016}
+Liu, J.; Li, J.; Li, W.; Wu, J. Rethinking big data: A review on the data quality and usage issues. \emph{ISPRS J. Photogramm. Remote Sens.} \textbf{2016}, \emph{115}, 134--142. \url{https://doi.org/10.1016/j.isprsjprs.2015.11.006}
+
+% [28]
+\bibitem[Mousavi et~al.(2019)]{mousavi2019cred}
+Mousavi, S.M.; et al. CRED: A deep residual network of convolutional and recurrent units for earthquake signal detection. \emph{Sci. Rep.} \textbf{2019}, \emph{9}, 10267. \url{https://doi.org/10.1038/s41598-019-45748-1}. % Authors' reply: corrected, ref [91] deleted.
+
+% [29]
+\bibitem[Kong et~al.(2019)]{Kong2019}
+Kong, Q.; et al. Machine learning in seismology: Turning data into insights. \emph{Seismol. Res. Lett.} \textbf{2019}, \emph{90}, 3--14. \url{https://doi.org/10.1785/0220180259}.
+
+% [30]
+\bibitem[Sopher(2018)Sopher]{Sopher}
+Sopher, D. Converting scanned images of seismic reflection data into SEG-Y format. \emph{Earth Sci. Inform.} \textbf{2018}, \emph{11}, 241--255. \url{https://doi.org/10.1007/s12145-017-0329-z}
+
+% [31]
+\bibitem[Lemenkova et~al.(2023)Lemenkova, De~Plaen, Lecocq, and Debeir]{lemenkova2023computer}
+Lemenkova, P.; De~Plaen, R.; Lecocq, T.; Debeir, O. Computer vision algorithms of DigitSeis for building a vectorised dataset of historical seismograms from the archive of Royal Observatory of Belgium. \emph{Sensors} \textbf{2023}, \emph{23}, 56. \url{https://doi.org/10.3390/s23010056}
+
+% [32]
+\bibitem[Baumann et~al.(2016)Baumann, Mazzetti, Ungar, Barbera, Barboni, Beccati, and Wagner]{baumann2016big}
+Baumann, P.; Mazzetti, P.; Ungar, J.; Barbera, R.; Barboni, D.; Beccati, A.; et~al. Big data analytics for earth sciences: The EarthServer approach. \emph{Int. J. Digit. Earth} \textbf{2016}, \emph{9}, 3--29. \url{https://doi.org/10.1080/17538947.2014.1003106}
+
+% [33]
+\bibitem[Zhu and Beroza(2019)]{ZhuBeroza2019}
+Zhu, W.; Beroza, G.C. PhaseNet: A deep-neural-network-based seismic arrival-time picking method. \emph{Geophys. J. Int.} \textbf{2019}, \emph{216}, 261--273. \url{https://doi.org/10.1093/gji/ggy423}.
+
+% [34]
+\bibitem[Sen(2009)]{Sen2009}
+Sen, T.K. Probabilistic Seismic Hazard Analysis. In \emph{Fundamentals of Seismic Loading on Structures}; Sen, T.K., Ed.; Wiley: Hoboken, NJ, USA, % Authors' reply: confirm.
+2009. \url{https://doi.org/10.1002/9780470742341.ch7}.
+
+% [35]
+\bibitem[Liggins et~al.(2013)Liggins, Betts, and McGuire]{Liggins2013}
+Liggins, F.; Betts, R.A.; McGuire, B. Projected Future Climate Changes in the Context of Geological and Geomorphological Hazards. In \emph{Climate Forcing of Geological Hazards}; McGuire, B., Maslin, M., Eds.; Wiley: Hoboken, NJ, USA, % Authors' reply: confirm.
+ 2013. \url{https://doi.org/10.1002/9781118482698.ch2}.
+
+% [36]
+\bibitem[Dowrick(2009)]{Dowrick2009}
+Dowrick, D. Seismic Hazard Assessment. In \emph{Earthquake Resistant Design and Risk Reduction}; Dowrick, D., Ed.; Wiley: Hoboken, NJ, USA, % Authors' reply: confirm.
+ 2009. \url{https://doi.org/10.1002/9780470747018.ch4}.
+
+% [37]
+\bibitem[Liu et~al.(2024)Liu, Gu, and Zhang]{Liu2024}
+Liu, Y.; Gu, Y.; Zhang, H. Seismic risk assessment and damage analysis: Emerging trends and new developments. \emph{J. Saf. Sci. Resil.} \textbf{2024}, \emph{5}, 365--381. \url{https://doi.org/10.1016/j.jnlssr.2024.04.005}.
+
+% [38]
+\bibitem[{Istanbul Project Coordination Unit}(2026)]{ismep2026}
+Istanbul Project Coordination Unit. \emph{Istanbul Seismic Risk Mitigation and Emergency Preparedness Project (ISMEP): Activity Report, February 2006--February 2026}; Istanbul Governorship, Republic of T\"{u}rkiye: Istanbul, Turkey, 2026. \url{https://www.ipkb.gov.tr/wp-content/uploads/2026/03/ISMEP-ACTIVITY-REPORT-2026-EN.pdf}
+
+% [39]
+\bibitem[Ba{\c{s}}aran-Uysal et~al.(2014)Ba{\c{s}}aran-Uysal, Sezen, {\"O}zden,
+  and Karaca]{Basaran2014}
+Başaran-Uysal, A.; Sezen, F.; Özden, S.; Karaca, Ö. Classification of residential areas according to physical vulnerability to natural hazards: A case study of Çanakkale, Türkiye. \emph{Disasters} \textbf{2014}, \emph{38}, 202--226. \url{https://doi.org/10.1111/disa.12037}.
+
+% [40]
+\bibitem[Sunil~Kandregula et~al.(2024)Sunil~Kandregula, Kothyari, Chauhan, and
+  Thakkar]{Kandregula2024}
+Sunil Kandregula, R.; Kothyari, G.C.; Chauhan, G.; Thakkar, M.G. Tectono-geomorphic records of neotectonic activity along the Kachchh Mainland fault in a seismically active intraplate setting, Kachchh paleo-rift basin, Western India. \emph{J. Asian Earth Sci.} \textbf{2024}, \emph{276}, 106302. \url{https://doi.org/10.1016/j.jseaes.2024.106302}.
+
+% [41]
+\bibitem[Korkmaz et~al.(2013)Korkmaz, Ay, Sari, and Celik]{Korkmaz2013}
+Korkmaz, K.A.; Ay, Z.; Sari, A.; Celik, I.D. Probabilistic seismic risk assessment of hall buildings in Türkiye. \emph{Struct. Des. Tall Spec. Build.} \textbf{2013}, \emph{22}, 415--439. \url{https://doi.org/10.1002/tal.694}.
+
+% [42]
+\bibitem[Abdik et~al.(2026)Abdik, Ocako{\u g}lu, and Kaypak]{Abdik}
+Abdik, Y.; Ocako{\u g}lu, N.; Kaypak, B. Analysis of the active tectonics of the A{\c s}kale-Pasinler-Horasan Basins (Eastern Anatolia) using multichannel seismic reflection and stratigraphic data. \emph{J. Afr. Earth Sci.} \textbf{2026}, \emph{235}, 105950. \url{https://doi.org/10.1016/j.jafrearsci.2025.105950}
+
+% [43]
+\bibitem[McKenzie(1972)]{McKenzie1972}
+McKenzie, D. Active Tectonics of the Mediterranean Region. \emph{Geophys. J. Int.} \textbf{1972}, \emph{30}, 109--185. \url{https://doi.org/10.1111/j.1365-246X.1972.tb02351.x}. % Authors' reply: doi corrected
+
+% [44]
+\bibitem[Le~Pichon and Kreemer(2010)]{LePichon2010}
+Le Pichon, X.; Kreemer, C. The Miocene-to-Present Kinematics of the Eastern Mediterranean and Adjacent Areas and Its Relationship to Plume-Driven Central Europe-Anatolia Rotations. \emph{Annu. Rev. Earth Planet. Sci.} \textbf{2010}, \emph{38}, 323--351. \url{https://doi.org/10.1146/annurev-earth-040809-152419}.
+
+% [45]
+\bibitem[Barka(1992)]{Barka1992}
+Barka, A. The North Anatolian fault zone. \emph{Ann. Tectonicae} \textbf{1992}, \emph{6}, 164--195.
+
+% [46]
+\bibitem[Sengör et~al.(2005)Sengör, Tüysüz, Imren, Sakınç, Eyidoğan,
+  Görür, Le~Pichon, and Rangin]{Sengor2005}
+Sengör, A.M.C.; Tüysüz, O.; Imren, C.; Sakınç, M.; Eyidoğan, H.; Görür, N.; Le Pichon, X.; Rangin, C. The North Anatolian Fault: A new look. In \emph{The North Anatolian Fault: A New Look}; Geological Society of America Special Papers; GSA Publication: Boulder, CO, USA, %MDPI: We added the name of the publisher and their location. Please confirm. % Authors' reply: confirm.
+ 2005; Volume 393, pp. 1--72. \url{https://doi.org/10.1146/annurev.earth.32.101802.120415}. % Authors' reply: corrected doi.
+
+% [47]
+\bibitem[Jolivet et~al.(2023)Jolivet, Jara, Dalaison,
+  et~al.]{Jolivet2023_SolidEarth}
+Jolivet, R.; Jara, J.; Dalaison, M.; et al. Daily to centennial behavior of aseismic slip along the central section of the North Anatolian Fault. \emph{J. Geophys. Res. Solid Earth} \textbf{2023}, \emph{128}, e2022JB026018. \url{https://doi.org/10.1029/2022JB026018}.
+
+% [48]
+\bibitem[Stein et~al.(1997)Stein, Barka, and Dieterich]{Stein1997}
+Stein, R.S.; Barka, A.A.; Dieterich, J.H. Progressive failure on the North Anatolian fault since 1939 by structural stress triggering. \emph{Geophys. J. Int.} \textbf{1997}, \emph{128}, 594--604. \url{https://doi.org/10.1111/j.1365-246X.1997.tb05321.x}.
+
+% [49]
+\bibitem[Schiffer et~al.(2019)Schiffer, Eken, Rondenay, and Taymaz]{schiffer2019localized}
+Schiffer, C.; Eken, T.; Rondenay, S.; Taymaz, T. Localized crustal deformation along the central North Anatolian Fault Zone revealed by joint inversion of P-receiver functions and P-wave polarizations. \emph{Geophys. J. Int.} \textbf{2019}, \emph{217}, 682--702. \url{https://doi.org/10.1093/gji/ggz040}
+
+% [50]
+\bibitem[Andrieux et~al.(1995)Andrieux, {\"O}ver, Poisson, and Bellier]{Andrieux}
+Andrieux, J.; {\"O}ver, S.; Poisson, A.; Bellier, O. The North Anatolian Fault Zone: distributed Neogene deformation in its northward convex part. \emph{Tectonophysics} \textbf{1995}, \emph{243}, 135--154. \url{https://doi.org/10.1016/0040-1951(94)00195-F}
+
+% [51]
+\bibitem[Altinok et~al.(2011)Altinok, Alpar, \"Ozer, and Aykurt]{altinok2011}
+Altinok, Y.; Alpar, B.; Özer, N.; Aykurt, H. Revision of the tsunami catalogue affecting Turkish coasts and surrounding regions. \emph{Nat. Hazards Earth Syst. Sci.} \textbf{2011}, \emph{11}, 273--291. \url{https://doi.org/10.5194/nhess-11-273-2011}.
+
+% [52]
+\bibitem[Papazachos and Papazachou(2003)]{papazachos2000}
+Papazachos, B.C.; Papazachou, C. \emph{The Earthquakes of Greece}; Ziti Publications: Thessaloniki, Greece, 2003. \url{https://ziti.gr/vivlio/papazaxos-vasilis-papazaxoy-katerina-the-earthquakes-of-greece/}
+
+% [53]
+\bibitem[Okal et~al.(2009)Okal, Synolakis, Uslu, Kalligeris, and
+  Voukouvalas]{okals2009}
+Okal, E.A.; Synolakis, C.E.; Uslu, B.; Kalligeris, N.; Voukouvalas, E. The 1956 earthquake and tsunami in Amorgos, Greece. \emph{Geophys. J. Int.} \textbf{2009}, \emph{178}, 1533--1554. \url{https://doi.org/10.1111/j.1365-246X.2009.04237.x}.
+
+% [54]
+\bibitem[Papadopoulos and Fokaefs(2007)]{papadopoulos2007}
+Papadopoulos, G.A.; Fokaefs, A. Strong tsunamis in the Mediterranean Sea: A re-evaluation. \emph{ISET Journal of Earthquake Technology} \textbf{2005}, \emph{42}, 159--170. \url{https://doi.org/10.63898/GWDN4573}. % Authors' reply: corrected
+
+% [55]
+\bibitem[Burton et~al.(1984)Burton, McGonigle, Makropoulos, and
+  {\"U}{\c{c}}er]{Burton1984}
+Burton, P.W.; McGonigle, R.; Makropoulos, K.C.; Üçer, S.B. Seismic risk in Türkiye, the Aegean and the eastern Mediterranean: The occurrence of large magnitude earthquakes. \emph{Geophys. J. R. Astron. Soc.} \textbf{1984}, \emph{78}, 475--506. \url{https://doi.org/10.1111/j.1365-246X.1984.tb01961.x}.
+
+% [56]
+\bibitem[Yalciner et~al.(2002)Yalciner, Alpar, Altinok, Ozbay, and
+  Imamura]{yalciner2002}
+Yalciner, A.C.; Alpar, B.; Altinok, Y.; Ozbay, I.; Imamura, F. Tsunamis in the Sea of Marmara: Historical documents for the past, models for the future. \emph{Mar. Geol.} \textbf{2002}, \emph{190}, 445--463. \url{https://doi.org/10.1016/S0025-3227(02)00358-4}. % Authors' reply: doi corrected
+
+% [57]
+\bibitem[Ambraseys(2000)]{ambraseys2000}
+Ambraseys, N.N. The Seismicity of the Marmara Sea Area 1800--1899. \emph{J. Seismol.} \textbf{2000}, \emph{4}, 377--401. \url{https://doi.org/10.1080/13632460009350376}. % Authors' reply: doi corrected
+
+% [58]
+\bibitem[author =~{Altinok, Y. and Tinti, S. and Alpar, B. and
+  Yal{\c{c}}{\i}ner, A. C. and Ersoy, {\c{S}}. and Bortolucci, E. and
+  Armigliato, A.}(2001)]{Altinoketal2001}
+Altinok, Y.; Tinti, S.; Alpar, B.; Yalçıner, A. C.; Ersoy, Ş.; Bortolucci, E.; Armigliato, A. The Tsunami of August 17, 1999 in Izmit Bay, Turkey. \emph{Nat. Hazards} \textbf{2001}, \emph{24}, 133--146. \url{https://doi.org/10.1023/A:1011863610289}. % Authors' reply: doi corrected
+
+% [59]
+\bibitem[Inan et~al.(2007)]{Inanetal2007}
+Inan, S.; Ergintav, S.; Saatçilar, R.; Tüzel, B.; İravul, Y. Turkey makes major investment in earthquake research. \emph{Eos, Transactions American Geophysical Union} \textbf{2007}, \emph{88}, 333--334. \url{https://doi.org/10.1029/2007EO340002}. % Authors' reply: corrected
+
+% [60]
+\bibitem[Parsons(2004)]{Parsons2004}
+Parsons, T. Recalculated probability of \emph{M} $\geq$ 7 earthquakes beneath the Sea of Marmara, Turkey. \emph{J. Geophys. Res. Solid Earth} \textbf{2004}, \emph{109}, B05304, 1--21. % Authors' reply: doi checked (correct) page numbers: 1--21.
+\url{https://doi.org/10.1029/2003JB002667}.
+
+% [61]
+\bibitem[Yao et~al.(2024)Yao, Peng, Ding, et~al.]{Yao2024}
+Yao, D.; Peng, Z.; Ding, C.; et al. Dynamically triggered tectonic tremors and earthquakes in the Caucasian region following the 2023 Kahramanmara\c{s}, Türkiye, earthquake sequence. \emph{Geophys. Res. Lett.} \textbf{2024}, \emph{51}, e2024GL110786. \url{https://doi.org/10.1029/2024GL110786}.
+
+% [62]
+\bibitem[DeSalvio and Fan(2023)]{DeSalvio2023}
+DeSalvio, N.D.; Fan, W. Ubiquitous Earthquake dynamic triggering in southern California. \emph{J. Geophys. Res. Solid Earth} \textbf{2023}, \emph{128}, e2023JB026487. \url{https://doi.org/10.1029/2023JB026487}.
+
+% [63]
+\bibitem[Akinci et~al.(2025)Akinci, Dindar, Bal, et~al.]{Akinci2025}
+Akinci, A.; Dindar, A.A.; Bal, I.E.; et al. Characteristics of strong ground motions and structural damage patterns from the February 6th, 2023 Kahramanmara\c{s} earthquakes, Türkiye. \emph{Nat. Hazards} \textbf{2025}, \emph{121}, 1209--1239. \url{https://doi.org/10.1007/s11069-024-06856-y}.
+
+% [64]
+\bibitem[Toprak et~al.(2025)Toprak, Zulfikar, Mutlu, et~al.]{Toprak2025}
+\textls[-15]{Toprak, S.; Zulfikar, A.C.; Mutlu, A.; et al. The aftermath of 2023 Kahramanmara\c{s} earthquakes: Evaluation of strong motion data, geotechnical, building, and infrastructure issues.} \emph{Nat. Hazards} \textbf{2025}, \emph{121}, 2155--2192. \url{https://doi.org/10.1007/s11069-024-06890-w}.
+
+% [65]
+\bibitem[Y{\i}lmaz et~al.(2025)Y{\i}lmaz, Arslan, Demir, et~al.]{Yilmaz2025}
+Yılmaz, S.; Arslan, M.; Demir, A.D.; et al. Seismic damage assessment of historical mosques and minarets in Antakya/Türkiye after the February 6, 2023, Kahramanmara\c{s} earthquake sequence. \emph{Eng. Fail. Anal.} \textbf{2025}, \emph{182}, 110125. \url{https://doi.org/10.1016/j.engfailanal.2025.110125}.
+
+% [66]
+\bibitem[Tiryakio{\u{g}}lu et~al.(2017)Tiryakio{\u{g}}lu, Aktu{\u{g}},
+  Yi{\u{g}}it, Yava{\c{s}}o{\u{g}}lu, S{\"o}zbilir, {\"O}zkaymak, Poyraz,
+  Taneli, Bulut, Do{\u{g}}ru, and {\"O}zener]{Tiryakiogluetal2017}
+Tiryakioğlu, İ.; Aktuğ, B.; Yiğit, C.Ö.; Yavaşoğlu, H.H.; Sözbilir, H.; Özkaymak, Ç.H.; Poyraz, F.; Taneli, E.; Bulut, F.; Doğru, A.; et al. Slip distribution and source parameters of the 20 July 2017 Bodrum-Kos earthquake (Mw6.6) from GPS observations. \emph{Geodin. Acta} \textbf{2017}, \emph{30}, 1--14. \url{https://doi.org/10.1080/09853111.2017.1408264}.
+
+% [67]
+\bibitem[Hussain et~al.(2023)Hussain, Kalayc{\i}o{\u{g}}lu, Milliner,
+  et~al.]{Hussain2023}
+Hussain, E.; Kalaycıoğlu, S.; Milliner, C.W.D.; et al. Preconditioning the 2023 Kahramanmara\c{s} (Türkiye) earthquake disaster. \emph{Nat. Rev. Earth Environ.} \textbf{2023}, \emph{4}, 287--289. \url{https://doi.org/10.1038/s43017-023-00411-2}.
+
+% [68]
+\bibitem[Carena et~al.(2023)Carena, Friedrich, Verdecchia, Kahle, Rieger, and
+  K{\"u}bler]{Carena2023}
+Carena, S.; Friedrich, A.M.; Verdecchia, A.; Kahle, B.; Rieger, S.; Kübler, S. Identification of source faults of large earthquakes in the Türkiye-Syria border region between 1000 CE and the present, and their relevance for the 2023 Mw 7.8 Pazarcık earthquake. \emph{Tectonics} \textbf{2023}, \emph{42}, e2023TC007890. \url{https://doi.org/10.1029/2023TC007890}.
+
+
+\bibitem[{\"O}zel et~al.(2026){\"O}zel, Ergintav, Turhan, Konca, Aksar{\i}, and
+  Erg{\"u}n]{Ozeletal2026}
+Özel, N.M.; Ergintav, S.; Turhan, F.; Konca, A.Ö.; Aksarı, D.; Ergün, T. Earthquake Early Warning System for the Marmara Region. In Proceedings of the EGU General Assembly 2026, Vienna, Austria, 3--8 May 2026; %MDPI: We revised the reference title and added location and date of it. Please confirm. % Authors' reply: confirm.
+ EGU26-17285. \url{https://doi.org/10.5194/egusphere-egu26-17285}.
+
+% [70]
+\bibitem[Eren(2025)]{Eren2025}
+Eren, S. Development of Earthquake Early Warning Systems in Marmara Region: A Hybrid Model Utilizing Mosque Loudspeakers. \emph{International Journal of Environment and Geoinformatics} \textbf{2025}, \emph{12}, 61--71. \url{https://doi.org/10.26650/ijegeo.1639063}% Authors' reply: confirm, and added doi.
+
+% [71]
+\bibitem[Speciale et~al.(2026)Speciale, Picozzi, Iervolino, Zollo, Caruso,
+  Colombelli, Emolo, Elia, Martino, and Festa]{Specialeetal2026}
+Speciale, S.; Picozzi, M.; Iervolino, I.; Zollo, A.; Caruso, A.; Colombelli, S.; Emolo, A.; Elia, L.; Martino, C.; Festa, G. The first Earthquake Early Warning System for the high-speed railway in Italy: Enhancing rapidness and operational efficiency during seismic events. \emph{Nat. Hazards Earth Syst. Sci. (NHESS)} \textbf{2026}, \emph{26}, 299--315. \url{https://doi.org/10.5194/nhess-26-299-2026}.
+
+% [72]
+\bibitem[Rudin(2019)]{Rudin2019}
+Rudin, C. Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. \emph{Nat. Mach. Intell.} \textbf{2019}, \emph{1}, 206--215. \url{https://doi.org/10.1038/s42256-019-0048-x}.
+
+% [73]
+\bibitem[Liu et~al.(2026)Liu, Gong, Wang, Zhou, and Jia]{Liuetal2026}
+Liu, B.; Gong, M.; Wang, X.; Zhou, B.; Jia, J. Real-time seismic damage assessment framework of RC frames using deep learning and monitoring data. \emph{J. Build. Eng.} \textbf{2026}, \emph{123}, 115834. \url{https://doi.org/10.1016/j.jobe.2026.115834}
+
+% [74]
+\bibitem[Xue et~al.(2024)Xue, Huang, Wu, Zhao, and Ma]{xue2024real}
+Xue, J.; Huang, Q.; Wu, S.; Zhao, L.; Ma, B. Real-time dual-parameter full-waveform inversion of GPR data based on robust deep learning. \emph{Geophys. J. Int.} \textbf{2024}, \emph{238}, 1755--1771. \url{https://doi.org/10.1093/gji/ggae243}
+
+% [75]
+\bibitem[Witte et~al.(2019)Witte, Louboutin, Kukreja, Luporini, Lange, Gorman, and Herrmann]{witte2019scalable}
+Witte, P.; Louboutin, M.; Kukreja, N.; Luporini, F.; Lange, M.; Gorman, G.; Herrmann, F. A large-scale framework for symbolic implementations of seismic inversion algorithms in Julia. \emph{Geophysics} \textbf{2019}, \emph{84}, 1--60. \url{https://doi.org/10.1190/geo2018-0174.1}
+
+% [76]
+\bibitem[Abdellaziz et~al.(2024)Abdellaziz, Brossier, M{\'e}tivier, and Oudet]{abdellaziz2024optimal}
+Abdellaziz, A.; Brossier, R.; M{\'e}tivier, L.; Oudet, {\'E}. Optimal experimental design for full waveform inversion using a wavenumber sampling criterion---part 1: 2-D to methodological development. \emph{Geophys. J. Int.} \textbf{2024}, \emph{240}, 1429--1459. \url{https://doi.org/10.1093/gji/ggae454}
+
+% [77]
+\bibitem[Virieux and Operto(2009)]{Virieux2009}
+Virieux, J.; Operto, S. An overview of full-waveform inversion in exploration geophysics. \emph{Geophysics} \textbf{2009}, \emph{74}, WCC1--WCC26. \url{https://doi.org/10.1190/1.3238367}.
+
+% [78]
+\bibitem[Peter et~al.(2011)Peter, Komatitsch, Luo, Martin, Le~Goff, Casarotti,
+  Pelties, Ampuero, Etienne, Hendrickson, et~al.]{peter2011forward}
+Peter, D.; Komatitsch, D.; Luo, Y.; Martin, R.; Le Goff, N.; Casarotti, E.; Pelties, C.; Ampuero, J.P.; Etienne, V.; Hendrickson, B.; et al. Forward and adjoint simulations of seismic wave propagation on fully unstructured hexahedral meshes. \emph{Geophys. J. Int.} \textbf{2011}, \emph{186}, 721--739. \url{https://doi.org/10.1111/j.1365-246X.2011.05044.x}.
+
+% [79]
+\bibitem[Ejarque et~al.(2022)Ejarque, Badia, Albertin, Aloisio, Baglione, Becerra, Boschert, Berlin, D'Anca, Elia, Exertier, Fiore, Flich, Folch, Gibbons, Koldunov, Lordan, Lorito, L{\o}vholt, Mac{\'i}as, Marozzo, Michelini, Monterrubio-Velasco, Pienkowska, and de~la~Puente]{ejarque2022enabling}
+Ejarque, J.; Badia, R.M.; Albertin, L.; Aloisio, G.; Baglione, E.; Becerra, Y.; Boschert, S.; Berlin, J.R.; D'Anca, A.; Elia, D.; Exertier, F.; Fiore, S.; Flich, J.; Folch, N.; Gibbons, S.J.; Koldunov, N.; Lordan, F.; Lorito, S.; L{\o}vholt, F.; Mac{\'i}as, J.; Marozzo, F.; Michelini, A.; Monterrubio-Velasco, M.; Pienkowska, M.; de~la~Puente, J. Enabling dynamic and intelligent workflows for HPC, data analytics, and AI convergence. \emph{Future Gener. Comput. Syst.} \textbf{2022}, \emph{134}, 414--429. \url{https://doi.org/10.1016/j.future.2022.04.014}
+
+% [80]
+\bibitem[Assunção et~al.(2015)Assunção, Calheiros, Bianchi, Netto, and
+  Buyya]{assuncao2015big}
+Assunção, M.D.; Calheiros, R.N.; Bianchi, S.; Netto, M.A.; Buyya, R. Big data computing and clouds: Trends and future directions. \emph{J. Parallel Distrib. Comput.} \textbf{2015}, \emph{79}, 3--15. \url{https://doi.org/10.1016/j.jpdc.2014.08.003}.
+
+% [81]
+\bibitem[Parisi et~al.(2025)]{Parisi2025}
+Parisi, F.; Nettis, A.; Uva, G. Machine learning-aided cloud analysis for seismic fragility assessment of multi-span bridges. \emph{Eng. Struct.} \textbf{2025}, \emph{343}, 121175. \url{https://doi.org/10.1016/j.engstruct.2025.121175}
+
+% [82]
+\bibitem[Krauss et~al.(2023)Krauss, Ni, Henderson, and Denolle]{krauss2023seismology}
+Krauss, Z.; Ni, Y.; Henderson, S.; Denolle, M. Seismology in the cloud: Guidance for the individual researcher. \emph{Seismica} \textbf{2023}, \emph{2}. \url{https://doi.org/10.26443/seismica.v2i2.979}
+
+% [83]
+\bibitem[MacCarthy et~al.(2020)MacCarthy, Marcillo, and Trabant]{maccarthy2020seismology}
+MacCarthy, J.; Marcillo, O.; Trabant, C. Seismology in the cloud: A new streaming workflow. \emph{Seismol. Res. Lett.} \textbf{2020}, \emph{91}, 1804--1812. \url{https://doi.org/10.1785/0220190357}
+
+% [84]
+\bibitem[Brossier et~al.(2015)Brossier, Operto, and Virieux]{Brossier2015}
+Brossier, R.; Operto, S.; Virieux, J. Velocity model building from seismic reflection data by full-waveform inversion. \emph{Geophys. Prospect.} \textbf{2015}, \emph{63}, 354--367. \url{https://doi.org/10.1111/1365-2478.12190}.
+
+% [85]
+\bibitem[Raissi et~al.(2019)Raissi, Perdikaris, and
+  Karniadakis]{raissi2019physics}
+Raissi, M.; Perdikaris, P.; Karniadakis, G.E. Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. \emph{J. Comput. Phys.} \textbf{2019}, \emph{378}, 686--707. \url{https://doi.org/10.1016/j.jcp.2018.10.045}.
+
+% [86]
+\bibitem[Rasht-Behesht et~al.(2022)Rasht-Behesht, Huber, Shukla, and
+  Karniadakis]{RashtBehesht2022}
+Rasht-Behesht, M.; Huber, C.; Shukla, K.; Karniadakis, G.E. Physics-informed neural networks (PINNs) for wave propagation and full waveform inversions. \emph{J. Geophys. Res. Solid Earth} \textbf{2022}, \emph{127}, e2021JB023120. \url{https://doi.org/10.1029/2021JB023120}.
+
+% [87]
+\bibitem[Minson et~al.(2014)Minson, Murray, Langbein, and Gomberg]{Minson2014}
+Minson, S.E.; Murray, J.R.; Langbein, J.O.; Gomberg, J.S. Real-time inversions for finite fault slip models and rupture geometry based on high-rate GPS data. \emph{J. Geophys. Res. Solid Earth} \textbf{2014}, \emph{119}, 3201--3231. \url{https://doi.org/10.1002/2013JB010622}.
+
+% [88]
+\bibitem[Glasgow et~al.(2021)Glasgow, Schmandt, Wang, Zhang, Bilek, and
+  Kiser]{Glasgow2021}
+Glasgow, M.; Schmandt, B.; Wang, R.; Zhang, M.; Bilek, S.L.; Kiser, E. Raton Basin induced seismicity is hosted by networks of short basement faults and mimics tectonic earthquake statistics. \emph{J. Geophys. Res. Solid Earth} \textbf{2021}, \emph{126}, e2021JB022839. \url{https://doi.org/10.1029/2021JB022839}.
+
+% [89]
+\bibitem[Wilkinson et~al.(2022)Wilkinson, Chambers, Meldrum, Kuras, Inauen,
+  Swift, Curioni, Uhlemann, Graham, and Atherton]{Wilkinson2022}
+Wilkinson, P.B.; Chambers, J.E.; Meldrum, P.I.; Kuras, O.; Inauen, C.M.; Swift, R.T.; Curioni, G.; Uhlemann, S.; Graham, J.; Atherton, N. Windowed 4D inversion for near real-time geoelectrical monitoring applications. \emph{Front. Earth Sci.} \textbf{2022}, \emph{10}, 983603. \url{https://doi.org/10.3389/feart.2022.983603}.
+
+% [90]
+\bibitem[Song et~al.(2022)Song, Alkhalifah, and Waheed]{song2022versatile}
+Song, C.; Alkhalifah, T.; Waheed, U.B. A versatile framework to solve the Helmholtz equation using physics-informed neural networks. \emph{Geophys. J. Int.} \textbf{2022}, \emph{228}, 1750--1762. \url{https://doi.org/10.1093/gji/ggab434} %MDPI: The content does not match it on doi web, please check it. % Authors' reply: corrected author's names and doi.
+
+% [91]
+\bibitem[Gineste and Eidsvik(2021)]{Gineste2021}
+Gineste, M.; Eidsvik, J. Batch seismic inversion using the iterative ensemble Kalman smoother. \emph{Comput. Geosci.} \textbf{2021}, \emph{25}, 1105--1121. \url{https://doi.org/10.1007/s10596-021-10043-4}.
+
+% [92]
+
+\bibitem[Moseley et~al.(2020)Moseley, Markham, and Nissen-Meyer]{Moseley2020}
+Moseley, B.; Markham, A.; Nissen-Meyer, T. Solving the wave equation with physics-informed deep learning. \emph{arXiv} \textbf{2020}, arXiv:2006.11894. \url{https://doi.org/10.48550/arXiv.2006.11894}.
+
+% [93]
+\bibitem[Ide et~al.(2007)Ide, Beroza, Shelly, and Uchide]{Ide2007}
+Ide, S.; Beroza, G.C.; Shelly, D.R.; Uchide, T. A scaling law for slow earthquakes. \emph{Nature} \textbf{2007}, \emph{447}, 76--79. \url{https://doi.org/10.1038/nature05780}.
+
+% [94]
+\bibitem[Obara(2002)]{Obara2002}
+Obara, K. Nonvolcanic deep tremor associated with subduction in southwest Japan. \emph{Science} \textbf{2002}, \emph{296}, 1679--1681. \url{https://doi.org/10.1126/science.1070378}.
+
+% [95]
+\bibitem[Donoho(2006)]{Donoho2006}
+Donoho, D.L. Compressed sensing. \emph{IEEE Trans. Inf. Theory} \textbf{2006}, \emph{52}, 1289--1306. \url{https://doi.org/10.1109/TIT.2006.871582}.
+
+% [96]
+\bibitem[Cand{\`e}s et~al.(2006)Cand{\`e}s, Romberg, and Tao]{Candes2006}
+Candès, E.J.; Romberg, J.; Tao, T. Robust uncertainty principles: Exact signal reconstruction from highly incomplete frequency information. \emph{IEEE Trans. Inf. Theory} \textbf{2006}, \emph{52}, 489--509. \url{https://doi.org/10.1109/TIT.2005.862083}.
+
+% [97]
+\bibitem[Herrmann and Li(2012)]{Herrmann2012}
+Herrmann, F.J.; Li, X. Efficient least-squares imaging with sparsity promotion and compressive sensing. \emph{Geophys. Prospect.} \textbf{2012}, \emph{60}, 696--712. \url{https://doi.org/10.1111/j.1365-2478.2011.01041.x}.
+
+% [98]
+\bibitem[Bensen et~al.(2007)Bensen, Ritzwoller, Barmin, et~al.]{Bensen2007}
+Bensen, G.D.; Ritzwoller, M.H.; Barmin, M.P.; et al. Processing seismic ambient noise data to obtain reliable broad-band surface wave dispersion measurements. \emph{Geophys. J. Int.} \textbf{2007}, \emph{169}, 1239--1260. \url{https://doi.org/10.1111/j.1365-246X.2007.03374.x}.
+
+% [99]
+\bibitem[Bacon et~al.(2025)]{Bacon2025}
+Bacon, C.; et al. Processing on the edge: The evolution of in-field processing on modern land seismic surveys. \emph{EAGE First Break} \textbf{2025}, \emph{43}, 69--73. \url{https://doi.org/10.3997/1365-2397.fb2025006}
+
+% [100]
+\bibitem[Armbrust et~al.(2015)Armbrust, Xin, Lian, et~al.]{Armbrust2018}
+Armbrust, M.; Xin, R.S.; Lian, C.; et al. Apache Spark SQL: Relational data processing in Spark. In \emph{Proceedings of the 2015 ACM SIGMOD}; Association for Computing Machinery: New York, NY, USA,  %MDPI: We added the name of the publisher and their location. Please confirm. % Authors' reply: confirm.
+ 2015. \url{https://doi.org/10.1145/2723372.2742797}.
+
+% [101]
+\bibitem[Zaharia et~al.(2016)Zaharia, Xin, Wendell, Das, Armbrust, Dave, Meng, Rosen, Venkataraman, Franklin, Ghodsi, Gonzalez, Shenker, and Stoica]{Zaharia2016}
+Zaharia, M.; Xin, R.S.; Wendell, P.; Das, T.; Armbrust, M.; Dave, A.; Meng, X.; Rosen, J.; Venkataraman, S.; Franklin, M.J.; Ghodsi, A.; Gonzalez, J.; Shenker, S.; Stoica, I. Apache Spark: a unified engine for big data processing. %MDPI: Please check if Refs. [95] and [99] are duplicated. If so, please remove duplicated references and rearrange all the references so that they appear in numerical order. Please ensure that there are no duplicated references. % Authors' reply: duplicated reference removed ([99]), corrected list of authors in this ref..
+\emph{Commun. ACM} \textbf{2016}, \emph{59}, 56--65. \url{https://doi.org/10.1145/2934664}
+
+% [102]
+\bibitem[Cremen and Galasso(2020)]{cremen2020}
+Cremen, G.; Galasso, C. Earthquake early warning: Recent advances and perspectives. \emph{Earth-Sci. Rev.} \textbf{2020}, \emph{205}, 103184. \url{https://doi.org/10.1016/j.earscirev.2020.103184}
+
+% [103]
+\end{thebibliography}
+\PublishersNote{}
+
+%\bibliography{Bibliography.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{adjustwidth}
+\end{document}
